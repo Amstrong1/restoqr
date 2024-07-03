@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('menu_id')->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->integer('prix');
+            $table->integer('price');
+            $table->string('image');
             $table->string('description')->nullable();
             $table->timestamps();
         });

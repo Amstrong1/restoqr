@@ -1,5 +1,5 @@
 <!-- Simplicity is an acquired taste. - Katharine Gerould -->
-<form method="POST" action="{{ route(Str::plural($type) . '.store') }}" enctype="multipart/form-data">
+<form method="POST" action="{{ route($type . '.store') }}" enctype="multipart/form-data">
     @csrf
 
     <!-- inputs -->

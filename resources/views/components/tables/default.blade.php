@@ -16,14 +16,18 @@
                     placeholder="Rechercher dans la liste">
             </div>
         </div>
-        <table class="w-full whitespace-no-wrap" id="datas-table-buttons" style="width: 100% !important">
+        <table class="w-full text-left" id="datas-table-buttons" style="width: 100% !important">
             <thead>
                 <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b bg-gray-50">
                     @foreach ($mattributes as $column => $title)
-                        <th class="px-4 py-3 text-center ">{{ $title }}</th>
+                        <th
+                            class="font-medium border-b-2 border-l border-r border-t whitespace-nowrap px-4 py-3 text-center">
+                            {{ $title }}</th>
                     @endforeach
                     @isset($mactions)
-                        <th class="px-4 py-3 text-center">Actions</th>
+                        <th
+                            class="font-medium border-b-2 border-l border-r border-t whitespace-nowrap px-4 py-3 text-center">
+                            Actions</th>
                     @endisset
                 </tr>
             </thead>
@@ -32,7 +36,8 @@
                     @foreach ($resources as $resource)
                         <tr class="text-gray-700">
                             @foreach ($mattributes as $column => $title)
-                                <td class="px-4 py-3 text-center">
+                                <td
+                                    class="text-center px-5 py-3 border-b dark:border-darkmode-300 border-l border-r border-t">
                                     @if ($column == 'img' || $column == 'image' || $column == 'photo' || $column == 'logo')
                                         <a class="flex items-center justify-center text-sm hover:opacity-80">
                                             <!-- Avatar OR Image with inset shadow -->
@@ -43,9 +48,6 @@
                                                         : 'https://ui-avatars.com/api/?background=random&name=' . $resource->fullname }}"
                                                     alt="" loading="lazy">
                                             </div>
-                                            {{-- <div>
-                                <p class="font-semibold capitalize">{{ $resource->name }}</p>
-                            </div> --}}
                                         </a>
                                     @elseif ($column == 'status')
                                         <span @class([
@@ -77,7 +79,7 @@
                                 </td>
                             @endforeach
                             @isset($mactions)
-                                <td class="px-4 py-3 text-center">
+                                <td class="text-center px-5 py-3 border-b border-l border-r border-t">
                                     <div class="flex items-center justify-center space-x-4 text-sm">
                                         @foreach ($mactions as $action => $title)
                                             @if ($action == 'show')
@@ -103,7 +105,8 @@
                                                     </svg>
                                                 </a>
                                             @elseif ($action == 'delete')
-                                                <form action="{{ route(Str::plural($type) . '.destroy', [$type => $resource]) }}"
+                                                <form
+                                                    action="{{ route(Str::plural($type) . '.destroy', [$type => $resource]) }}"
                                                     method="POST"
                                                     onsubmit="event.preventDefault(); deleteConfirmation(this)">
                                                     @method('DELETE')
@@ -129,19 +132,11 @@
                 @else
                     <tr>
                         <td colspan="{{ count((array) $mattributes) + 1 }}"
-                            class="px-6 py-4 whitespace-nowrap text-center text-gray-400"> Aucun Element </td>
+                            class="whitespace-nowrap text-center text-gray-400 px-5 py-3 border-b border-l border-r border-t">
+                            Aucun Element </td>
                     </tr>
                 @endif
             </tbody>
         </table>
     </div>
-    {{-- <div
-         class="grid px-4 py-3 text-center text-xs font-semibold tracking-wide text-gray-500 uppercase border-t bg-gray-50">
-        <!-- Pagination -->
-        <span class="flex mt-2 py-3 sm:mt-auto sm:justify-center">
-            {{ $resources->links('components.elements.pagination.default') }}
-        </span>
-    </div> --}}
-
-
 </div>
