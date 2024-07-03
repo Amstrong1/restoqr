@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreMenuRequest;
 use App\Http\Requests\UpdateMenuRequest;
-use App\Models\Menu;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class MenuController extends Controller
 {
@@ -13,7 +15,11 @@ class MenuController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.menu.index', [
+            'menus' => Menu::all(),
+            'my_actions' => $this->menu_actions(),
+            'my_attributes' => $this->menu_columns(),
+        ]);
     }
 
     /**
@@ -21,7 +27,9 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.menu.create', [
+            'my_fields' => $this->menu_fields()
+        ]);
     }
 
     /**
@@ -29,7 +37,19 @@ class MenuController extends Controller
      */
     public function store(StoreMenuRequest $request)
     {
-        //
+        $menu = new Menu();
+
+        $menu->structure_id = Auth::user()->structure_id;
+        $menu->name = $request->name;
+        $menu->description = $request->description;
+
+        if ($menu->save()) {
+            Alert::toast('Opération éffectué avec succès', 'success');
+            return redirect('menu');
+        } else {
+            Alert::toast('Une erreur est survenue', 'error');
+            return redirect()->back()->withInput($request->input());
+        }
     }
 
     /**
@@ -37,7 +57,10 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        //
+        return view('admin.menu.show', [
+            'menu' => $menu,
+            'my_fields' => $this->menu_fields(),
+        ]);
     }
 
     /**
@@ -45,7 +68,10 @@ class MenuController extends Controller
      */
     public function edit(Menu $menu)
     {
-        //
+        return view('admin.menu.edit', [
+            'menu' => $menu,
+            'my_fields' => $this->menu_fields(),
+        ]);
     }
 
     /**
@@ -53,7 +79,16 @@ class MenuController extends Controller
      */
     public function update(UpdateMenuRequest $request, Menu $menu)
     {
-        //
+        $menu = Menu::find($menu->id);
+
+        $menu->structure_id = Auth::user()->structure_id;
+        $menu->name = $request->name;
+        $menu->description = $request->description;
+                
+        if ($menu->save()) {
+            Alert::toast('Opération éffectué avec succès', 'success');
+            return redirect('menu');
+        };
     }
 
     /**
@@ -61,6 +96,46 @@ class MenuController extends Controller
      */
     public function destroy(Menu $menu)
     {
-        //
+        try {
+            $menu = $menu->delete();
+            Alert::success('Opération éffectué avec succès', 'Supprimé');
+            return redirect('menu');
+        } catch (\Exception $e) {
+            Alert::error('Une erreur est survenue', 'Element introuvable', );
+            return redirect()->back();
+        }
+    }
+
+    private function menu_columns()
+    {
+        $columns = (object) [
+            'name' => 'Nom',
+            'description' => 'Description',
+        ];
+        return $columns;
+    }
+
+    private function menu_actions()
+    {
+        $actions = (object) array(
+            'edit' => 'Modifier',
+            'delete' => "Supprimer",
+        );
+        return $actions;
+    }
+
+    private function menu_fields()
+    {
+        $fields = [
+            'name' => [
+                'title' => 'Nom',
+                'field' => 'text'
+            ],
+            'description' => [
+                'title' => 'Description',
+                'field' => 'text'
+            ]
+        ];
+        return $fields;
     }
 }

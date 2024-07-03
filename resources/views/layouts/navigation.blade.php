@@ -90,7 +90,7 @@
 
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
-                                        this.closest('form').submit();">
+                                        this.closest('fotyroco@mailinator.comrm').submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>
