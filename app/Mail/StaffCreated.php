@@ -13,12 +13,15 @@ class StaffCreated extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $user;
+    public $password;
+
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -37,7 +40,7 @@ class StaffCreated extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'admin.staff.mail',
         );
     }
 
