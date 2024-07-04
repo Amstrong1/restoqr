@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('structure_id')->constrained();
             $table->foreignId('place_id')->constrained();
-            $table->enum('status', ['pending', 'accepted', 'rejected', 'canceled', 'prepared', 'delivered'])->default('pending');
-            $table->integer('total');
+            $table->string('status')->default('pending');
+            $table->integer('total')->default(0);
             $table->timestamps();
         });
     }

@@ -83,7 +83,7 @@
                                     <div class="flex items-center justify-center space-x-4 text-sm">
                                         @foreach ($mactions as $action => $title)
                                             @if ($action == 'show')
-                                                <a href="{{ route(Str::plural($type) . '.show', [$type => $resource->id]) }}"
+                                                <a href="{{ route($type . '.show', [$type => $resource->id]) }}"
                                                     class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 rounded-lg focus:outline-none focus:shadow-outline-gray">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
                                                         viewBox="0 0 20 20" fill="currentColor">
@@ -94,7 +94,7 @@
                                                     </svg>
                                                 </a>
                                             @elseif ($action == 'edit')
-                                                <a href="{{ route(Str::plural($type) . '.edit', [$type => $resource->id]) }}"
+                                                <a href="{{ route($type . '.edit', [$type => $resource->id]) }}"
                                                     class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 text-main rounded-lg dark:text-main focus:outline-none focus:shadow-outline-gray"
                                                     aria-label="Edit">
                                                     <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
@@ -106,7 +106,7 @@
                                                 </a>
                                             @elseif ($action == 'delete')
                                                 <form
-                                                    action="{{ route(Str::plural($type) . '.destroy', [$type => $resource]) }}"
+                                                    action="{{ route($type . '.destroy', [$type => $resource]) }}"
                                                     method="POST"
                                                     onsubmit="event.preventDefault(); deleteConfirmation(this)">
                                                     @method('DELETE')

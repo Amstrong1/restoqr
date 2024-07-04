@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Place;
 
 class OrderController extends Controller
 {
@@ -26,9 +27,9 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('admin.order.create', [
-            'my_fields' => $this->order_fields()
-        ]);
+        // return view('admin.order.create', [
+        //     'my_fields' => $this->order_fields()
+        // ]);
     }
 
     /**
@@ -38,23 +39,14 @@ class OrderController extends Controller
     {
         $order = new Order();
 
-        $fileName = time() . '.' . $request->logo->extension();
-        $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
-
-        $order->name = $request->name;
-        $order->adresse = $request->adresse;
-        $order->contact = $request->contact;
-        $order->email = $request->email;
-        $order->ifu = $request->ifu;
-        $order->rccm = $request->rccm;
-        $order->logo = $path;
+        $order->structure_id = $request->structure;
+        $order->place_id = $request->place;
+        $order->status = $request->status;
 
         if ($order->save()) {
-            Alert::toast('Opération éffectué avec succès', 'success');
-            return redirect('order');
+            return 'success';
         } else {
-            Alert::toast('Une erreur est survenue', 'error');
-            return redirect()->back()->withInput($request->input());
+            return 'error';
         }
     }
 
@@ -85,23 +77,9 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
-        $order = Order::find($order->id);
+        $order->place_id = $request->place;
+        $order->status = $request->status;
 
-        if ($request->file !== null) {
-            $fileName = time() . '.' . $request->logo->extension();
-            $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
-        }
-
-        $order->name = $request->name;
-        $order->adresse = $request->adresse;
-        $order->contact = $request->contact;
-        $order->email = $request->email;
-        $order->ifu = $request->ifu;
-        $order->rccm = $request->rccm;
-        if (isset($path)) {
-            $order->logo = $path;
-        }
-        
         if ($order->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
             return redirect('order');
@@ -118,7 +96,7 @@ class OrderController extends Controller
             Alert::success('Opération éffectué avec succès', 'Supprimé');
             return redirect('order');
         } catch (\Exception $e) {
-            Alert::error('Une erreur est survenue', 'Element introuvable', );
+            Alert::error('Une erreur est survenue', 'Element introuvable',);
             return redirect()->back();
         }
     }
@@ -126,13 +104,9 @@ class OrderController extends Controller
     private function order_columns()
     {
         $columns = (object) [
-            'logo' => '',
-            'name' => 'Dénomination',
-            'contact' => 'Contact',
-            'email' => 'Email',
-            'adresse' => 'Adresse',
-            'ifu' => 'IFU',
-            'rccm' => 'RCCM',
+            'place_id' => 'Table',
+            'status' => 'Statut',
+            'total' => 'Total',
         ];
         return $columns;
     }
@@ -149,33 +123,22 @@ class OrderController extends Controller
     private function order_fields()
     {
         $fields = [
-            'name' => [
-                'title' => 'Dénomination',
-                'field' => 'text'
+            'place' => [
+                'title' => 'Table',
+                'field' => 'model',
+                'option' => Place::all()
             ],
-            'adresse' => [
-                'title' => 'Adresse',
-                'field' => 'text'
-            ],
-            'contact' => [
-                'title' => 'Contact',
-                'field' => 'tel'
-            ],
-            'email' => [
-                'title' => 'Email',
-                'field' => 'email'
-            ],
-            'ifu' => [
-                'title' => 'IFU',
-                'field' => 'text'
-            ],
-            'rccm' => [
-                'title' => 'RCCM',
-                'field' => 'text'
-            ],
-            'logo' => [
-                'title' => 'Logo',
-                'field' => 'file'
+            'status' => [
+                'title' => 'Statut',
+                'field' => 'select',
+                'option' => [
+                    'pending' => 'En attente',
+                    'accepted' => 'Accepté', 
+                    'rejected' => 'Rejeté', 
+                    'canceled' => 'Annulé', 
+                    'prepared' => 'Préparé', 
+                    'delivered' => 'Livré'
+                ]
             ],
         ];
         return $fields;
