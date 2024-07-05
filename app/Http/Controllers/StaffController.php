@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Place;
 use App\Models\Staff;
+use App\Mail\StaffCreated;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\StoreStaffRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\UpdateStaffRequest;
@@ -52,6 +54,7 @@ class StaffController extends Controller
         $staff->place_id = $request->place;
 
         if ($staff->save()) {
+            Mail::to($request->email)->send(new StaffCreated($user, $password));
             Alert::toast('Opération éffectué avec succès', 'success');
             return redirect('staff');
         } else {

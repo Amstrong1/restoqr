@@ -39,7 +39,7 @@ class ArticleController extends Controller
     {
         $article = new Article();
 
-        $fileName = time() . '.' . $request->logo->extension();
+        $fileName = time() . '.' . $request->image->extension();
         $path = $request->file('image')->storeAs('images', $fileName, 'public');
 
         $article->menu_id = $request->menu;
@@ -47,7 +47,7 @@ class ArticleController extends Controller
         $article->price = $request->price;
         $article->image = $request->image;
         $article->description = $request->description;
-        $article->logo = $path;
+        $article->image = $path;
 
         if ($article->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
@@ -86,7 +86,7 @@ class ArticleController extends Controller
     public function update(UpdateArticleRequest $request, Article $article)
     {
         if ($request->file !== null) {
-            $fileName = time() . '.' . $request->logo->extension();
+            $fileName = time() . '.' . $request->image->extension();
             $path = $request->file('image')->storeAs('images', $fileName, 'public');
         }
 
@@ -97,7 +97,7 @@ class ArticleController extends Controller
         $article->description = $request->description;
         
         if (isset($path)) {
-            $article->logo = $path;
+            $article->image = $path;
         }
         
         if ($article->save()) {

@@ -26,9 +26,9 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('admin.customer.create', [
-            'my_fields' => $this->customer_fields()
-        ]);
+        // return view('admin.customer.create', [
+        //     'my_fields' => $this->customer_fields()
+        // ]);
     }
 
     /**
@@ -38,23 +38,14 @@ class CustomerController extends Controller
     {
         $customer = new Customer();
 
-        $fileName = time() . '.' . $request->logo->extension();
-        $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
-
         $customer->name = $request->name;
-        $customer->adresse = $request->adresse;
-        $customer->contact = $request->contact;
-        $customer->email = $request->email;
-        $customer->ifu = $request->ifu;
-        $customer->rccm = $request->rccm;
-        $customer->logo = $path;
+        $customer->adresse = $request->email;
+        $customer->contact = $request->tel;
 
         if ($customer->save()) {
-            Alert::toast('Opération éffectué avec succès', 'success');
-            return redirect('customer');
+            return 'success';
         } else {
-            Alert::toast('Une erreur est survenue', 'error');
-            return redirect()->back()->withInput($request->input());
+            return 'error';
         }
     }
 
@@ -85,22 +76,9 @@ class CustomerController extends Controller
      */
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
-        $customer = Customer::find($customer->id);
-
-        if ($request->file !== null) {
-            $fileName = time() . '.' . $request->logo->extension();
-            $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
-        }
-
         $customer->name = $request->name;
-        $customer->adresse = $request->adresse;
-        $customer->contact = $request->contact;
-        $customer->email = $request->email;
-        $customer->ifu = $request->ifu;
-        $customer->rccm = $request->rccm;
-        if (isset($path)) {
-            $customer->logo = $path;
-        }
+        $customer->adresse = $request->email;
+        $customer->contact = $request->tel;
         
         if ($customer->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
@@ -126,13 +104,9 @@ class CustomerController extends Controller
     private function customer_columns()
     {
         $columns = (object) [
-            'logo' => '',
-            'name' => 'Dénomination',
-            'contact' => 'Contact',
+            'name' => 'Nom',
             'email' => 'Email',
-            'adresse' => 'Adresse',
-            'ifu' => 'IFU',
-            'rccm' => 'RCCM',
+            'tel' => 'Contact',
         ];
         return $columns;
     }
@@ -150,11 +124,7 @@ class CustomerController extends Controller
     {
         $fields = [
             'name' => [
-                'title' => 'Dénomination',
-                'field' => 'text'
-            ],
-            'adresse' => [
-                'title' => 'Adresse',
+                'title' => 'Nom',
                 'field' => 'text'
             ],
             'contact' => [
@@ -164,18 +134,6 @@ class CustomerController extends Controller
             'email' => [
                 'title' => 'Email',
                 'field' => 'email'
-            ],
-            'ifu' => [
-                'title' => 'IFU',
-                'field' => 'text'
-            ],
-            'rccm' => [
-                'title' => 'RCCM',
-                'field' => 'text'
-            ],
-            'logo' => [
-                'title' => 'Logo',
-                'field' => 'file'
             ],
         ];
         return $fields;

@@ -56,7 +56,7 @@ class RegisteredUserController extends Controller
             'structure_id' => $structure->id,
             'name' => $request->lname . ' ' . $request->fname,
             'role' => 'admin',
-            'active' => false,
+            'active' => true,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
