@@ -1475,6 +1475,7 @@
     </main>
 
     @include('sweetalert::alert')
+
     
     <!-- BEGIN: Vendor JS Assets-->
     <script src="dist/js/vendors/dom.js"></script>
