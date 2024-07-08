@@ -40,4 +40,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function structure() {
+        return $this->belongsTo(Structure::class);
+    }
 }

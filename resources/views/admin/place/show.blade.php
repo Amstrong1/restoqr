@@ -12,20 +12,21 @@
 
                         <div class="flex justify-between items-center p-6">
                             <h2 class="font-semibold">QR CODE</h2>
-                            <a href="">
-                                <x-primary-button>
+
+                            <span>
+                                <x-primary-button onclick="generatePDF()" id="btn">
                                     Imprimer 
                                 </x-primary-button>
-                            </a>
+                            </span>
 
                         </div>
-                        <div class="my-4 flex flex-col items-center">
+                        <div id="print" class="my-4 flex flex-col items-center">
                             <div class="flex justify-center items-center">
                                 <div>{!! $qrCode !!}</div>
                                 <div>
                                     <span
-                                        class="block transform rotate-90 text-2xl font-bold text-black relative -left-8">
-                                        CLUB NAME
+                                        class="block transform rotate-90 text-sm font-bold text-black relative -left-8">
+                                        {{ auth()->user()->structure->name }}
                                     </span>
                                 </div>
                             </div>
@@ -41,3 +42,34 @@
         </div>
     </div>
 </x-app-layout>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    function generatePDF() {
+        var element = document.getElementById("print");
+        document.getElementById('btn').style.display = "none";
+        var opt = {
+            margin: 0.3,
+            filename: 'document.pdf',
+            image: {
+                type: 'jpeg',
+                quality: 0.98
+            },
+            html2canvas: {
+                scale: 2
+            },
+            jsPDF: {
+                unit: 'in',
+                format: 'letter',
+                orientation: 'portrait'
+            }
+        };
+        html2pdf().from(element).set(opt).save();
+
+        // setTimeout(function() {
+        //     document.getElementById('btn').style.display = 'block';
+        // }, 10000);
+    }
+</script>
