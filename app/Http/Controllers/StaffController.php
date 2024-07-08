@@ -19,8 +19,10 @@ class StaffController extends Controller
      */
     public function index()
     {
+        $structure = auth()->user()->structure;
+        $staffs = $structure->users()->where('role', 'waiter')->orWhere('role', 'manager')->get();
         return view('admin.staff.index', [
-            'staffs' => Staff::all(),
+            'staffs' => $staffs,
             'my_actions' => $this->staff_actions(),
             'my_attributes' => $this->staff_columns(),
         ]);
@@ -46,14 +48,19 @@ class StaffController extends Controller
         $user = User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
+            'role' => $request->input('role'),
+            'active' => true,
             'password' => Hash::make($password),
         ]);
 
-        $staff = new Staff();
-        $staff->user_id = $user->id;
-        $staff->place_id = $request->place;
+        if ($user->role == "waiter") {
+            $staff = new Staff();
+            $staff->user_id = $user->id;
+            // $staff->place_id = $request->place;
+            $staff->save();
+        }
 
-        if ($staff->save()) {
+        if ($user) {
             Mail::to($request->email)->send(new StaffCreated($user, $password));
             Alert::toast('Opération éffectué avec succès', 'success');
             return redirect('staff');
@@ -93,11 +100,12 @@ class StaffController extends Controller
         $user = $staff->user;
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->role = $request->input('role');
         $user->save();
 
-        $staff->place_id = $request->place;
+        // $staff->place_id = $request->place;
 
-        if ($staff->save()) {
+        if ($user->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
             return redirect('staff');
         };
@@ -113,7 +121,7 @@ class StaffController extends Controller
             Alert::success('Opération éffectué avec succès', 'Supprimé');
             return redirect('staff');
         } catch (\Exception $e) {
-            Alert::error('Une erreur est survenue', 'Element introuvable', );
+            Alert::error('Une erreur est survenue', 'Element introuvable',);
             return redirect()->back();
         }
     }
@@ -123,7 +131,7 @@ class StaffController extends Controller
         $columns = (object) [
             'name' => 'Nom',
             'email' => 'Email',
-            'place' => 'Table',
+            'role_formatted' => 'Role',
         ];
         return $columns;
     }
@@ -148,11 +156,16 @@ class StaffController extends Controller
                 'title' => 'Email',
                 'field' => 'text'
             ],
-            'place' => [
-                'title' => 'Table',
-                'field' => 'model',
-                'options' => Place::all()
-            ]
+            'role' => [
+                'title' => 'Role',
+                'field' => 'select',
+                'options' => ['waiter' => 'Serveur', 'manager' => 'Gérant']
+            ],
+            // 'place' => [
+            //     'title' => 'Table (Serveur uniquement)',
+            //     'field' => 'model',
+            //     'options' => Place::all()
+            // ],
         ];
         return $fields;
     }

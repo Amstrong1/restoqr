@@ -17,6 +17,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $guarded = [];
+    protected $append = ['role_formatted'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -41,7 +42,24 @@ class User extends Authenticatable
         ];
     }
 
-    public function structure() {
+    public function structure()
+    {
         return $this->belongsTo(Structure::class);
+    }
+
+    public function getRoleFormattedAttribute()
+    {
+        $role = "";
+        switch ($this->role) {
+            case 'manager':
+                $role = "Gérant";
+                break;
+            case 'waiter':
+                $role = "Serveur";
+                break;
+            default:                
+                break;
+        }
+        return $role;
     }
 }
