@@ -141,11 +141,11 @@ class StaffController extends Controller
     {
         $fields = [
             'name' => [
-                'title' => 'Dénomination',
+                'title' => 'Nom',
                 'field' => 'text'
             ],
             'email' => [
-                'title' => 'Adresse',
+                'title' => 'Email',
                 'field' => 'text'
             ],
             'place' => [
