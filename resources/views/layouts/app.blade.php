@@ -39,7 +39,6 @@
     </main>
 
     @include('sweetalert::alert')
-
     
     <!-- BEGIN: Vendor JS Assets-->
     <script src="{{ asset('dist/js/vendors/dom.js') }}"></script>

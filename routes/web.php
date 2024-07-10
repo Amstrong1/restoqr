@@ -12,9 +12,8 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\VariationController;
 
-Route::get('/', function () {
-    return view('welcome')->name('welcome');
-});
+
+
 
 Route::get('/dashboard', function () {
     return view('admin.index');
@@ -41,3 +40,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/{any}', function () {
+    return view('welcome');
+})->where('any', '.*');
