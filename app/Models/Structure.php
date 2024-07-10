@@ -11,4 +11,9 @@ class Structure extends Model
     use HasFactory, SoftDeletes;
 
     protected $guarded = [];
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

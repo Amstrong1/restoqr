@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StorePlaceRequest;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\UpdatePlaceRequest;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class PlaceController extends Controller
 {
@@ -57,8 +58,11 @@ class PlaceController extends Controller
      */
     public function show(Place $place)
     {
+        $qrCode = QrCode::size(200)->color(4, 14, 96)->generate($place->id);
+
         return view('admin.place.show', [
             'place' => $place,
+            'qrCode' => $qrCode,
             'my_fields' => $this->place_fields(),
         ]);
     }
@@ -115,6 +119,7 @@ class PlaceController extends Controller
     private function place_actions()
     {
         $actions = (object) array(
+            'show' => 'Voir',
             'edit' => 'Modifier',
             'delete' => "Supprimer",
         );

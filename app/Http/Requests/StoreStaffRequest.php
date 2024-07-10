@@ -25,8 +25,8 @@ class StoreStaffRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'place' => ['required', 'exists:places,id'],
-            'password' => ['required'],
+            'role' => ['required', 'string', 'max:20'],
+            // 'place' => ['requiredif:role,waiter', 'exists:places,id'],
         ];
     }
 }
