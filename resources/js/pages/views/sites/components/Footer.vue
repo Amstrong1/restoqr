@@ -79,7 +79,7 @@
 			</div><!--end grid-->
 		</div><!--end container-->
 
-		<div class="py-[30px] px-0 border-t border-slate-800">
+		<!-- <div class="py-[30px] px-0 border-t border-slate-800">
 			<div class="container relative text-center">
 				<div class="grid md:grid-cols-1">
 					<p class="mb-0">©
@@ -87,8 +87,8 @@
 							class="mdi mdi-heart text-red-600"></i> by <a href="https://shreethemes.in/" target="_blank"
 							class="text-reset">Shreethemes</a>.
 					</p>
-				</div><!--end grid-->
-			</div><!--end container-->
-		</div>
+				</div>
+			</div>
+		</div> -->
 	</footer>
 </template>
