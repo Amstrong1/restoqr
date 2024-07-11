@@ -5,6 +5,8 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\BannerController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +35,9 @@ Route::middleware('auth')->group(function () {
     Route::resource('structure', StructureController::class);
     Route::resource('variation', VariationController::class);
     Route::resource('staff', StaffController::class);
+
+    Route::put('/social', [SocialController::class, 'update'])->name('social.update');
+    Route::put('/banner', [BannerController::class, 'update'])->name('banner.update');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

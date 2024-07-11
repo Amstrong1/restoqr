@@ -7,7 +7,7 @@
                     <div class="bg-white overflow-hidden shadow-lg sm:rounded-lg">
                         <div class="p-6 text-gray-900">
                             <h1>{{ __('Modifier') }}</h1>
-                            <x-forms.update :item="$place" :fields="$my_fields" type="place" />
+                            <x-forms.edit :item="$place" :fields="$my_fields" type="place" />
                         </div>
                     </div>
                 </div>

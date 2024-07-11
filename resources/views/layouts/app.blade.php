@@ -15,6 +15,7 @@
     <!-- Scripts -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <script src="{{ asset('assets/vendor/ckeditor5/build/ckeditor.js') }}"></script>
 
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="{{ asset('dist/css/vendors/litepicker.css') }}">
@@ -39,6 +40,14 @@
     </main>
 
     @include('sweetalert::alert')
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
     
     <!-- BEGIN: Vendor JS Assets-->
     <script src="{{ asset('dist/js/vendors/dom.js') }}"></script>

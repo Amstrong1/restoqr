@@ -8,7 +8,7 @@
             <div @class(['m-2', 'col-span-2' => isset($value['colspan'])])>
                 @php
                     $component = 'inputs.' . $value['field'];
-                    $fill = $item->{$attr};
+                    $fill = $item->{$attr} ?? "";
                 @endphp
 
                 @if ($value['field'] === 'model')

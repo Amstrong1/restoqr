@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('structures', function (Blueprint $table) {
+        Schema::create('socials', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('structure_id')->constrained();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('x')->nullable();
             $table->string('tiktok')->nullable();
-            $table->string('banner')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('socials');
     }
 };

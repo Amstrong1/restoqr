@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\Social;
 use App\Models\Structure;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreStructureRequest;
@@ -55,7 +57,11 @@ class StructureController extends Controller
     {
         return view('admin.structure.edit', [
             'structure' => $structure,
+            'banner' => Banner::where('structure_id', $structure->id)->first(),
+            'social' => Social::where('structure_id', $structure->id)->first(),
             'my_fields' => $this->structure_fields(),
+            'social_fields' => $this->social_fields(),
+            'banner_fields' => $this->banner_fields(),
         ]);
     }
 
@@ -66,17 +72,8 @@ class StructureController extends Controller
     {
         // dd($request);
         if ($request->logo !== null) {
-            $fileName = time() . '.' . $request->logo->extension();
-            // $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
-            
+            $fileName = time() . '.' . $request->logo->extension();           
             $request->logo->move(public_path('logos'), $fileName);
-        }
-
-        if ($request->banner !== null) {
-            $fileName2 = time() . '.' . $request->banner->extension();
-            // $path = $request->file('banner')->storeAs('logos', $fileName, 'public');
-            $request->banner->move(public_path('banners'), $fileName2);
-
         }
 
         $structure->name = $request->name;
@@ -84,15 +81,9 @@ class StructureController extends Controller
         $structure->tel = $request->tel;
         $structure->address = $request->address;
         $structure->slug = $request->slug;
-        $structure->facebook = $request->facebook;
-        $structure->instagram = $request->instagram;
-        $structure->tiktok = $request->tiktok;
-        $structure->x = $request->x;
+
         if (isset($fileName)) {
             $structure->logo = 'logos/' . $fileName;
-        }
-        if (isset($fileName2)) {
-            $structure->banner = 'banners/' . $fileName2;
         }
         
         if ($structure->save()) {
@@ -163,14 +154,37 @@ class StructureController extends Controller
             'logo' => [
                 'title' => 'Logo',
                 'field' => 'file'
+            ],           
+        ];
+        return $fields;
+    }
+
+    private function banner_fields()
+    {
+        $fields = [
+            'title' => [
+                'title' => 'Titre',
+                'field' => 'text'
             ],
+            'image' => [
+                'title' => 'Bannière',
+                'field' => 'file'
+            ],
+            'description' => [
+                'title' => 'Description',
+                'field' => 'richtext',
+                'colspan' => true
+            ],
+        ];
+        return $fields;
+    }
+
+    private function social_fields()
+    {
+        $fields = [            
             'facebook' => [
                 'title' => 'Facebook',
                 'field' => 'url'
-            ],
-            'banner' => [
-                'title' => 'Bannière',
-                'field' => 'file'
             ],
             'instagram' => [
                 'title' => 'Instagram',
