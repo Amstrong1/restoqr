@@ -46,7 +46,7 @@
                                             <img src="img1.png" alt="content-img-1" width="426" height="398" class="h-auto w-full rounded-[10px]">
                                         </div>
                                         <!-- Content Shape -->
-                                        <img src="assets/img/elements/content-shape-2.svg" alt="content-shape-1" width="107" height="105" class="absolute -bottom-1 -left-1">
+                                        <img src="landing/img/elements/content-shape-2.svg" alt="content-shape-1" width="107" height="105" class="absolute -bottom-1 -left-1">
                                     </div>
                                     <!-- Content Block Right -->
                                 </div>

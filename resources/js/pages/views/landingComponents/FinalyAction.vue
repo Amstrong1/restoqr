@@ -28,9 +28,9 @@
                     <!-- Section Space -->
 
                     <!-- Newsletter Shape 1 -->
-                    <img src="assets/img/elements/flower-shape-1.svg" alt="flower-shape-1" width="92" height="116" class="absolute left-[152px] top-[44px] hidden md:block">
+                    <img src="landing/img/elements/flower-shape-1.svg" alt="flower-shape-1" width="92" height="116" class="absolute left-[152px] top-[44px] hidden md:block">
                     <!-- Newsletter Shape 2 -->
-                    <img src="assets/img/elements/flower-shape-2.svg" alt="flower-shape-2" width="129" height="164" class="absolute bottom-0 right-[57px] hidden md:block">
+                    <img src="landing/img/elements/flower-shape-2.svg" alt="flower-shape-2" width="129" height="164" class="absolute bottom-0 right-[57px] hidden md:block">
                 </div>
                 <!-- Section Background -->
             </section>

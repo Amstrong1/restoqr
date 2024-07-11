@@ -25,7 +25,7 @@
                                     <div class="hover-solid-shadow h-full after:bg-ColorPurple">
                                         <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
                                             <div class="mb-[30px] h-[70px] w-auto">
-                                                <img src="assets/img/icons/icon-black-home-7-service-1.svg" alt="icon-black-home-7-service-1" width="75" height="70">
+                                                <img src="landing/img/icons/icon-black-home-7-service-1.svg" alt="icon-black-home-7-service-1" width="75" height="70">
                                             </div>
                                             <div>
                                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl" href="/">Menus Numériques Personnalisés</a>
@@ -43,7 +43,7 @@
                                     <div class="hover-solid-shadow h-full after:bg-ColorPurple">
                                         <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
                                             <div class="mb-[30px] h-[70px] w-auto">
-                                                <img src="assets/img/icons/icon-black-home-7-service-3.svg" alt="icon-black-home-7-service-3.svg" width="75" height="70">
+                                                <img src="landing/img/icons/icon-black-home-7-service-3.svg" alt="icon-black-home-7-service-3.svg" width="75" height="70">
                                             </div>
                                             <div>
                                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl" href="service-details.html">Commandes en Ligne Intégrées</a>
@@ -61,7 +61,7 @@
                                     <div class="hover-solid-shadow h-full after:bg-ColorPurple">
                                         <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
                                             <div class="mb-[30px] h-[70px] w-auto">
-                                                <img src="assets/img/icons/icon-black-home-7-service-8.svg" alt="icon-black-home-7-service-8" width="60" height="70">
+                                                <img src="landing/img/icons/icon-black-home-7-service-8.svg" alt="icon-black-home-7-service-8" width="60" height="70">
                                             </div>
                                             <div>
                                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl" href="/">Paiements Sécurisés et Faciles </a>
@@ -78,7 +78,7 @@
                                     <div class="hover-solid-shadow h-full after:bg-ColorPurple">
                                         <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
                                             <div class="mb-[30px] h-[70px] w-auto">
-                                                <img src="assets/img/icons/icon-black-home-7-service-6.svg" alt="icon-black-home-7-service-6" width="73" height="70">
+                                                <img src="landing/img/icons/icon-black-home-7-service-6.svg" alt="icon-black-home-7-service-6" width="73" height="70">
                                             </div>
                                             <div>
                                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl" href="/">Gestion des Avis Clients</a>
@@ -95,7 +95,7 @@
                                     <div class="hover-solid-shadow h-full after:bg-ColorPurple">
                                         <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
                                             <div class="mb-[30px] h-[70px] w-auto">
-                                                <img src="assets/img/icons/icon-black-home-7-service-2.svg" alt="icon-black-home-7-service-2" width="75" height="70">
+                                                <img src="landing/img/icons/icon-black-home-7-service-2.svg" alt="icon-black-home-7-service-2" width="75" height="70">
                                             </div>
                                             <div>
                                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl" href="/">Gestion des Stocks</a>
@@ -113,7 +113,7 @@
                                     <div class="hover-solid-shadow h-full after:bg-ColorPurple">
                                         <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
                                             <div class="mb-[30px] h-[70px] w-auto">
-                                                <img src="assets/img/icons/icon-black-home-7-service-4.svg" alt="icon-black-home-7-service-4" width="69" height="70">
+                                                <img src="landing/img/icons/icon-black-home-7-service-4.svg" alt="icon-black-home-7-service-4" width="69" height="70">
                                             </div>
                                             <div>
                                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl" href="/">Promotions et Offres Spéciales</a>
@@ -130,7 +130,7 @@
                                     <div class="hover-solid-shadow h-full after:bg-ColorPurple">
                                         <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
                                             <div class="mb-[30px] h-[70px] w-auto">
-                                                <img src="assets/img/icons/icon-black-home-7-service-5.svg" alt="icon-black-home-7-service-5" width="73" height="70">
+                                                <img src="landing/img/icons/icon-black-home-7-service-5.svg" alt="icon-black-home-7-service-5" width="73" height="70">
                                             </div>
                                             <div>
                                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl" href="/">Analytique Avancée</a>
@@ -148,7 +148,7 @@
                                     <div class="hover-solid-shadow h-full after:bg-ColorPurple">
                                         <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
                                             <div class="mb-[30px] h-[70px] w-auto">
-                                                <img src="assets/img/icons/icon-black-home-7-service-7.svg" alt="icon-black-home-7-service-7" width="75" height="70">
+                                                <img src="landing/img/icons/icon-black-home-7-service-7.svg" alt="icon-black-home-7-service-7" width="75" height="70">
                                             </div>
                                             <div>
                                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl" href="/">Intégration avec les Réseaux Sociaux</a>

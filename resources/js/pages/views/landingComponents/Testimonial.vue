@@ -28,7 +28,7 @@
                                 <div class="hover-solid-shadow h-full">
                                     <div class="flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10">
                                         <div class="h-auto w-16">
-                                            <img src="assets/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
+                                            <img src="landing/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
                                         </div>
                                         <blockquote class="text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl">
                                             Masco image edit is a great tool for those people who
@@ -37,7 +37,7 @@
                                         </blockquote>
                                         <div class="flex items-center gap-x-[17px]">
                                             <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
-                                                <img src="assets/img/th-12/testimonial-user-img-1.png" alt="testimonial-user-img-1" width="60" height="60" class="h-full w-full">
+                                                <img src="landing/img/th-12/testimonial-user-img-1.png" alt="testimonial-user-img-1" width="60" height="60" class="h-full w-full">
                                             </div>
                                             <div class="text-xl font-semibold capitalize text-[#0E0E0E]">
                                                 Dominika Smith
@@ -53,7 +53,7 @@
                                 <div class="hover-solid-shadow h-full">
                                     <div class="flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10">
                                         <div class="h-auto w-16">
-                                            <img src="assets/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
+                                            <img src="landing/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
                                         </div>
                                         <blockquote class="text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl">
                                             I am very impressed! The user interface is very simple
@@ -63,7 +63,7 @@
                                         </blockquote>
                                         <div class="flex items-center gap-x-[17px]">
                                             <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
-                                                <img src="assets/img/th-12/testimonial-user-img-2.png" alt="testimonial-user-img-2" width="60" height="60" class="h-full w-full">
+                                                <img src="landing/img/th-12/testimonial-user-img-2.png" alt="testimonial-user-img-2" width="60" height="60" class="h-full w-full">
                                             </div>
                                             <div class="text-xl font-semibold capitalize text-[#0E0E0E]">
                                                 Adam Jonney
@@ -79,7 +79,7 @@
                                 <div class="hover-solid-shadow h-full">
                                     <div class="flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10">
                                         <div class="h-auto w-16">
-                                            <img src="assets/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
+                                            <img src="landing/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
                                         </div>
                                         <blockquote class="text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl">
                                             The background remover is awesome!! It is easy to use
@@ -89,7 +89,7 @@
                                         </blockquote>
                                         <div class="flex items-center gap-x-[17px]">
                                             <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
-                                                <img src="assets/img/th-12/testimonial-user-img-3.png" alt="testimonial-user-img-3" width="60" height="60" class="h-full w-full">
+                                                <img src="landing/img/th-12/testimonial-user-img-3.png" alt="testimonial-user-img-3" width="60" height="60" class="h-full w-full">
                                             </div>
                                             <div class="text-xl font-semibold capitalize text-[#0E0E0E]">
                                                 Robert Mack
