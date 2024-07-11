@@ -57,7 +57,10 @@ class User extends Authenticatable
             case 'waiter':
                 $role = "Serveur";
                 break;
-            default:                
+            case 'admin':
+                $role = "Administrateur";
+                break;
+            default:
                 break;
         }
         return $role;

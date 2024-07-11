@@ -22,10 +22,7 @@ class UpdateStructureRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required|max:255'],
-            'email' => ['required|max:255|email:filter'],
-            'tel' => ['required|max:255'],
-            'address' => ['required|max:255'],
+            
         ];
     }
 }

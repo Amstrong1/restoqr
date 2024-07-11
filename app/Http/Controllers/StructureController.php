@@ -64,11 +64,19 @@ class StructureController extends Controller
      */
     public function update(UpdateStructureRequest $request, Structure $structure)
     {
-        $structure = Structure::find($structure->id);
-
-        if ($request->file !== null) {
+        // dd($request);
+        if ($request->logo !== null) {
             $fileName = time() . '.' . $request->logo->extension();
-            $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
+            // $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
+            
+            $request->logo->move(public_path('logos'), $fileName);
+        }
+
+        if ($request->banner !== null) {
+            $fileName2 = time() . '.' . $request->banner->extension();
+            // $path = $request->file('banner')->storeAs('logos', $fileName, 'public');
+            $request->banner->move(public_path('banners'), $fileName2);
+
         }
 
         $structure->name = $request->name;
@@ -76,13 +84,20 @@ class StructureController extends Controller
         $structure->tel = $request->tel;
         $structure->address = $request->address;
         $structure->slug = $request->slug;
-        if (isset($path)) {
-            $structure->logo = $path;
+        $structure->facebook = $request->facebook;
+        $structure->instagram = $request->instagram;
+        $structure->tiktok = $request->tiktok;
+        $structure->x = $request->x;
+        if (isset($fileName)) {
+            $structure->logo = 'logos/' . $fileName;
+        }
+        if (isset($fileName2)) {
+            $structure->banner = 'banners/' . $fileName2;
         }
         
         if ($structure->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
-            return redirect('structure');
+            return back();
         };
     }
 
@@ -142,12 +157,32 @@ class StructureController extends Controller
                 'field' => 'email'
             ],
             'slug' => [
-                'title' => 'Lien',
-                'field' => 'text'
+                'title' => 'Lien site internet',
+                'field' => 'url'
             ],
             'logo' => [
                 'title' => 'Logo',
                 'field' => 'file'
+            ],
+            'facebook' => [
+                'title' => 'Facebook',
+                'field' => 'url'
+            ],
+            'banner' => [
+                'title' => 'Bannière',
+                'field' => 'file'
+            ],
+            'instagram' => [
+                'title' => 'Instagram',
+                'field' => 'url'
+            ],
+            'x' => [
+                'title' => 'X (Twitter)',
+                'field' => 'url'
+            ],
+            'tiktok' => [
+                'title' => 'Tiktok',
+                'field' => 'url'
             ],
         ];
         return $fields;

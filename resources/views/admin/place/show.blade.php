@@ -31,7 +31,8 @@
                                 </div>
                             </div>
                             <div class="text-gray-400 mb-8">
-                                <h2 class="mt-4 text-4xl font-bold text-orange-500 mb-2">SCAN FOR MENU</h2>
+                                <h2 class="mt-4 font-semibold mb-2">TABLE N°: {{ $place->number }}</h2>
+                                <h3 class="mt-2 text-4xl font-bold text-orange-500 mb-2">SCAN FOR MENU</h3>
                                 Not working with your camera app? <br>
                                 Search for a free QR code reader on your app store.
                             </div>

@@ -46,7 +46,7 @@
         </div>
 
         <div class="mt-4">
-            <x-primary-button class="mt-8">
+            <x-primary-button class="mt-8 w-full text-center">
                 {{ __('Se connecter') }}
             </x-primary-button>
         </div>
