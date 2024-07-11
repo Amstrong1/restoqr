@@ -1365,6 +1365,12 @@ select {
 .w-screen {
   width: 100vw;
 }
+.w-24 {
+  width: 6rem;
+}
+.w-64 {
+  width: 16rem;
+}
 .min-w-0 {
   min-width: 0px;
 }

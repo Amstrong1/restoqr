@@ -20,96 +20,63 @@
                             class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Tableau de bord</div>
                     </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
                 </li>
+                
                 <li>
                     <a href="/order" class="side-menu__link ">
-                        <i data-tw-merge data-lucide="zap"
-                            class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <i data-tw-merge data-lucide="zap" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Commandes en cours</div>
                     </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
                 </li>
+
                 <li>
                     <a href="/order" class="side-menu__link ">
-                        <i data-tw-merge data-lucide="archive"
-                            class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <i data-tw-merge data-lucide="archive" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Commandes</div>
                     </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
                 </li>
+
                 <li>
-                    <a href="/profile" class="side-menu__link ">
+                    <a href="{{ route('structure.edit', Auth::user()->structure->id) }}" class="side-menu__link ">
                         <i data-tw-merge="" data-lucide="compass" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Restaurant</div>
                     </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
                 </li>
+
                 <li>
                     <a href="/menu" class="side-menu__link ">
-                        <i data-tw-merge="" data-lucide="goal" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <i data-tw-merge="" data-lucide="layout-grid" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Menu</div>
                     </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
                 </li>
+
                 <li>
                     <a href="/article" class="side-menu__link ">
-                        <i data-tw-merge="" data-lucide="goal" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <i data-tw-merge="" data-lucide="coffee" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Article</div>
                     </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
                 </li>
+
                 <li>
                     <a href="/place" class="side-menu__link ">
-                        <i data-tw-merge="" data-lucide="goal" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <i data-tw-merge="" data-lucide="columns" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Tables</div>
                     </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
                 </li>
+
                 <li>
                     <a href="/customer" class="side-menu__link ">
-                        <i data-tw-merge="" data-lucide="goal" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <i data-tw-merge="" data-lucide="users" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Clients</div>
-                    </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
+                    </a>                   
                 </li>
+
                 <li>
                     <a href="/staff" class="side-menu__link ">
-                        <i data-tw-merge="" data-lucide="goal" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <i data-tw-merge="" data-lucide="user-check" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Staff</div>
                     </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
-                </li>
-                <li class="side-menu__divider">
-                    AUTHENTICATIONS
-                </li>
-                <li>
-                    <a href="" class="side-menu__link ">
-                        <i data-tw-merge="" data-lucide="book-key" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                        <div class="side-menu__link__title">Login</div>
-                    </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
-                </li>
-                <li>
-                    <a href="" class="side-menu__link ">
-                        <i data-tw-merge="" data-lucide="book-lock"
-                            class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                        <div class="side-menu__link__title">Register</div>
-                    </a>
-                    <!-- BEGIN: Second Child -->
-                    <!-- END: Second Child -->
-                </li>
-                <!-- END: First Child -->
+                </li>              
             </ul>
         </div>
     </div>

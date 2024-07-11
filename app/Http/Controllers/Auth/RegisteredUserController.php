@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email_struct,
             'tel' => $request->tel,
             'address' => $request->address,
-            'logo' => $fileName,
+            'logo' => 'logos/' . $fileName,
             'slug' => $request->slug,
         ]);
 

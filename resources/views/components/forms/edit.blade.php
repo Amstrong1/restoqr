@@ -8,7 +8,7 @@
             <div @class(['m-2', 'col-span-2' => isset($value['colspan'])])>
                 @php
                     $component = 'inputs.' . $value['field'];
-                    $fill = $item->{$attr};
+                    $fill = $item->{$attr} ?? "";
                 @endphp
 
                 @if ($value['field'] === 'model')
@@ -97,16 +97,31 @@
                             {{ $message }}
                         </p>
                     @enderror
-                @else
+                @elseif ($value['field'] === 'file')
                     <x-input-label style="color: #000" for="{{ $attr }}"
                         value="{!! $value['title'] !!}"></x-input-label>
 
-                    @if ($value['field'] == 'file')
+                    <div class="flex gap-4">
                         <div class="w-1/2 p-1 md:p-2">
-                            <img alt="gallery" class="block h-full w-full rounded-lg object-cover object-center"
-                                src="{{ asset('storage/' . $fill) }}" />
+                            <input type="file" name="{{ $attr }}" id="{{ $attr }}"
+                                class="block mt-1 w-full border-2 p-2 rounded outline-0">
                         </div>
-                    @endif
+
+                        @if ($fill !== null)
+                            <div class="w-1/2 p-1 md:p-2">
+                                <img alt="gallery" class="block w-1/2 rounded-lg object-cover object-center"
+                                    src="{{ asset($fill) }}" />
+                            </div>
+                        @endif
+                    </div>
+                    @error($attr)
+                        <p class="text-red-500 text-sm pl-2 pt-2">
+                            {{ $message }}
+                        </p>
+                    @enderror
+                @else
+                    <x-input-label style="color: #000" for="{{ $attr }}"
+                        value="{!! $value['title'] !!}"></x-input-label>
 
                     <x-dynamic-component :component="$component" style="color: #000" id="{{ $attr }}"
                         class="block mt-1 w-full border-2 p-2 rounded outline-0" type="{{ $value['field'] }}"
@@ -122,7 +137,7 @@
     </div>
 
     <div class="flex items-center justify-start mt-4">
-        <x-primary-button class="ml-4">
+        <x-primary-button class="">
             {{ __('Modifier') }}
         </x-primary-button>
 

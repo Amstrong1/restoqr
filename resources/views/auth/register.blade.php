@@ -96,12 +96,12 @@
             </div>
 
             <div>
-                <x-primary-button class="mt-8">
+                <x-primary-button class="mt-8 w-full">
                     {{ __('Enregistrer') }}
                 </x-primary-button>
             </div>
 
-            <div class="mt-4" @click="formStep -= 1">
+            <div class="mt-4 w-full" @click="formStep -= 1">
                 <x-secondary-button>
                     {{ __('Retour') }}
                 </x-secondary-button>
@@ -109,8 +109,10 @@
         </div>
     </form>
     <div class="mt-4">
-        <x-secondary-button class="" href="{{ route('login') }}">
-            {{ __('Vous avez déja un compte ?') }}
-        </x-secondary-button>
+        <a href="{{ route('login') }}">
+            <x-secondary-button>
+                {{ __('Vous avez déja un compte ?') }}
+            </x-secondary-button>
+        </a>
     </div>
 </x-guest-layout>

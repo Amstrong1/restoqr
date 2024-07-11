@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\Social;
 use App\Models\Structure;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreStructureRequest;
@@ -55,7 +57,11 @@ class StructureController extends Controller
     {
         return view('admin.structure.edit', [
             'structure' => $structure,
+            'banner' => Banner::where('structure_id', $structure->id)->first(),
+            'social' => Social::where('structure_id', $structure->id)->first(),
             'my_fields' => $this->structure_fields(),
+            'social_fields' => $this->social_fields(),
+            'banner_fields' => $this->banner_fields(),
         ]);
     }
 
@@ -64,11 +70,10 @@ class StructureController extends Controller
      */
     public function update(UpdateStructureRequest $request, Structure $structure)
     {
-        $structure = Structure::find($structure->id);
-
-        if ($request->file !== null) {
-            $fileName = time() . '.' . $request->logo->extension();
-            $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
+        // dd($request);
+        if ($request->logo !== null) {
+            $fileName = time() . '.' . $request->logo->extension();           
+            $request->logo->move(public_path('logos'), $fileName);
         }
 
         $structure->name = $request->name;
@@ -76,13 +81,14 @@ class StructureController extends Controller
         $structure->tel = $request->tel;
         $structure->address = $request->address;
         $structure->slug = $request->slug;
-        if (isset($path)) {
-            $structure->logo = $path;
+
+        if (isset($fileName)) {
+            $structure->logo = 'logos/' . $fileName;
         }
         
         if ($structure->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
-            return redirect('structure');
+            return back();
         };
     }
 
@@ -142,12 +148,55 @@ class StructureController extends Controller
                 'field' => 'email'
             ],
             'slug' => [
-                'title' => 'Lien',
-                'field' => 'text'
+                'title' => 'Lien site internet',
+                'field' => 'url'
             ],
             'logo' => [
                 'title' => 'Logo',
                 'field' => 'file'
+            ],           
+        ];
+        return $fields;
+    }
+
+    private function banner_fields()
+    {
+        $fields = [
+            'title' => [
+                'title' => 'Titre',
+                'field' => 'text'
+            ],
+            'image' => [
+                'title' => 'Bannière',
+                'field' => 'file'
+            ],
+            'description' => [
+                'title' => 'Description',
+                'field' => 'richtext',
+                'colspan' => true
+            ],
+        ];
+        return $fields;
+    }
+
+    private function social_fields()
+    {
+        $fields = [            
+            'facebook' => [
+                'title' => 'Facebook',
+                'field' => 'url'
+            ],
+            'instagram' => [
+                'title' => 'Instagram',
+                'field' => 'url'
+            ],
+            'x' => [
+                'title' => 'X (Twitter)',
+                'field' => 'url'
+            ],
+            'tiktok' => [
+                'title' => 'Tiktok',
+                'field' => 'url'
             ],
         ];
         return $fields;
