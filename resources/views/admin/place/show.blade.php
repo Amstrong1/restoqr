@@ -4,7 +4,7 @@
         <div class="container">
             <div class="py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="bg-white overflow-hidden shadow-lg sm:rounded-lg">
+                    <div class="bg-white overflow-hidden shadow-lg sm:rounded-lg py-8">
                         <div class="p-6 text-gray-900">
                             <h1>{{ __('Voir') }}</h1>
                             <x-forms.show :item="$place" :fields="$my_fields" type="place" />
@@ -15,27 +15,19 @@
 
                             <span>
                                 <x-primary-button onclick="generatePDF()" id="btn">
-                                    Imprimer 
+                                    Imprimer
                                 </x-primary-button>
                             </span>
 
                         </div>
-                        <div id="print" class="my-4 flex flex-col items-center">
-                            <div class="flex justify-center items-center">
-                                <div>{!! $qrCode !!}</div>
-                                <div>
-                                    <span
-                                        class="block transform rotate-90 text-sm font-bold text-black relative -left-8">
-                                        {{ auth()->user()->structure->name }}
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="text-gray-400 mb-8">
-                                <h2 class="mt-4 font-semibold mb-2">TABLE N°: {{ $place->number }}</h2>
-                                <h3 class="mt-2 text-4xl font-bold text-orange-500 mb-2">SCAN FOR MENU</h3>
-                                Not working with your camera app? <br>
-                                Search for a free QR code reader on your app store.
-                            </div>
+                        <div id="print" class="my-4 flex flex-col items-center gap-2 text-black h-full">
+                            <h2 class="mt-2 text-4xl font-bold text-orange-500 mb-2">MENU</h2>
+                            <h3 class="mb-2 text-sm font-semibold">Scannez le code QR pour voir le menu sur votre téléphone</h3>
+                            <div>{!! $qrCode !!}</div>
+                            <span class="mt-4 block">{{ auth()->user()->structure->name }}</span>
+                            <span class="bloc font-semibold mb-2">TABLE N°: {{ $place->number }}</span>
+                            <p>Si le scan ne fonctionne pas avec votre application de caméra,</p>
+                            <p>Recherchez un lecteur de codes QR gratuit dans le playstore.</p>
                         </div>
                     </div>
                 </div>
@@ -53,7 +45,7 @@
         document.getElementById('btn').style.display = "none";
         var opt = {
             margin: 0.3,
-            filename: 'document.pdf',
+            filename: {{ 'table' . json_encode($place->number) }} . '.pdf',
             image: {
                 type: 'jpeg',
                 quality: 0.98

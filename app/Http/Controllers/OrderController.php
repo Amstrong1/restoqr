@@ -42,6 +42,7 @@ class OrderController extends Controller
         $order->structure_id = $request->structure;
         $order->place_id = $request->place;
         $order->status = $request->status;
+        $order->description = $request->description;
 
         if ($order->save()) {
             return 'success';
@@ -77,7 +78,6 @@ class OrderController extends Controller
      */
     public function update(UpdateOrderRequest $request, Order $order)
     {
-        $order->place_id = $request->place;
         $order->status = $request->status;
 
         if ($order->save()) {

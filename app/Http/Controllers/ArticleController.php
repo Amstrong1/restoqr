@@ -151,20 +151,20 @@ class ArticleController extends Controller
                 'options' => Menu::all()
             ],
             'name' => [
-                'title' => 'Dénomination',
+                'title' => 'Nom',
                 'field' => 'text'
             ],
             'price' => [
                 'title' => 'Prix',
                 'field' => 'number'
             ],
-            'description' => [
-                'title' => 'Adresse',
-                'field' => 'text'
-            ],
             'image' => [
-                'title' => 'Logo',
+                'title' => 'Image',
                 'field' => 'file'
+            ],
+            'description' => [
+                'title' => 'Description',
+                'field' => 'textarea',
             ],
         ];
         return $fields;
