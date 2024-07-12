@@ -30,7 +30,7 @@
                     <ul class="navigation-menu nav-light">
                         <li><a href="#" class="sub-menu-item">Accueil</a></li>
                         <li><a href="#" class="sub-menu-item">Menu</a></li>
-                        <li><a href="#" class="sub-menu-item">Reservation</a></li>
+                        <li><a href="/site/rating" class="sub-menu-item">Laissez votre avis </a></li>
                         <!-- <li><a href="#" class="sub-menu-item">Menu</a></li> -->
                     </ul><!--end navigation menu-->
                 </div>
@@ -45,7 +45,7 @@
                     </li>
             
                     <li class="inline ps-1 mb-0">
-                        <a href="https://1.envato.market/techwind" target="_blank">
+                        <a href="/site/cart" target="_blank">
                             <div class="login-btn-primary"><span class="size-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"><i data-feather="shopping-cart" class="size-4"></i></span></div>
                             <div class="login-btn-light"><span class="size-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 border hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700"><i data-feather="shopping-cart" class="size-4"></i></span></div>
                         </a>
