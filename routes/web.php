@@ -46,6 +46,14 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/site/{any}', function () {
+    return view('site');
+})->where('any', '.*');
+
 Route::get('/{any}', function () {
     return view('welcome');
 })->where('any', '.*');
+
+
+
+

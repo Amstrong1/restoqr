@@ -21,7 +21,7 @@
                                         <a href="#" class="btn is-outline-black btn-animation is-large inline-block rounded"><span>En savoir plus</span></a>
                                     </div>
                                     <p class="flex gap-[10px] text-base font-semibold">
-                                        <img src="assets/img/icons/icon-green-star.svg" alt="icon-green-star" width="25" height="24" />
+                                        <img src="landing/img/icons/icon-green-star.svg" alt="icon-green-star" width="25" height="24" />
                                         Classé 4.9/5 - sur plus de 600 avis
                                     </p>
                                 </div>
@@ -38,7 +38,7 @@
                                     <!-- Hero Avatar Image -->
                                     <img src="img3.png" alt="hero-avatar-img-2" width="408" height="408" class="absolute -right-[39px] bottom-10 h-[78px] w-[78px] rounded-[50%]" />
                                     <!-- Hero Shape -->
-                                    <img src="assets/img/elements/hero-2-shape-1.svg" alt="hero-2-shape-1" width="90" height="91" class="absolute -right-[45px] -top-[70px]" />
+                                    <img src="landing/img/elements/hero-2-shape-1.svg" alt="hero-2-shape-1" width="90" height="91" class="absolute -right-[45px] -top-[70px]" />
                                 </div>
                             </div>
                             <!-- Hero Image Block -->

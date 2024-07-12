@@ -26,7 +26,7 @@
 
                     <!-- CTA Shape -->
                     <div class="absolute right-[9%] top-8 -z-10 hidden xxl:block">
-                        <img src="assets/img/elements/cta-1-shape-1.svg" alt="cta-1-shape-1" width="115" height="130">
+                        <img src="landing/img/elements/cta-1-shape-1.svg" alt="cta-1-shape-1" width="115" height="130">
                     </div>
                 </div>
                 <!-- Footer Area Top -->
@@ -47,7 +47,7 @@
                                 <div class="flex flex-col gap-y-7 md:col-span-3 lg:col-span-1">
                                     <!-- Footer Logo -->
                                     <a href="index.html">
-                                        <img src="assets/img/logo-blue-light.png" alt="Masco" width="109" height="24">
+                                        <img src="landing/img/logo-blue-light.png" alt="Masco" width="109" height="24">
                                     </a>
                                     <!-- Footer Content -->
                                     <div>

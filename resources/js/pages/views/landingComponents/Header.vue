@@ -12,7 +12,7 @@ import { onMounted, ref, onBeforeMount } from 'vue'
                 <div class="flex items-center justify-between gap-x-8">
                     <!-- Header Logo -->
                     <a class href='index.html'>
-                        <img src="assets/img/logo-yellow-dark.png" alt="Masco" width="109" height="24" />
+                        <img src="landing/img/logo-yellow-dark.png" alt="Masco" width="109" height="24" />
                     </a>
                     <!-- Header Logo -->
 
@@ -29,23 +29,21 @@ import { onMounted, ref, onBeforeMount } from 'vue'
                             </div>
                             <ul class="site-menu-main">
                                 <li class="nav-item nav-item-has-children">
-                                    <a class='nav-link-item drop-trigger' href='#home'>Accueil</a>
+                                    <a class='nav-link-item drop-trigger' href='/#home'>Accueil</a>
                                 </li>
                                 <li class="nav-item nav-item-has-children">
-                                    <a href="#feature" class="nav-link-item drop-trigger">Fonctionnalités</a>
+                                    <a href="/#feature" class="nav-link-item drop-trigger">Fonctionnalités</a>
                                 </li>
                                 <!-- <li class="nav-item nav-item-has-children">
                                     <a href="#interface" class="nav-link-item drop-trigger">Interfaces</a>
                                 </li> -->
                                 <li class="nav-item nav-item-has-children">
-                                    <a href="#about" class="nav-link-item drop-trigger">A propos</a>
+                                    <a href="/#about" class="nav-link-item drop-trigger">A propos</a>
                                 </li>
                                 <!-- <li class="nav-item nav-item-has-children">
                                     <a href="#whychooseus" class="nav-link-item drop-trigger">Pourquoi nous choisir?</a>
                                 </li> -->
-                                <li class="nav-item nav-item-has-children">
-                                    <router-link to="/test" class="nav-link-item drop-trigger">Test</router-link>
-                                </li>
+                              
                             </ul>
                         </nav>
                     </div>
@@ -53,8 +51,8 @@ import { onMounted, ref, onBeforeMount } from 'vue'
 
                     <!-- Header User Event -->
                     <div class="flex items-center gap-6">
-                        <a class='btn-text hidden hover:text-ColorPurple sm:inline-block' href='/dashboad/Login'>Connexion</a>
-                        <a class='btn is-lunar-green is-rounded btn-animation group hidden sm:inline-block' href='/dashboad/Register'><span>  Inscription</span></a>
+                        <a class='btn-text hidden hover:text-ColorPurple sm:inline-block' href='/login'>Connexion</a>
+                        <a class='btn is-lunar-green is-rounded btn-animation group hidden sm:inline-block' href='/register'><span>  Inscription</span></a>
                         <!-- Responsive Offcanvas Menu Button -->
                         <div class="block lg:hidden">
                             <button id="openBtn" class="hamburger-menu mobile-menu-trigger">
