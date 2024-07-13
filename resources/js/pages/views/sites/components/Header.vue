@@ -3,13 +3,15 @@
    <nav id="topnav" class="defaultscroll is-sticky">
             <div class="container relative flex justify-between items-center py-8">
                 <!-- Logo container-->
-                <a class="logo" href="index.html">
-                    <span class="inline-block dark:hidden">
-                        <img src="/assets/images/logo-dark.png" class="l-dark" height="24" alt="">
-                        <img src="/assets/images/logo-light.png" class="l-light" height="24" alt="">
+                <router-link :to="{name: 'site', params:{name: tableId} }" class="logo" >
+                    <span class="inline-block dark:hidden" v-if="restaurant">
+                        <img :src="'/storage/' + restaurant.logo" class="l-dark w-16 h-16" alt="">
+                        <img :src="'/storage/' + restaurant.logo" class="l-light w-16 h-16" alt="">
                     </span>
-                    <img src="/assets/images/logo-light.png" height="24" class="hidden dark:inline-block" alt="">
-                </a>
+                 
+                    <img :src="'/storage/' + restaurant.logo" height="24" class="hidden dark:inline-block" alt="">
+
+                </router-link>
 
                 <!-- End Logo container-->
                 <div class="menu-extras">
@@ -28,8 +30,8 @@
 				<div id="navigation">
                     <!-- Navigation Menu-->   
                     <ul class="navigation-menu nav-light">
-                        <li><a href="#" class="sub-menu-item">Accueil</a></li>
-                        <li><a href="#" class="sub-menu-item">Menu</a></li>
+                        <li><router-link :to="{name: 'site', params:{name: tableId} }"  class="sub-menu-item">Accueil</router-link></li>
+                        <li><router-link :to="{name: 'site', params:{name: tableId} }" class="sub-menu-item">Menu</router-link></li>
                         <li><a href="/site/rating" class="sub-menu-item">Laissez votre avis </a></li>
                         <!-- <li><a href="#" class="sub-menu-item">Menu</a></li> -->
                     </ul><!--end navigation menu-->
@@ -45,10 +47,10 @@
                     </li>
             
                     <li class="inline ps-1 mb-0">
-                        <a href="/site/cart" target="_blank">
-                            <div class="login-btn-primary"><span class="size-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"><i data-feather="shopping-cart" class="size-4"></i></span></div>
-                            <div class="login-btn-light"><span class="size-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 border hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700"><i data-feather="shopping-cart" class="size-4"></i></span></div>
-                        </a>
+                        <router-link :to="{name: 'Cart', params:{name: tableId} }">
+                            <div class="login-btn-primary"><span class="size-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-indigo-600 hover:bg-indigo-700 border border-indigo-600 hover:border-indigo-700 text-white"><i data-feather="shopping-cart" class="size-4"></i>({{ data.countCartItems }})</span></div>
+                            <div class="login-btn-light"><span class="size-9 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center rounded-full bg-gray-50 hover:bg-gray-200 dark:bg-slate-900 dark:hover:bg-gray-700 border hover:border-gray-100 dark:border-gray-700 dark:hover:border-gray-700"><i data-feather="shopping-cart" class="size-4"></i>({{ data.countCartItems }})</span></div>
+                        </router-link>
                     </li>
                 </ul>
                 <!--Login button End-->
@@ -60,3 +62,23 @@
 
 		 
 </template>
+
+<script setup>
+import {ref,onMounted} from 'vue';   
+import { useShoppingStore } from '../../../../stores/pinia';
+
+const data = useShoppingStore();
+
+const props = defineProps({
+    restaurant: {
+        type: Object,
+        default: () => ({}),
+    },
+    tableId: {
+        type: String,
+        default: '',
+    }
+}); 
+
+
+</script>

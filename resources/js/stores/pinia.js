@@ -33,7 +33,7 @@ export const useShoppingStore = defineStore('shopping', {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Quantité du produit augmentée',
+                    title: 'Quantité augmentée avec succès',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -42,7 +42,7 @@ export const useShoppingStore = defineStore('shopping', {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Produit ajouté au panier avec succès',
+                    title: 'Ajout au panier avec succès',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -54,7 +54,7 @@ export const useShoppingStore = defineStore('shopping', {
             Swal.fire({
                 position: 'top-end',
                 icon: 'error',
-                title: 'Produit supprimé du panier',
+                title: 'Supprimer du panier',
                 showConfirmButton: false,
                 timer: 1500
             });
@@ -68,7 +68,7 @@ export const useShoppingStore = defineStore('shopping', {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Quantité du produit augmentée',
+                    title: 'Quantité  augmentée avec succès',
                     showConfirmButton: false,
                     timer: 1500
                 });
@@ -83,7 +83,7 @@ export const useShoppingStore = defineStore('shopping', {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'warning',
-                    title: 'Quantité du produit diminuée',
+                    title: 'Quantité diminuée avec succès',
                     showConfirmButton: false,
                     timer: 1500
                 });

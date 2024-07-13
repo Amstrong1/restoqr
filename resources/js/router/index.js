@@ -10,12 +10,16 @@ const routes = [
         component: index,
     },
     {
-        path: '/site/resto',
+        path: '/site/resto/:tableId',
         component: Site,
+        name: 'site',
+        props: true,
     },
     {
-        path: '/site/cart',
+        path: '/site/cart/:tableId',
         component: Cart,
+        name: 'Cart',
+        props: true,
     },
     {
         path: '/site/rating',

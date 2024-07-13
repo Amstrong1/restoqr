@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('structure_id')->constrained();
+            $table->foreignId('structure_id')->constrained()->cascadeOnDelete();
             $table->foreignId('place_id')->constrained();
             $table->string('status')->default('pending');
             $table->integer('total')->default(0);

@@ -13,11 +13,12 @@ return new class extends Migration
     {
         Schema::create('socials', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('structure_id')->constrained();
+            $table->foreignId('structure_id')->constrained()->cascadeOnDelete();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('x')->nullable();
             $table->string('tiktok')->nullable();
+            $table->string('youtube')->nullable();
             $table->timestamps();
         });
     }

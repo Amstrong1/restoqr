@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('structure_id')->constrained();
+            $table->foreignId('structure_id')->constrained()->cascadeOnDelete();
             $table->string('title')->nullable();
             $table->string('image')->nullable();
             $table->text('description')->nullable();
