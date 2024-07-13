@@ -58,7 +58,7 @@ class PlaceController extends Controller
      */
     public function show(Place $place)
     {
-        $qrCode = QrCode::size(200)->color(4, 14, 96)->generate("/site/resto/" . $place->id);
+        $qrCode = QrCode::size(200)->color(4, 14, 96)->generate(str_replace("place", "site/resto", url()->current()));
 
         return view('admin.place.show', [
             'place' => $place,
