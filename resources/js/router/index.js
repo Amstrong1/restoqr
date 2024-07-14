@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import index from '../pages/views/index.vue'
 import Site from '../pages/views/sites/Index.vue'
 import Cart from '../pages/views/sites/Cart.vue'
+import StatusOrder from '../pages/views/sites/StatusOrder.vue'
 import Rating from '../pages/views/sites/Rating.vue'
 
 const routes = [
@@ -19,6 +20,12 @@ const routes = [
         path: '/site/cart/:tableId',
         component: Cart,
         name: 'Cart',
+        props: true,
+    },
+    {
+        path: '/site/order/:tableId',
+        component: StatusOrder,
+        name: 'StatusOrder',
         props: true,
     },
     {

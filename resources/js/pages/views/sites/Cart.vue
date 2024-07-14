@@ -66,10 +66,10 @@
                     <div class="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
                         <div class="lg:col-span-12">
                                         <label class="form-label font-semibold">Laissez un commentaire sur votre commande:</label>
-                                        <input type="text" class="form-input w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0 mt-2"  id="firstname" name="name" required="">
+                                        <input type="text" v-model="cart.comment" class="form-input w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0 mt-2"  id="firstname" name="name" required="">
                             </div>
                         <div class="lg:col-span-9 md:order-1 order-3">
-                            <a href="#" class="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md me-2 mt-2">Lancer commande</a>
+                            <button type="button" @click="sendOrder()" class="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md me-2 mt-2">Lancer commande</button>
                             <a href="#" class="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center rounded-md bg-indigo-600/5 hover:bg-indigo-600 border-indigo-600/10 hover:border-indigo-600 text-indigo-600 hover:text-white mt-2">Continuer l'achat</a>
                         </div>
 
@@ -116,6 +116,13 @@ const data = useShoppingStore();
 
 const restaurant = ref([])
 
+const cart = ref({
+    items:data.getCartItems,
+    total: data.getCartTotal,
+    comment:''
+})
+
+
 const getRestaurantInfo = async () => {
     try {
          const response = await axios.get(`/api/get_menu_and_restaurant_info/${tableId.value}`);
@@ -125,6 +132,17 @@ const getRestaurantInfo = async () => {
         console.error('Error fetching menu and restaurant info:', error);
     }
 }
+
+const sendOrder = async () => {
+  await axios.post('/api/order/'+tableId.value, cart.value).then((response) => {
+          toast.fire({
+                      icon: "success",
+                      title: "Commande enregistrées avec succé",
+                  });
+    router.push('/site/order/'+tableId.value)
+  });
+};
+
 
 onMounted (async()=>{
 await getRestaurantInfo()

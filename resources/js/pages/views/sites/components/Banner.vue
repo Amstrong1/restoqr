@@ -1,7 +1,7 @@
 <template>
     <!-- Start Hero -->
     <section   v-if="restaurant.banner" class="relative  flex md:h-screen py-36 items-center bg-no-repeat bg-fixed bg-center bg-cover animate-fadeInBackground" 
-    :style="{ 'background-image': `url(/storage/${restaurant.banner['image']})` }" >
+    :style="{ 'background-image': `url(/${restaurant.banner['image']})` }" >
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container relative z-10">
             <div class="grid grid-cols-1 justify-center text-center">
@@ -9,9 +9,7 @@
                     <h1 class="font-bold lg:leading-normal leading-normal text-4xl lg:text-6xl mt-16 mb-5 animate-slideInDown">
                         {{restaurant.banner['title']}}
                     </h1>
-                    <p v-html="restaurant.banner['description']" class="text-white/70 text-lg max-w-xl mx-auto animate-slideInUp">
-                       
-                    </p>
+                    <p v-html="restaurant.banner['description']" class="text-white/70 text-lg max-w-xl mx-auto animate-slideInUp"> </p>
                     <div class="mt-8 animate-bounceIn">
                         <a href="#table" class="py-3 px-6 inline-block font-semibold tracking-wide border duration-500 text-base text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md shadow-lg">
                             <i class="uil uil-restaurant"></i> Commander

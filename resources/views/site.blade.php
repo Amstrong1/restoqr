@@ -29,7 +29,8 @@
 	<link href="{{ asset('assets/libs/%40iconscout/unicons/css/line.css')}}" type="text/css" rel="stylesheet">
 	<link href="{{ asset('assets/libs/%40mdi/font/css/materialdesignicons.min.css')}}" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="{{ asset('assets/css/tailwind.min.css')}}">
-     
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
      <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 

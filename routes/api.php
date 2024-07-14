@@ -10,5 +10,7 @@ Route::get('/user', function (Request $request) {
 
 Route::controller(RestoController::class)->group(function () {
     Route::get('get_menu_and_restaurant_info/{tableId}','get_menu_and_restaurant_info');
+    Route::get('get_table_order_info/{tableId}','get_table_order_info');
+    Route::post('order/{tableId}','order');
    
 });
