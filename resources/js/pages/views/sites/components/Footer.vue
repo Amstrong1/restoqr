@@ -1,5 +1,5 @@
 <template>
-	<footer class="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">
+	<footer v-if="restaurant" class="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">
 		<div class="container relative">
 			<div class="grid grid-cols-12">
 				<div class="col-span-12">

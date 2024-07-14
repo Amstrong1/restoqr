@@ -1,8 +1,8 @@
 <template>
-    <Header :restaurant="restaurant" :tableId="tableId"/>
-    <Banner :restaurant="restaurant"/>
-    <AllMenu :menus="menus"/>
-    <Footer :restaurant="restaurant"/>
+    <Header v-if="restaurant" :restaurant="restaurant" :tableId="tableId"/>
+    <Banner v-if="restaurant" :restaurant="restaurant"/>
+    <AllMenu v-if="restaurant" :menus="menus"/>
+    <Footer v-if="restaurant" :restaurant="restaurant"/>
     <!-- <TodayMenu />
      -->
 </template>
