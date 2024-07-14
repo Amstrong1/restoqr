@@ -12,15 +12,14 @@ class BannerController extends Controller
         $image = "";
         if ($request->image !== null) {
             $image = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('banners'), $image);
-
+            $path = $request->file('image')->storeAs('banners', $image, 'public');
         }
 
         Banner::updateOrCreate(
             ['structure_id' => auth()->user()->structure->id],
             [
                 'title' => $request->title,
-                'image' => 'banners/' . $image,
+                'image' => $path,
                 'description' => $request->description,
             ]
         );

@@ -42,13 +42,14 @@ class RegisteredUserController extends Controller
         ]);
 
         $fileName = time() . '.' . $request->logo->extension();
-        $request->logo->move(public_path('logos'), $fileName);
+        $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
+
         $structure = Structure::create([
             'name' => $request->structure,
             'email' => $request->email_struct,
             'tel' => $request->tel,
             'address' => $request->address,
-            'logo' => 'logos/' . $fileName,
+            'logo' => $path,
             'slug' => $request->slug,
         ]);
 

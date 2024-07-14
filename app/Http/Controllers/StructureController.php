@@ -73,7 +73,7 @@ class StructureController extends Controller
         // dd($request);
         if ($request->logo !== null) {
             $fileName = time() . '.' . $request->logo->extension();           
-            $request->logo->move(public_path('logos'), $fileName);
+            $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
         }
 
         $structure->name = $request->name;
@@ -83,7 +83,7 @@ class StructureController extends Controller
         $structure->slug = $request->slug;
 
         if (isset($fileName)) {
-            $structure->logo = 'logos/' . $fileName;
+            $structure->logo = $path;
         }
         
         if ($structure->save()) {

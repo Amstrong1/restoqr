@@ -20,20 +20,19 @@
                     <img alt="gallery" class="block h-full w-full rounded-lg object-cover object-center"
                         src="{{ asset('storage/' . $fill) }}" />
                 </div>
-                @elseif ($value['field'] === 'multiple-file')
-                    <div class="flex">
-                        @foreach ($images as $item)
-                            <div class="w-1/2 mx-auto p-1 md:p-2">
-                                <img alt="gallery" class="block h-full w-full rounded-lg object-cover object-center"
-                                    src="{{ asset('storage/' . $item->image) }}" />
-                            </div>
-                        @endforeach
-                    </div>
-                
+            @elseif ($value['field'] === 'multiple-file')
+                <div class="flex">
+                    @foreach ($images as $item)
+                        <div class="w-1/2 mx-auto p-1 md:p-2">
+                            <img alt="gallery" class="block h-full w-full rounded-lg object-cover object-center"
+                                src="{{ asset('storage/' . $item->image ?? ($item->logo ?? $item->banner)) }}" />
+                        </div>
+                    @endforeach
+                </div>
             @elseif ($value['field'] === 'model')
-            <x-text-input style="color: #000" class="block mt-1 w-full border-2 py-2 px-4 rounded-lg outline-0"
+                <x-text-input style="color: #000" class="block mt-1 w-full border-2 py-2 px-4 rounded-lg outline-0"
                     value="{{ old($attr) ?? $fill->name }}" readonly />
-        @else
+            @else
                 <x-text-input style="color: #000" class="block mt-1 w-full border-2 py-2 px-4 rounded-lg outline-0"
                     value="{{ old($attr) ?? $fill }}" readonly />
             @endif

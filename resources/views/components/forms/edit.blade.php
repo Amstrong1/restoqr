@@ -8,7 +8,7 @@
             <div @class(['m-2', 'col-span-2' => isset($value['colspan'])])>
                 @php
                     $component = 'inputs.' . $value['field'];
-                    $fill = $item->{$attr} ?? "";
+                    $fill = $item->{$attr} ?? '';
                 @endphp
 
                 @if ($value['field'] === 'model')
@@ -19,7 +19,7 @@
                         name="{{ $attr }}" class="block mt-2 w-full border-2 p-2 rounded outline-0">
                         <option value="">Cliquer pour sélectionner</option>
                         @foreach ($value['options'] as $data)
-                            <option value="{{ $data->id }}" @selected(old($attr) ?? $fill === $data->name)>
+                            <option value="{{ $data->id }}" @selected($attr ?? $fill === $data->name)>
                                 {{ $data->name }}
                             </option>
                         @endforeach
@@ -110,7 +110,7 @@
                         @if ($fill !== null)
                             <div class="w-1/2 p-1 md:p-2">
                                 <img alt="gallery" class="block w-1/2 rounded-lg object-cover object-center"
-                                    src="{{ asset($fill) }}" />
+                                    src="{{ asset('storage/' . $fill) }}" />
                             </div>
                         @endif
                     </div>

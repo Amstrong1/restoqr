@@ -40,7 +40,7 @@ class ArticleController extends Controller
         $article = new Article();
 
         $fileName = time() . '.' . $request->image->extension();
-        $path = $request->file('image')->storeAs('images', $fileName, 'public');
+        $path = $request->file('image')->storeAs('articles', $fileName, 'public');
 
         $article->menu_id = $request->menu;
         $article->name = $request->name;
@@ -87,7 +87,7 @@ class ArticleController extends Controller
     {
         if ($request->image !== null) {
             $fileName = time() . '.' . $request->image->extension();
-            $path = $request->file('image')->storeAs('images', $fileName, 'public');
+            $path = $request->file('image')->storeAs('articles', $fileName, 'public');
         }
 
         $article->menu_id = $request->menu;
