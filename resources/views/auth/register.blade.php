@@ -3,6 +3,7 @@
         @csrf
 
         <div x-cloak x-show="formStep === 1">
+            <div class="text-xl font-semibold mb-2">Informations de la structure</div>
             <div>
                 <x-input-label for="structure" :value="__('Dénomination Sociale')" />
                 <x-text-input id="structure" class="block mt-1 w-full" type="text" name="structure" :value="old('structure')"
@@ -53,6 +54,7 @@
         </div>
 
         <div x-cloak x-show="formStep === 2">
+            <div class="text-xl font-semibold mb-2">Informations de l'administrateur</div>
             <!-- Name -->
             <div>
                 <x-input-label for="lname" :value="__('Nom')" />
