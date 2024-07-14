@@ -145,7 +145,7 @@ class StructureController extends Controller
             ],
             'address' => [
                 'title' => 'Adresse',
-                'field' => 'email'
+                'field' => 'text'
             ],
             'slug' => [
                 'title' => 'Lien site internet',
@@ -196,6 +196,10 @@ class StructureController extends Controller
             ],
             'tiktok' => [
                 'title' => 'Tiktok',
+                'field' => 'url'
+            ],
+            'youtube' => [
+                'title' => 'Youtube',
                 'field' => 'url'
             ],
         ];

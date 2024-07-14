@@ -16,6 +16,7 @@ class SocialController extends Controller
                 'instagram' => $request->instagram,
                 'x' => $request->x,
                 'tiktok' => $request->tiktok,
+                'youtube' => $request->youtube,
             ]
         );
 

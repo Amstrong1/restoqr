@@ -133,7 +133,7 @@ class MenuController extends Controller
             ],
             'description' => [
                 'title' => 'Description',
-                'field' => 'text'
+                'field' => 'textarea'
             ]
         ];
         return $fields;

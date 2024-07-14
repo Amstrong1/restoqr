@@ -85,7 +85,7 @@ class ArticleController extends Controller
      */
     public function update(UpdateArticleRequest $request, Article $article)
     {
-        if ($request->file !== null) {
+        if ($request->image !== null) {
             $fileName = time() . '.' . $request->image->extension();
             $path = $request->file('image')->storeAs('images', $fileName, 'public');
         }
