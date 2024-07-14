@@ -1,6 +1,6 @@
 <template>
    <!-- Start Navbar -->
-   <nav id="topnav" class="defaultscroll is-sticky">
+   <nav id="topnav" class="defaultscroll is-sticky" v-if="restaurant">
             <div class="container relative flex justify-between items-center py-8">
                 <!-- Logo container-->
                 <router-link :to="{name: 'site', params:{name: tableId} }" class="logo" >
