@@ -48,6 +48,7 @@ class ArticleController extends Controller
         $article->image = $request->image;
         $article->description = $request->description;
         $article->image = $path;
+        $article->timer = $request->timer;
 
         if ($article->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
@@ -95,6 +96,7 @@ class ArticleController extends Controller
         $article->price = $request->price;
         $article->image = $request->image;
         $article->description = $request->description;
+        $article->timer = $request->timer;
         
         if (isset($path)) {
             $article->image = $path;
@@ -128,6 +130,7 @@ class ArticleController extends Controller
             'menu' => 'Menu',
             'name' => 'Article',
             'price' => 'Prix',
+            'timer' => 'Temps de préparation',
         ];
         return $columns;
     }
@@ -157,6 +160,10 @@ class ArticleController extends Controller
             'price' => [
                 'title' => 'Prix',
                 'field' => 'number'
+            ],
+            'timer' => [
+                'title' => 'Temps de préparation',
+                'field' => 'time'
             ],
             'image' => [
                 'title' => 'Image',

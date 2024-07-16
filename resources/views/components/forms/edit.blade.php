@@ -20,7 +20,7 @@
                         <option value="">Cliquer pour sélectionner</option>
                         @foreach ($value['options'] as $data)
                             <option value="{{ $data->id }}" @selected($attr ?? $fill === $data->name)>
-                                {{ $data->name }}
+                                {{ $fill->name ?? $fill->number }}
                             </option>
                         @endforeach
                     </x-dynamic-component>
@@ -35,7 +35,8 @@
                         name="{{ $attr }}" class="block mt-1 w-full border-2 p-2 rounded outline-0">
                         <option value="">Sélectionner</option>
                         @foreach ($value['options'] as $key => $value)
-                            <option value="{{ $key }}" @selected(old($attr) ? old($attr) === $key : $fill == $key)> {{ $value }}
+                            <option value="{{ $key }}" @selected(old($value) ? old($attr) === $value : $fill == $value)>
+                                {{ $value }}
                             </option>
                         @endforeach
                     </x-dynamic-component>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PlaceController;
 use App\Http\Controllers\StaffController;
@@ -11,7 +12,6 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\QuizController;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\VariationController;
 
@@ -31,6 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('customer', CustomerController::class);
     Route::resource('invoice', InvoiceController::class);
     Route::resource('menu', MenuController::class);
+    Route::get('order/pending', [OrderController::class, 'pending'])->name('order.pending');
+    Route::get('order/in-progress', [OrderController::class, 'inProgress'])->name('order.progress');
     Route::resource('order', OrderController::class);
     Route::resource('place', PlaceController::class);
     Route::resource('structure', StructureController::class);
@@ -46,7 +48,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 Route::get('/site/{any}', function () {
     return view('site');
@@ -55,9 +57,3 @@ Route::get('/site/{any}', function () {
 Route::get('/{any}', function () {
     return view('welcome');
 })->where('any', '.*');
-
-
-
-
-
-

@@ -9,7 +9,7 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = ['place_number'];
 
     public function invoice()
     {
@@ -25,6 +25,11 @@ class Order extends Model
     public function orderLines()
     {
         return $this->hasMany(OrderLine::class);
+    }
+
+    public function getPlaceNumberAttribute()
+    {
+        return $this->place->number;
     }
     
 }

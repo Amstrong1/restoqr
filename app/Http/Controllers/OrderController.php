@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
-use App\Http\Requests\StoreOrderRequest;
-use RealRashid\SweetAlert\Facades\Alert;
-use App\Http\Requests\UpdateOrderRequest;
 use App\Models\Place;
+use App\Http\Requests\StoreOrderRequest;
+use App\Http\Requests\UpdateOrderRequest;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class OrderController extends Controller
 {
@@ -17,6 +17,29 @@ class OrderController extends Controller
     {
         return view('admin.order.index', [
             'orders' => Order::all(),
+            'my_actions' => $this->order_actions(),
+            'my_attributes' => $this->order_columns(),
+        ]);
+    }
+
+    /**
+     * Retrieves all pending orders and displays them in the admin order index view.
+     *
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function pending()
+    {
+        return view('admin.order.index', [
+            'orders' => Order::where('status', 'En attente')->get(),
+            'my_actions' => $this->order_actions(),
+            'my_attributes' => $this->order_columns(),
+        ]);
+    }
+
+    public function inProgress()
+    {
+        return view('admin.order.index', [
+            'orders' => Order::where('status', 'En cours')->get(),
             'my_actions' => $this->order_actions(),
             'my_attributes' => $this->order_columns(),
         ]);
@@ -79,6 +102,7 @@ class OrderController extends Controller
     public function update(UpdateOrderRequest $request, Order $order)
     {
         $order->status = $request->status;
+        $order->paid = $request->paid;
 
         if ($order->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
@@ -104,9 +128,9 @@ class OrderController extends Controller
     private function order_columns()
     {
         $columns = (object) [
-            'place_id' => 'Table',
+            'place_number' => 'Table',
             'status' => 'Statut',
-            'total' => 'Total',
+            'total' => 'Total XOF',
         ];
         return $columns;
     }
@@ -115,7 +139,7 @@ class OrderController extends Controller
     {
         $actions = (object) array(
             'edit' => 'Modifier',
-            'delete' => "Supprimer",
+            // 'delete' => "Supprimer",
         );
         return $actions;
     }
@@ -126,18 +150,28 @@ class OrderController extends Controller
             'place' => [
                 'title' => 'Table',
                 'field' => 'model',
-                'option' => Place::all()
+                'options' => Place::all()
             ],
             'status' => [
                 'title' => 'Statut',
                 'field' => 'select',
-                'option' => [
-                    'pending' => 'En attente',
-                    'accepted' => 'Accepté', 
-                    'rejected' => 'Rejeté', 
-                    'canceled' => 'Annulé', 
-                    'prepared' => 'Préparé', 
-                    'delivered' => 'Livré'
+                'options' => [
+                    'En attente' => 'En attente',
+                    'En cours' => 'En cours',
+                    'Livrée' => 'Livrée',
+                    'Annulée' => 'Annulée',
+                    'Préparée' => 'Préparée',
+                    'Terminée' => 'Terminée',
+                    'Gelée' => 'Gelée',
+                    'Expirée' => 'Expirée',
+                ]
+            ],
+            'paid' => [
+                'title' => 'Payée',
+                'field' => 'select',
+                'options' => [
+                    'Oui' => 'Oui',
+                    'Non' => 'Non',
                 ]
             ],
         ];

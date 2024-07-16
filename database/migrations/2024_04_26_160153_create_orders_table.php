@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('structure_id')->constrained()->cascadeOnDelete();
             $table->foreignId('place_id')->constrained();
-            $table->string('status')->default('pending');
+            $table->string('status')->default('En cours');
             $table->integer('total')->default(0);
             $table->timestamps();
         });
