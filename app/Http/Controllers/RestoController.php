@@ -57,7 +57,7 @@ class RestoController extends Controller
              $orderline->order_id = $order->id;
              $orderline->article_id = $item['id'];
              $orderline->quantity = $item['quantity'];
-             //$orderline->structure_id = $restaurantId;
+             $orderline->structure_id = $restaurantId;
              $orderline->save();
 
             //  Mail::to($user->email)->send(new SellingMail());
