@@ -5,11 +5,11 @@
                 <!-- Logo container-->
                 <router-link :to="{name: 'site', params:{name: tableId} }" class="logo" >
                     <span class="inline-block dark:hidden" v-if="restaurant">
-                        <img :src="'/' + restaurant.logo" class="l-dark w-16 h-16" alt="">
-                        <img :src="'/' + restaurant.logo" class="l-light w-16 h-16" alt="">
+                        <img :src="'/storage/'+restaurant.logo" class="l-dark w-16 h-16" alt="">
+                        <img :src="'/storage/'+restaurant.logo" class="l-light w-16 h-16" alt="">
                     </span>
                  
-                    <img :src="'/storage/' + restaurant.logo" height="24" class="hidden dark:inline-block" alt="">
+                    <img :src="'/storage/'+restaurant.logo" height="16" class="hidden dark:inline-block" alt="">
 
                 </router-link>
 
@@ -32,7 +32,7 @@
                     <ul class="navigation-menu nav-light">
                         <li><router-link :to="{name: 'site', params:{name: tableId} }"  class="sub-menu-item">Accueil</router-link></li>
                         <li><router-link :to="{name: 'site', params:{name: tableId} }" class="sub-menu-item">Menu</router-link></li>
-                        <li><a href="/site/rating" class="sub-menu-item">Laissez votre avis </a></li>
+                        <li><router-link :to="{name: 'Rating', params:{name: tableId} }" class="sub-menu-item">Laissez votre avis </router-link></li>
                         <!-- <li><a href="#" class="sub-menu-item">Menu</a></li> -->
                     </ul><!--end navigation menu-->
                 </div>

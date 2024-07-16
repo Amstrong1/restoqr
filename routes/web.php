@@ -11,6 +11,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\VariationController;
 
@@ -35,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('structure', StructureController::class);
     Route::resource('variation', VariationController::class);
     Route::resource('staff', StaffController::class);
+    Route::resource('quiz', QuizController::class);
 
     Route::put('/social', [SocialController::class, 'update'])->name('social.update');
     Route::put('/banner', [BannerController::class, 'update'])->name('banner.update');

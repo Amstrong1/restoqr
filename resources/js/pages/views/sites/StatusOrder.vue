@@ -2,7 +2,7 @@
       <Header />
 
 <!-- Start Hero -->
-<section  v-if="restaurant.banner" class="relative table w-full py-20 lg:py-24 bg-gray-50 bg-no-repeat bg-fixed bg-center bg-cover animate-fadeInBackground dark:bg-slate-800"   :style="{ 'background-image': `url(/${restaurant.banner['image']})` }">
+<section  v-if="restaurant.banner" class="relative table w-full py-20 lg:py-24 bg-gray-50 bg-no-repeat bg-fixed bg-center bg-cover animate-fadeInBackground dark:bg-slate-800"   :style="{ 'background-image': `url(/storage/${restaurant.banner['image']})` }">
 <div class="absolute inset-0 bg-black opacity-80"></div>
    
     <div class="container relative ">
@@ -24,7 +24,7 @@
 <!-- Start -->
 <section class="relative md:py-24 py-16">
     <div class="container mt-16" v-for="order in orders" :key="order.id">
-        <div class="grid lg:grid-cols-1">
+        <div class="grid lg:grid-cols-1" v-if="order.order_lines.length != 0">
             <div class="relative overflow-x-auto shadow dark:shadow-gray-800 rounded-md">
                 <table class="w-full text-start">
                     <thead class="text-sm uppercase bg-slate-50 dark:bg-slate-800">
@@ -57,7 +57,7 @@
                 </table>
             </div>
 
-            <div class="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 mt-6 gap-6">
+            <div class="grid lg:grid-cols-12 md:grid-cols-3 grid-cols-1 mt-6 gap-6">
               
 
                 <div class="lg:col-span-3 md:order-2 order-1">
@@ -68,7 +68,7 @@
                             <span class="font-semibold"> {{ order.total }} F CFA</span>
                         </li>
                         <li class="flex justify-between p-4 border-t border-gray-100 dark:border-gray-800">
-                            <span class="font-semibold text-lg">Statut de votre commande :</span>
+                            <span class="font-semibold text-lg">Statut  commande :</span>
                             <span class="text-slate-400">{{ order.status }}</span>
                         </li>
                     </ul>

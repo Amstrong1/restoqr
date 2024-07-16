@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Menu;
+use App\Models\Quiz;
 use App\Models\Order;
-use App\Models\OrderLine;
 use App\Models\Place;
+use App\Models\Feedback;
+use App\Models\OrderLine;
 use App\Models\Structure;
 use Illuminate\Http\Request;
 
@@ -38,6 +40,16 @@ class RestoController extends Controller
 
     }
 
+    public function get_quizzes_resto($tableId){
+
+        $restaurantId = Place::where('id', $tableId)->first()->structure_id;
+
+        $quizzes = Quiz::where('structure_id', $restaurantId)->get();   
+
+        return response()->json(['quizzes' => $quizzes], 200);
+
+    }
+
     public function order(Request $request, $tableId){
 
         //dd($request);   
@@ -62,10 +74,43 @@ class RestoController extends Controller
 
             //  Mail::to($user->email)->send(new SellingMail());
 
-         }       
- 
+         } 
+             
+         }     
+         
+         
+         public function save_feedback(Request $request, $tableId){
 
+     
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+            'comment' => 'required|string',
+            'questions' => 'required|array',
+            'questions.*.text' => 'required|string',
+            'questions.*.rating' => 'required|integer|min:1|max:5',
+        ]);
 
+        $restaurantId = Place::where('id', $tableId)->first()->structure_id;
+
+        // Création d'un nouvel avis
+        $feedback = new Feedback();
+        $feedback->place_id = $tableId;
+        $feedback->structure_id = $restaurantId;
+        $feedback->name = $request->input('name');
+        $feedback->phone = $request->input('phone');
+        $feedback->comment = $request->input('comment');
+        $feedback->save();
+
+        // Sauvegarde des questions et des notes
+        foreach ($request->input('questions') as $question) {
+            $quiz = Quiz::where('quiz', $question['text'])->first();
+            if ($quiz) {
+                $feedback->quizzes()->attach($quiz->id, ['rating' => $question['rating']]);
+            }
+        }
+
+        return response()->json(['message' => 'Feedback saved successfully'], 200);
     }
 
    

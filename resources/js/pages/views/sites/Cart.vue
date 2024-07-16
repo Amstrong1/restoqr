@@ -2,7 +2,7 @@
     <Header />
 
         <!-- Start Hero -->
-        <section  v-if="restaurant && restaurant.banner" class="relative table w-full py-20 lg:py-24 bg-gray-50 bg-no-repeat bg-fixed bg-center bg-cover animate-fadeInBackground dark:bg-slate-800"   :style="{ 'background-image': `url(/${restaurant.banner['image']})` }">
+        <section  v-if="restaurant && restaurant.banner" class="relative table w-full py-20 lg:py-24 bg-gray-50 bg-no-repeat bg-fixed bg-center bg-cover animate-fadeInBackground dark:bg-slate-800"   :style="{ 'background-image': `url(/storage/${restaurant.banner['image']})` }">
         <div class="absolute inset-0 bg-black opacity-80"></div>
            
             <div class="container relative ">
