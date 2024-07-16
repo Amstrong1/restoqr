@@ -77,6 +77,12 @@
                         <div class="side-menu__link__title">Staff</div>
                     </a>
                 </li>              
+                <li>
+                    <a href="/quiz" class="side-menu__link ">
+                        <i data-tw-merge="" data-lucide="compass" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <div class="side-menu__link__title">Questions</div>
+                    </a>
+                </li>              
             </ul>
         </div>
     </div>

@@ -6,7 +6,7 @@
 					<div class="py-[60px] px-0">
 						<div class="grid lg:grid-cols-3 md:grid-cols-2 justify-center gap-[30px]">
 							<div class="text-center">
-								<a href="/site/rating"
+								<router-link :to="{name: 'Rating', params:{name: tableId} }"
 									class="py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-gray-50 hover:bg-gray-100 border-gray-50 hover:border-gray-100 text-slate-900 rounded-md inline-flex items-center">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
 										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -16,7 +16,7 @@
 										</polygon>
 									</svg>
 									<span>Laisser votre avis</span>
-								</a>
+								</router-link>
 
 							</div>
 
@@ -39,7 +39,7 @@
 
 						<div class="grid grid-cols-1 mt-12">
 							<div class="text-center">
-								<img :src="'/' + restaurant.logo" class="block mx-auto w-16 h-16" alt="">
+								<img :src="'/storage/' + restaurant.logo" class="block mx-auto w-16 h-16" alt="">
 								<p class="max-w-xl mx-auto mt-6">Nos reseaux sociaux
 								</p>
 							</div>

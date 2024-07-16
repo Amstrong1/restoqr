@@ -29,8 +29,10 @@ const routes = [
         props: true,
     },
     {
-        path: '/site/rating',
+        path: '/site/rating/:tableId',
         component: Rating,
+        name: 'Rating',
+        props: true,
     },
 ]
 

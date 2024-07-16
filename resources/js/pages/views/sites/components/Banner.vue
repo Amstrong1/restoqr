@@ -1,7 +1,7 @@
 <template>
     <!-- Start Hero -->
     <section   v-if="restaurant && restaurant.banner" class="relative  flex md:h-screen py-36 items-center bg-no-repeat bg-fixed bg-center bg-cover animate-fadeInBackground" 
-    :style="{ 'background-image': `url(/${restaurant.banner['image']})` }" >
+    :style="{ 'background-image': `url(/storage/${restaurant.banner['image']})` }" >
         <div class="absolute inset-0 bg-black opacity-80"></div>
         <div class="container relative z-10">
             <div class="grid grid-cols-1 justify-center text-center">
