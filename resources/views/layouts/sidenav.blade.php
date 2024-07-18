@@ -23,7 +23,14 @@
                 </li>
                 
                 <li>
-                    <a href="/order" class="side-menu__link ">
+                    <a href="/order/pending" class="side-menu__link ">
+                        <i data-tw-merge data-lucide="alert-circle" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <div class="side-menu__link__title">Commandes en attente</div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="/order/in-progress" class="side-menu__link ">
                         <i data-tw-merge data-lucide="zap" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Commandes en cours</div>
                     </a>

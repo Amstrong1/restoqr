@@ -58,7 +58,7 @@ class RestoController extends Controller
         $order = new Order();
         $order->structure_id = $restaurantId;
         $order->place_id = $tableId;
-        $order->status = 'pending';
+        $order->status = 'En cours';
         $order->total = $request->total;
         $order->description = $request->comment;
         $order->save();
