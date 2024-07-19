@@ -12,6 +12,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\VariationController;
 
@@ -46,6 +47,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+    Route::get('show/feedback/{feedback_id}', [FeedbackController::class, 'show'])->name('feedback.show');
+
 });
 
 require __DIR__ . '/auth.php';

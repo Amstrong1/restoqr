@@ -90,6 +90,12 @@
                         <div class="side-menu__link__title">Questions</div>
                     </a>
                 </li>              
+                <li>
+                    <a href="/feedback" class="side-menu__link ">
+                        <i data-tw-merge="" data-lucide="users" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <div class="side-menu__link__title">Avis client</div>
+                    </a>
+                </li>              
             </ul>
         </div>
     </div>
