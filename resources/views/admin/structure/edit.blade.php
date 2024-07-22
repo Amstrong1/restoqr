@@ -19,6 +19,11 @@
                             <h1>{{ __('Ajouter des liens vers les reseau sociaux') }}</h1>
                             <x-forms.edit :item="$social" :fields="$social_fields" type="social" />
                         </div>
+
+                        <div class="p-6 text-gray-900">
+                            <h1>{{ __('Ajuster vos objectifs commerciaux') }}</h1>
+                            <x-forms.edit :item="$goal" :fields="$goal_fields" type="goal" />
+                        </div>
                     </div>
                 </div>
             </div>

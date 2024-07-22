@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Goal;
 use App\Models\Banner;
 use App\Models\Social;
 use App\Models\Structure;
@@ -59,9 +60,11 @@ class StructureController extends Controller
             'structure' => $structure,
             'banner' => Banner::where('structure_id', $structure->id)->first(),
             'social' => Social::where('structure_id', $structure->id)->first(),
+            'goal' => Goal::where('structure_id', $structure->id)->first(),
             'my_fields' => $this->structure_fields(),
             'social_fields' => $this->social_fields(),
             'banner_fields' => $this->banner_fields(),
+            'goal_fields' => $this->goal_fields(),
         ]);
     }
 
@@ -70,9 +73,8 @@ class StructureController extends Controller
      */
     public function update(UpdateStructureRequest $request, Structure $structure)
     {
-        // dd($request);
         if ($request->logo !== null) {
-            $fileName = time() . '.' . $request->logo->extension();           
+            $fileName = time() . '.' . $request->logo->extension();
             $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
         }
 
@@ -85,7 +87,7 @@ class StructureController extends Controller
         if (isset($fileName)) {
             $structure->logo = $path;
         }
-        
+
         if ($structure->save()) {
             Alert::toast('Opération éffectué avec succès', 'success');
             return back();
@@ -102,7 +104,7 @@ class StructureController extends Controller
             Alert::success('Opération éffectué avec succès', 'Supprimé');
             return redirect('structure');
         } catch (\Exception $e) {
-            Alert::error('Une erreur est survenue', 'Element introuvable', );
+            Alert::error('Une erreur est survenue', 'Element introuvable',);
             return redirect()->back();
         }
     }
@@ -154,7 +156,7 @@ class StructureController extends Controller
             'logo' => [
                 'title' => 'Logo',
                 'field' => 'file'
-            ],           
+            ],
         ];
         return $fields;
     }
@@ -181,7 +183,7 @@ class StructureController extends Controller
 
     private function social_fields()
     {
-        $fields = [            
+        $fields = [
             'facebook' => [
                 'title' => 'Facebook',
                 'field' => 'url'
@@ -202,6 +204,31 @@ class StructureController extends Controller
                 'title' => 'Youtube',
                 'field' => 'url'
             ],
+        ];
+        return $fields;
+    }
+
+    private function goal_fields()
+    {
+        $fields = [
+            'frequency' => [
+                'title' => 'Frequence',
+                'field' => 'select',
+                'options' => [
+                    'Quotidien' => 'Quotidien',
+                    'Hebdomadaire' => 'Hebdomadaire',
+                    'Mensuel' => 'Mensuel',
+                    'Annuel' => 'Annuel'
+                ]
+            ],
+            'order' => [
+                'title' => 'Estimation Nombres Commandes',
+                'field' => 'number'
+            ],
+            'revenue' => [
+                'title' => 'Estimation Chiffre d\'affaires',
+                'field' => 'number'
+            ]
         ];
         return $fields;
     }

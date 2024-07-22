@@ -2,10 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Menu;
-use App\Models\Banner;
-use App\Models\Social;
-use App\Models\Article;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,6 +15,18 @@ class Structure extends Model
     public function users()
     {
         return $this->hasMany(User::class);
+    }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
+    public function orderLines()
+    {
+        return $this->hasMany(OrderLine::class);
+    }
+    public function goal()
+    {
+        return $this->hasOne(Goal::class);
     }
     public function social()
     {

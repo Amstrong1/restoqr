@@ -17,21 +17,33 @@
                                         <div>
                                             <div class="text-base text-slate-500">Total Orders</div>
                                             <div class="mt-1 flex items-center">
-                                                <div class="text-xl font-medium">1,241,221</div>
-                                                <div class="-mr-1 ml-2.5 flex items-center text-success">
+                                                <div class="text-xl font-medium">{{ $orders_count }}</div>
+                                                {{-- <div class="-mr-1 ml-2.5 flex items-center text-success">
                                                     11%
                                                     <i data-tw-merge="" data-lucide="chevron-up"
                                                         class="stroke-[1] ml-px h-4 w-4"></i>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                         <div class="sm:ml-auto">
                                             <select data-tw-merge=""
                                                 class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 px-4 sm:w-28">
-                                                <option value="monthly">Monthly</option>
-                                                <option value="yearly">Yearly</option>
-                                                <option value="weekly">Weekly</option>
-                                                <option value="daily">Daily</option>
+                                                <option @if ($goal->frequency == 'Mensuel') selected @else disabled @endif
+                                                    value="Mensuel">
+                                                    Mensuel
+                                                </option>
+                                                <option @if ($goal->frequency == 'Annuel') selected @else disabled @endif
+                                                    value="Annuel">
+                                                    Annuel
+                                                </option>
+                                                <option @if ($goal->frequency == 'Hebdomadaire') selected @else disabled @endif
+                                                    value="Hebdomadaire">
+                                                    Hebdomadaire
+                                                </option>
+                                                <option @if ($goal->frequency == 'Quotidien') selected @else disabled @endif
+                                                    value="Quotidien">
+                                                    Quotidien
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -39,34 +51,36 @@
                                 <div class="flex flex-col gap-6 border-b border-dashed px-5 py-6">
                                     <div>
                                         <div class="flex items-center text-slate-500">
-                                            <div class="mr-auto">Order Goal</div>
-                                            <span class="ml-auto">201 / 410</span>
+                                            <div class="mr-auto">Progression nombre de commandes</div>
+                                            <span class="ml-auto">{{ $orders_count }} / {{ $goal->order }}</span>
                                         </div>
                                         <div class="mt-2.5 flex h-2 rounded-full border bg-slate-50">
-                                            <div
-                                                class="-m-px w-[75%] border border-theme-1/40 bg-theme-1/30 first:rounded-l last:rounded-r">
+                                            <div style="width: {{ ceil(($orders_count / $goal->order) * 100) }}%"
+                                                class="-m-px border border-theme-1/40 bg-theme-1/30 first:rounded-l last:rounded-r">
                                             </div>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="flex items-center text-slate-500">
-                                            <div class="mr-auto">Revenue Progress</div>
-                                            <span class="ml-auto">$8,500 / $10,000</span>
+                                            <div class="mr-auto">Progression revenue</div>
+                                            <span class="ml-auto">XOF
+                                                {{ number_format($revenue_progress, 0, ',', ' ') }} /
+                                                {{ number_format($goal->revenue, 0, ',', ' ') }}</span>
                                         </div>
                                         <div class="mt-2.5 flex h-2 rounded-full border bg-slate-50">
-                                            <div
-                                                class="-m-px w-[45%] border border-theme-2/40 bg-theme-2/30 first:rounded-l last:rounded-r">
+                                            <div style="width: {{ ceil(($revenue_progress / $goal->revenue) * 100) }}%"
+                                                class="-m-px border border-theme-2/40 bg-theme-2/30 first:rounded-l last:rounded-r">
                                             </div>
                                         </div>
                                     </div>
                                     <div>
                                         <div class="flex items-center text-slate-500">
-                                            <div class="mr-auto">Completed Orders</div>
-                                            <span class="ml-auto">395 / 450</span>
+                                            <div class="mr-auto">Commandes terminées</div>
+                                            <span class="ml-auto">{{ $orders_done }} / {{ $orders_count }}</span>
                                         </div>
                                         <div class="mt-2.5 flex h-2 rounded-full border bg-slate-50">
-                                            <div
-                                                class="-m-px w-[75%] border border-primary/40 bg-primary/30 first:rounded-l last:rounded-r">
+                                            <div style="width: {{ $orders_count !== 0 ? ceil(($orders_done / $orders_count) * 100) : 0 }}%"
+                                                class="-m-px border border-primary/40 bg-primary/30 first:rounded-l last:rounded-r">
                                             </div>
                                         </div>
                                     </div>
@@ -136,24 +150,14 @@
                                             </div>
                                             <div
                                                 class="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
-                                                <div class="flex items-center text-slate-500">
-                                                    <div
-                                                        class="mr-2 h-2 w-2 rounded-full border border-primary/60 bg-primary/60">
+                                                @foreach ($menus as $menu)
+                                                    <div class="flex items-center text-slate-500">
+                                                        <div style="background-color: {{ getRandomColor() }}"
+                                                            class="mr-2 h-2 w-2 rounded-full">
+                                                        </div>
+                                                        {{ $menu->name }}
                                                     </div>
-                                                    Coffee
-                                                </div>
-                                                <div class="flex items-center text-slate-500">
-                                                    <div
-                                                        class="mr-2 h-2 w-2 rounded-full border border-success/60 bg-success/60">
-                                                    </div>
-                                                    Pastries
-                                                </div>
-                                                <div class="flex items-center text-slate-500">
-                                                    <div
-                                                        class="mr-2 h-2 w-2 rounded-full border border-warning/60 bg-warning/60">
-                                                    </div>
-                                                    Beverages
-                                                </div>
+                                                @endforeach
                                             </div>
                                             <button data-tw-merge=""
                                                 class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed mt-9 w-full border-dashed border-slate-300 hover:bg-slate-50"><i

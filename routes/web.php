@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\OrderController;
@@ -12,21 +13,18 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\GoalController;
 use App\Http\Controllers\StructureController;
 use App\Http\Controllers\VariationController;
 
 
 
-
-Route::get('/dashboard', function () {
-    return view('admin.index');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 Route::get('/soon', function () {
     return view('soon');
 })->name('soon');
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified')->group(function () {
+    Route::get('dashboard', HomeController::class)->name('dashboard');
     Route::resource('article', ArticleController::class);
     Route::resource('customer', CustomerController::class);
     Route::resource('invoice', InvoiceController::class);
@@ -42,6 +40,7 @@ Route::middleware('auth')->group(function () {
 
     Route::put('/social', [SocialController::class, 'update'])->name('social.update');
     Route::put('/banner', [BannerController::class, 'update'])->name('banner.update');
+    Route::put('/goal', [GoalController::class, 'update'])->name('goal.update');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
