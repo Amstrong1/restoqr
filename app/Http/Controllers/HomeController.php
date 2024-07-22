@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 
 class HomeController extends Controller
 {
@@ -16,21 +17,33 @@ class HomeController extends Controller
         $structure = auth()->user()->structure;
         $goal = $structure->goal()->first();
 
+        $menus = $structure->menus()->get();
         $orders = $structure->orders()->get();
         $orderLines = $structure->orderLines()->get();
 
-        
-        $articles_sold = $structure->articles()->get()->map(function ($article) use ($orderLines) {
-            $orderLines = $orderLines->where('article_id', $article->id);
+        $articles_sold = $structure->articles()->get()->groupBy('menu_id')->map(function ($articles, $menu_id) use ($menus, $orderLines) {
+            $menu = $menus->where('id', $menu_id)->first();
+            $orderLines = $orderLines->whereIn('article_id', $articles->pluck('id'));
             $quantity = $orderLines->sum('quantity');
             return [
-                'article' => $article,
+                'menu_id' => $menu_id,
+                'menu_name' => optional($menu)->name,
                 'quantity' => $quantity
             ];
         });
 
-        dd($articles_sold);
+        $qties = [];
+        $categories = [];
+        $colors = [];
+        foreach ($articles_sold as $value) {
+            $qties[] = $value['quantity'] * 100 / count($articles_sold);
+            $categories[] = $value['menu_name'];
+            $colors[] = getRandomColor();
+        }
 
+        $qties = json_encode($qties);
+        $json_colors = json_encode($colors);
+        $json_categories = json_encode($categories);
 
         if ($goal->frequency == 'Annuel') {
             $orders = $orders->filter(function ($value) {
@@ -71,8 +84,18 @@ class HomeController extends Controller
         });
         $orders_done = $orders_done->count();
 
-        $menus = $structure->menus()->get();
-
-        return view('admin.index', compact('orders_count', 'goal', 'revenue_progress', 'orders_done', 'menus'));
+        return view('admin.index', compact(
+            'orders_count',
+            'goal',
+            'revenue_progress',
+            'orders_done',
+            'menus',
+            'articles_sold',
+            'qties',
+            'categories',
+            'json_categories',
+            'colors',
+            'json_colors',
+        ));
     }
 }

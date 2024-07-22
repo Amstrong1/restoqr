@@ -87,7 +87,7 @@
     <script src="{{ asset('dist/js/components/base/lucide.js') }}"></script>
     <script src="{{ asset('dist/js/utils/colors.js') }}"></script>
     <script src="{{ asset('dist/js/utils/helper.js') }}"></script>
-    <script src="{{ asset('dist/js/components/report-donut-chart-5.js') }}"></script>
+    {{-- <script src="{{ asset('dist/js/components/report-donut-chart-5.js') }}"></script> --}}
     <script src="{{ asset('dist/js/components/base/litepicker.js') }}"></script>
     <script src="{{ asset('dist/js/components/report-bar-chart-5.js') }}"></script>
     <script src="{{ asset('dist/js/themes/exort.js') }}"></script>
