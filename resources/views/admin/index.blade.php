@@ -15,7 +15,7 @@
                                 <div class="border-b border-dashed p-5">
                                     <div class="flex flex-col gap-3 sm:flex-row">
                                         <div>
-                                            <div class="text-base text-slate-500">Total Orders</div>
+                                            <div class="text-base text-slate-500">Total des commandes</div>
                                             <div class="mt-1 flex items-center">
                                                 <div class="text-xl font-medium">{{ $orders_count }}</div>
                                                 {{-- <div class="-mr-1 ml-2.5 flex items-center text-success">
@@ -25,53 +25,79 @@
                                                 </div> --}}
                                             </div>
                                         </div>
-                                        <div class="sm:ml-auto">
-                                            <select data-tw-merge=""
-                                                class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 px-4 sm:w-28">
-                                                <option @if ($goal->frequency == 'Mensuel') selected @else disabled @endif
-                                                    value="Mensuel">
-                                                    Mensuel
-                                                </option>
-                                                <option @if ($goal->frequency == 'Annuel') selected @else disabled @endif
-                                                    value="Annuel">
-                                                    Annuel
-                                                </option>
-                                                <option @if ($goal->frequency == 'Hebdomadaire') selected @else disabled @endif
-                                                    value="Hebdomadaire">
-                                                    Hebdomadaire
-                                                </option>
-                                                <option @if ($goal->frequency == 'Quotidien') selected @else disabled @endif
-                                                    value="Quotidien">
-                                                    Quotidien
-                                                </option>
-                                            </select>
-                                        </div>
+                                        @if ($goal !== null)
+                                            <div class="sm:ml-auto">
+                                                <select data-tw-merge=""
+                                                    class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 px-4 sm:w-28">
+                                                    <option
+                                                        @if ($goal->frequency == 'Mensuel') selected @else disabled @endif
+                                                        value="Mensuel">
+                                                        Mensuel
+                                                    </option>
+                                                    <option
+                                                        @if ($goal->frequency == 'Annuel') selected @else disabled @endif
+                                                        value="Annuel">
+                                                        Annuel
+                                                    </option>
+                                                    <option
+                                                        @if ($goal->frequency == 'Hebdomadaire') selected @else disabled @endif
+                                                        value="Hebdomadaire">
+                                                        Hebdomadaire
+                                                    </option>
+                                                    <option
+                                                        @if ($goal->frequency == 'Quotidien') selected @else disabled @endif
+                                                        value="Quotidien">
+                                                        Quotidien
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="flex flex-col gap-6 border-b border-dashed px-5 py-6">
                                     <div>
                                         <div class="flex items-center text-slate-500">
                                             <div class="mr-auto">Progression nombre de commandes</div>
-                                            <span class="ml-auto">{{ $orders_count }} / {{ $goal->order }}</span>
+                                            @if ($goal !== null)
+                                                <span class="ml-auto">{{ $orders_count }} / {{ $goal->order }}</span>
+                                            @endif
                                         </div>
                                         <div class="mt-2.5 flex h-2 rounded-full border bg-slate-50">
-                                            <div style="width: {{ ceil(($orders_count / $goal->order) * 100) }}%"
-                                                class="-m-px border border-theme-1/40 bg-theme-1/30 first:rounded-l last:rounded-r">
-                                            </div>
+                                            @if ($goal !== null)
+                                                <div style="width: {{ ceil(($orders_count / $goal->order) * 100) }}%"
+                                                    class="-m-px border border-theme-1/40 bg-theme-1/30 first:rounded-l last:rounded-r">
+                                                </div>
+                                            @endif
                                         </div>
                                     </div>
                                     <div>
                                         <div class="flex items-center text-slate-500">
                                             <div class="mr-auto">Progression revenue</div>
-                                            <span class="ml-auto">XOF
-                                                {{ number_format($revenue_progress, 0, ',', ' ') }} /
-                                                {{ number_format($goal->revenue, 0, ',', ' ') }}</span>
+                                            @if ($goal !== null)
+                                                <span class="ml-auto">XOF
+                                                    {{ number_format($revenue_progress, 0, ',', ' ') }} /
+                                                    {{ number_format($goal->revenue, 0, ',', ' ') }}
+                                                </span>
+                                            @else
+                                                <span class="ml-auto">XOF
+                                                    {{ number_format($revenue_progress, 0, ',', ' ') }} /
+                                                    0
+                                                </span>
+                                            @endif
                                         </div>
-                                        <div class="mt-2.5 flex h-2 rounded-full border bg-slate-50">
-                                            <div style="width: {{ ceil(($revenue_progress / $goal->revenue) * 100) }}%"
-                                                class="-m-px border border-theme-2/40 bg-theme-2/30 first:rounded-l last:rounded-r">
+                                        @if ($goal !== null)
+                                            <div class="mt-2.5 flex h-2 rounded-full border bg-slate-50">
+                                                <div style="width: {{ ceil(($revenue_progress / $goal->revenue) * 100) }}%"
+                                                    class="-m-px border border-theme-2/40 bg-theme-2/30 first:rounded-l last:rounded-r">
+                                                </div>
                                             </div>
-                                        </div>
+                                        @else
+                                            <div class="mt-2.5 flex h-2 rounded-full border bg-slate-50">
+                                                <div style="width: 0%"
+                                                    class="-m-px border border-theme-2/40 bg-theme-2/30 first:rounded-l last:rounded-r">
+                                                </div>
+                                            </div>
+                                        @endif
                                     </div>
                                     <div>
                                         <div class="flex items-center text-slate-500">
@@ -142,20 +168,24 @@
                                                 <div class="absolute inset-0 flex items-center justify-center">
                                                     <div class="text-center">
                                                         <div class="text-lg font-medium text-slate-600/90">
-                                                            781,224
+                                                            {{ $orders_done }}
                                                         </div>
-                                                        <div class="mt-1 text-slate-500">Total Sales</div>
+                                                        <div class="mt-1 text-slate-500">Total des ventes</div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div
                                                 class="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
-                                                @for ($i = 0; $i < count($categories); $i++)
-                                                    <div style="background-color: {{ $colors[$i] }}"
-                                                        class="mr-2 h-2 w-2 rounded-full">
-                                                    </div>
-                                                    {{ $categories[$i] }}
-                                                @endfor
+                                                @if ($categories !== null)
+                                                    @for ($i = 0; $i < count($categories); $i++)
+                                                        <div style="background-color: {{ $colors[$i] }}"
+                                                            class="mr-2 h-2 w-2 rounded-full">
+                                                        </div>
+                                                        {{ $categories[$i] }}
+                                                    @endfor
+                                                @else
+                                                    <span class="italic">Auncune donnée disponible</span>
+                                                @endif
                                             </div>
                                         </div>
                                         <button data-tw-merge=""
@@ -229,7 +259,7 @@
                                             class="stroke-[1] w-5 h-5 group-[.primary]:text-primary group-[.primary]:fill-primary/10 group-[.success]:text-success group-[.success]:fill-success/10"></i>
                                     </div>
                                     <div class="flex-start flex flex-col">
-                                        <div class="text-slate-500">Total Orders</div>
+                                        <div class="text-slate-500">Total des commandes</div>
                                         <div class="mt-1.5 flex items-center">
                                             <div class="text-base font-medium">876,221</div>
                                             <div class="-mr-1 ml-2 flex items-center text-xs text-success">

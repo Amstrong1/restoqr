@@ -17,7 +17,8 @@ class HomeController extends Controller
         $structure = auth()->user()->structure;
         $goal = $structure->goal()->first();
 
-        $menus = $structure->menus()->get();
+        if ($goal !== null) {
+            $menus = $structure->menus()->get();
         $orders = $structure->orders()->get();
         $orderLines = $structure->orderLines()->get();
 
@@ -83,6 +84,19 @@ class HomeController extends Controller
             return $value->status == 'Terminée';
         });
         $orders_done = $orders_done->count();
+        } else {
+            $orders_count = 0;
+            $revenue_progress = 0;
+            $orders_done = 0;
+            $menus = null;
+            $articles_sold = null;
+            $qties = null;
+            $categories = null;
+            $colors = null;
+            $json_categories = json_encode([]);
+            $json_colors = json_encode(["#aaaaaa"]);
+        }
+        
 
         return view('admin.index', compact(
             'orders_count',
