@@ -8,7 +8,7 @@
                         <div class="col-span-12 md:col-span-6 2xl:col-span-12">
                             <div class="flex h-10 items-center">
                                 <div class="text-base font-medium group-[.mode--light]:text-white">
-                                    Current Balance
+                                    Solde actuel
                                 </div>
                             </div>
                             <div class="box box--stacked mt-3.5">
@@ -111,7 +111,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="px-5 py-6">
+                                {{-- <div class="px-5 py-6">
                                     <a data-tw-merge="" href="#"
                                         class="transition duration-200 border shadow-sm inline-flex items-center font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed text-primary dark:border-primary [&:hover:not(:disabled)]:bg-primary/10 rounded-full relative w-full justify-start border-primary/20 px-4 py-2.5">Explore
                                         Details
@@ -121,14 +121,14 @@
                                                 class="stroke-[1] h-4 w-4"></i>
                                         </div>
                                     </a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
                         <div class="col-span-12 md:col-span-6 2xl:col-span-12">
                             <div class="flex h-10 items-center">
                                 <div
                                     class="text-base font-medium md:group-[.mode--light]:text-white 2xl:group-[.mode--light]:text-current">
-                                    Sales Breakdown
+                                    Statistiques des ventes
                                 </div>
                             </div>
                             <div class="box box--stacked mt-3.5 p-5">
@@ -188,13 +188,13 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <button data-tw-merge=""
+                                        {{-- <button data-tw-merge=""
                                             class="transition duration-200 border shadow-sm inline-flex items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed mt-9 w-full border-dashed border-slate-300 hover:bg-slate-50">
                                             <i data-tw-merge="" data-lucide="external-link"
                                                 class="mr-2 h-4 w-4 stroke-[1.3]">
                                             </i>
                                             Export Report
-                                        </button>
+                                        </button> --}}
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-span-12 flex flex-col gap-y-10 2xl:col-span-7">
+            {{-- <div class="col-span-12 flex flex-col gap-y-10 2xl:col-span-7">
                 <div>
                     <div class="flex h-10 items-center">
                         <div class="text-base font-medium 2xl:group-[.mode--light]:text-white">
@@ -944,7 +944,7 @@
                         </select>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </x-app-layout>

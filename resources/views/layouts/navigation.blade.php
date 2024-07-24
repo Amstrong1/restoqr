@@ -14,6 +14,7 @@
                     </div>
                 </div>
             </div>
+            {{-- <x-application-logo/> --}}
             <div
                 class="ml-3.5 font-medium text-white transition-opacity group-[.side-menu--collapsed.side-menu--on-hover]:xl:opacity-100 group-[.side-menu--collapsed]:xl:opacity-0">
                 RestoQR
