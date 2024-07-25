@@ -44,7 +44,7 @@ class Structure extends Model
     {
         return $this->hasMany(Place::class);
     }
-    public function customer()
+    public function customers()
     {
         return $this->hasMany(Customer::class);
     }
