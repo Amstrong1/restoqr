@@ -153,7 +153,7 @@ class ArticleController extends Controller
             'menu' => [
                 'title' => 'Menu',
                 'field' => 'model',
-                'options' => $structure->articles()->get()
+                'options' => $structure->menus()->get()
             ],
             'name' => [
                 'title' => 'Nom',
