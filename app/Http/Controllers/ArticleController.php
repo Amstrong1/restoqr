@@ -164,8 +164,8 @@ class ArticleController extends Controller
                 'field' => 'number'
             ],
             'timer' => [
-                'title' => 'Temps de préparation',
-                'field' => 'time'
+                'title' => 'Temps de préparation (min)',
+                'field' => 'number'
             ],
             'image' => [
                 'title' => 'Image',
