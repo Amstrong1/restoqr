@@ -16,8 +16,10 @@ class PlaceController extends Controller
      */
     public function index()
     {
+        $structure = auth()->user()->structure;
+
         return view('admin.place.index', [
-            'places' => Place::all(),
+            'places' => $structure->places()->get(),
             'my_actions' => $this->place_actions(),
             'my_attributes' => $this->place_columns(),
         ]);

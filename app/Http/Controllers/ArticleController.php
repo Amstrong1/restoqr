@@ -15,8 +15,9 @@ class ArticleController extends Controller
      */
     public function index()
     {
+        $structure = auth()->user()->structure;
         return view('admin.article.index', [
-            'articles' => Article::all(),
+            'articles' => $structure->articles()->get(),
             'my_actions' => $this->article_actions(),
             'my_attributes' => $this->article_columns(),
         ]);

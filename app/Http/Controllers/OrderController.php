@@ -15,8 +15,9 @@ class OrderController extends Controller
      */
     public function index()
     {
+        $structure = auth()->user()->structure;
         return view('admin.order.index', [
-            'orders' => Order::all(),
+            'orders' => $structure->orders()->get(),
             'my_actions' => $this->order_actions(),
             'my_attributes' => $this->order_columns(),
         ]);

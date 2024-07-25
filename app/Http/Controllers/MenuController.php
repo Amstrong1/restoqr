@@ -15,8 +15,10 @@ class MenuController extends Controller
      */
     public function index()
     {
+        $structure = auth()->user()->structure;
+
         return view('admin.menu.index', [
-            'menus' => Menu::all(),
+            'menus' => $structure->menus()->get(),
             'my_actions' => $this->menu_actions(),
             'my_attributes' => $this->menu_columns(),
         ]);

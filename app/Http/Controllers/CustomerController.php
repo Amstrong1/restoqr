@@ -14,8 +14,9 @@ class CustomerController extends Controller
      */
     public function index()
     {
+        $structure = auth()->user()->structure;
         return view('admin.customer.index', [
-            'customers' => Customer::all(),
+            'customers' => $structure->customers()->get(),
             'my_actions' => $this->customer_actions(),
             'my_attributes' => $this->customer_columns(),
         ]);
