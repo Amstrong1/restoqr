@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Menu;
 use App\Models\Article;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Requests\StoreArticleRequest;
@@ -43,6 +42,7 @@ class ArticleController extends Controller
         $fileName = time() . '.' . $request->image->extension();
         $path = $request->file('image')->storeAs('articles', $fileName, 'public');
 
+        $article->structure_id = auth()->user()->structure_id;
         $article->menu_id = $request->menu;
         $article->name = $request->name;
         $article->price = $request->price;
