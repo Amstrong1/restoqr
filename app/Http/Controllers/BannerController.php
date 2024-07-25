@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BannerController extends Controller
 {
@@ -24,6 +25,7 @@ class BannerController extends Controller
             ]
         );
 
+        Alert::success('Success', 'Description ajoutée avec succès!');
         return back();
     }
 }
