@@ -131,7 +131,7 @@ class ArticleController extends Controller
             'menu' => 'Menu',
             'name' => 'Article',
             'price' => 'Prix',
-            'timer' => 'Temps de préparation',
+            'timer' => 'Temps de préparation (min)',
         ];
         return $columns;
     }
