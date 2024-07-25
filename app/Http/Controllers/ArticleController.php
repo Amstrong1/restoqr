@@ -148,11 +148,12 @@ class ArticleController extends Controller
 
     private function article_fields()
     {
+        $structure = auth()->user()->structure;
         $fields = [
             'menu' => [
                 'title' => 'Menu',
                 'field' => 'model',
-                'options' => Menu::all()
+                'options' => $structure->articles()->get()
             ],
             'name' => [
                 'title' => 'Nom',
