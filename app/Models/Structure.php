@@ -40,6 +40,10 @@ class Structure extends Model
     {
         return $this->hasMany(Article::class);
     }
+    public function places()
+    {
+        return $this->hasMany(Place::class);
+    }
     public function banner()
     {
         return $this->hasOne(Banner::class);
