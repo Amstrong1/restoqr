@@ -71,7 +71,7 @@
                     </a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="/customer" class="side-menu__link ">
                         <i data-tw-merge="" data-lucide="users" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Clients</div>
@@ -83,7 +83,8 @@
                         <i data-tw-merge="" data-lucide="user-check" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Staff</div>
                     </a>
-                </li>              
+                </li> --}}
+                
                 <li>
                     <a href="/quiz" class="side-menu__link ">
                         <i data-tw-merge="" data-lucide="compass" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>

@@ -48,6 +48,10 @@ class Structure extends Model
     {
         return $this->hasMany(Customer::class);
     }
+    public function quizzes()
+    {
+        return $this->hasMany(Quiz::class);
+    }
     public function banner()
     {
         return $this->hasOne(Banner::class);
