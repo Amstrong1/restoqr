@@ -18,7 +18,7 @@ class HomeController extends Controller
         $goal = $structure->goal()->first();
         $all_orders_count = $structure->orders()->count();
         $feedback_count = $structure->feedbacks()->count();
-        $orderLinesAll = $structure->orderLines()->simplePaginate(10);
+        $orderLinesAll = $structure->orderLines()->orderBy('id', 'desc')->simplePaginate(10);
 
         if ($goal !== null) {
             $menus = $structure->menus()->get();
