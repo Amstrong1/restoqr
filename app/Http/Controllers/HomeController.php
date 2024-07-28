@@ -20,6 +20,9 @@ class HomeController extends Controller
         $feedback_count = $structure->feedbacks()->count();
         $orderLinesAll = $structure->orderLines()->orderBy('id', 'desc')->simplePaginate(10);
 
+        $products_count = $structure->orderLines()->groupBy('article_id')->count();
+        $sales_count = $structure->orderLines()->sum('quantity');
+
         if ($goal !== null) {
             $menus = $structure->menus()->get();
             $orders = $structure->orders()->get();
@@ -115,7 +118,9 @@ class HomeController extends Controller
             'json_colors',
             'all_orders_count',
             'feedback_count',
-            'orderLinesAll'
+            'orderLinesAll',
+            'products_count',
+            'sales_count',
         ));
     }
 }

@@ -53,7 +53,7 @@
                         <div class="mt-5 rounded-md border border-dashed border-slate-300/70 py-5">
                             <div class="flex flex-col md:flex-row">
                                 <div
-                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r">
+                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r md:w-64">
                                     <div
                                         class="group flex items-center justify-center w-10 h-10 border rounded-full mr-5 [&.primary]:border-primary/10 [&.primary]:bg-primary/10 [&.success]:border-success/10 [&.success]:bg-success/10 success">
                                         <i data-tw-merge="" data-lucide="kanban-square"
@@ -67,7 +67,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r">
+                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r md:w-64">
                                     <div
                                         class="group flex items-center justify-center w-10 h-10 border rounded-full mr-5 [&.primary]:border-primary/10 [&.primary]:bg-primary/10 [&.success]:border-success/10 [&.success]:bg-success/10 success">
                                         <i data-tw-merge="" data-lucide="person-standing"
@@ -80,67 +80,37 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            {{-- <div class="mx-5 my-5 h-px border-t border-dashed border-slate-300/70"></div>
-                            <div class="flex flex-col md:flex-row">
+                                
                                 <div
-                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r">
+                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r md:w-64">
                                     <div
                                         class="group flex items-center justify-center w-10 h-10 border rounded-full mr-5 [&.primary]:border-primary/10 [&.primary]:bg-primary/10 [&.success]:border-success/10 [&.success]:bg-success/10 primary">
                                         <i data-tw-merge="" data-lucide="coffee"
                                             class="stroke-[1] w-5 h-5 group-[.primary]:text-primary group-[.primary]:fill-primary/10 group-[.success]:text-success group-[.success]:fill-success/10"></i>
                                     </div>
                                     <div class="flex-start flex flex-col">
-                                        <div class="text-slate-500">Total Supplier</div>
+                                        <div class="text-slate-500">Articles Vendus</div>
                                         <div class="mt-1.5 flex items-center">
-                                            <div class="text-base font-medium">1,523</div>
-                                            <div class="-mr-1 ml-2 flex items-center text-xs text-success">
-                                                11%
-                                                <i data-tw-merge="" data-lucide="chevron-up"
-                                                    class="stroke-[1] ml-px h-4 w-4"></i>
-                                            </div>
+                                            <div class="text-base font-medium">{{ $products_count }}</div>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div
-                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r">
+                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r md:w-64">
                                     <div
                                         class="group flex items-center justify-center w-10 h-10 border rounded-full mr-5 [&.primary]:border-primary/10 [&.primary]:bg-primary/10 [&.success]:border-success/10 [&.success]:bg-success/10 success">
                                         <i data-tw-merge="" data-lucide="credit-card"
                                             class="stroke-[1] w-5 h-5 group-[.primary]:text-primary group-[.primary]:fill-primary/10 group-[.success]:text-success group-[.success]:fill-success/10"></i>
                                     </div>
                                     <div class="flex-start flex flex-col">
-                                        <div class="text-slate-500">Expenses Analysis</div>
+                                        <div class="text-slate-500">Quantitées Vendues</div>
                                         <div class="mt-1.5 flex items-center">
-                                            <div class="text-base font-medium">261</div>
-                                            <div class="-mr-1 ml-2 flex items-center text-xs text-success">
-                                                2%
-                                                <i data-tw-merge="" data-lucide="chevron-up"
-                                                    class="stroke-[1] ml-px h-4 w-4"></i>
-                                            </div>
+                                            <div class="text-base font-medium">{{ $sales_count }}</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div
-                                    class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r">
-                                    <div
-                                        class="group flex items-center justify-center w-10 h-10 border rounded-full mr-5 [&.primary]:border-primary/10 [&.primary]:bg-primary/10 [&.success]:border-success/10 [&.success]:bg-success/10 success">
-                                        <i data-tw-merge="" data-lucide="package-search"
-                                            class="stroke-[1] w-5 h-5 group-[.primary]:text-primary group-[.primary]:fill-primary/10 group-[.success]:text-success group-[.success]:fill-success/10"></i>
-                                    </div>
-                                    <div class="flex-start flex flex-col">
-                                        <div class="text-slate-500">Coffee Varieties</div>
-                                        <div class="mt-1.5 flex items-center">
-                                            <div class="text-base font-medium">141</div>
-                                            <div class="-mr-1 ml-2 flex items-center text-xs text-danger">
-                                                4%
-                                                <i data-tw-merge="" data-lucide="chevron-down"
-                                                    class="stroke-[1] ml-px h-4 w-4"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                 </div>
