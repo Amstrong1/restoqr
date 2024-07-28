@@ -10,7 +10,7 @@
                         </div>
                     </div>
                     <div class="box box--stacked mt-3.5 p-5">
-                        <div class="flex flex-col gap-y-5 lg:flex-row lg:items-center">
+                        {{-- <div class="flex flex-col gap-y-5 lg:flex-row lg:items-center">
                             <div class="flex flex-col gap-x-3 gap-y-2 sm:flex-row sm:items-center">
                                 <div class="relative">
                                     <i data-tw-merge="" data-lucide="calendar-check2"
@@ -48,7 +48,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="mt-5 rounded-md border border-dashed border-slate-300/70 py-5">
                             <div class="flex flex-col md:flex-row">
