@@ -366,15 +366,19 @@
                                         </td>
                                         <td data-tw-merge=""
                                             class="px-5 border-b dark:border-darkmode-300 w-56 border-slate-200/80 bg-slate-50 py-5 font-medium text-slate-500 first:rounded-tl-[0.6rem] last:rounded-tr-[0.6rem]">
-                                            Menu Items Sold
+                                            Articles
                                         </td>
                                         <td data-tw-merge=""
                                             class="px-5 border-b dark:border-darkmode-300 truncate border-slate-200/80 bg-slate-50 py-5 font-medium text-slate-500 first:rounded-tl-[0.6rem] last:rounded-tr-[0.6rem]">
-                                            Customer Feedback
+                                            Commentaires clients
                                         </td>
                                         <td data-tw-merge=""
                                             class="px-5 border-b dark:border-darkmode-300 w-32 truncate border-slate-200/80 bg-slate-50 py-5 text-right font-medium text-slate-500 first:rounded-tl-[0.6rem] last:rounded-tr-[0.6rem]">
-                                            Total Sales
+                                            Quantitées Vendues
+                                        </td>
+                                        <td data-tw-merge=""
+                                            class="px-5 border-b dark:border-darkmode-300 w-32 truncate border-slate-200/80 bg-slate-50 py-5 text-right font-medium text-slate-500 first:rounded-tl-[0.6rem] last:rounded-tr-[0.6rem]">
+                                            Prix
                                         </td>
                                         <td data-tw-merge=""
                                             class="px-5 border-b dark:border-darkmode-300 w-32 border-slate-200/80 bg-slate-50 py-5 text-center font-medium text-slate-500 first:rounded-tl-[0.6rem] last:rounded-tr-[0.6rem]">
@@ -397,7 +401,7 @@
                                                     <i data-tw-merge="" data-lucide="external-link"
                                                         class="h-3.5 w-3.5 stroke-[1.7]"></i>
                                                     <div class="ml-1.5 whitespace-nowrap">
-                                                        {{ $item->article_id }}
+                                                        {{ $item->article->name }}
                                                     </div>
                                                 </a>
                                             </td>
@@ -425,6 +429,12 @@
                                                 class="px-5 border-b dark:border-darkmode-300 rounded-l-none rounded-r-none border-x-0 border-t-0 border-dashed py-5 text-right first:rounded-l-[0.6rem] last:rounded-r-[0.6rem] dark:bg-darkmode-600">
                                                 <a class="whitespace-nowrap font-medium" href="#">
                                                     {{ $item->quantity }}
+                                                </a>
+                                            </td>
+                                            <td data-tw-merge=""
+                                                class="px-5 border-b dark:border-darkmode-300 rounded-l-none rounded-r-none border-x-0 border-t-0 border-dashed py-5 text-right first:rounded-l-[0.6rem] last:rounded-r-[0.6rem] dark:bg-darkmode-600">
+                                                <a class="whitespace-nowrap font-medium" href="#">
+                                                    {{ number_format($item->quantity * $item->article->price, 0, ',', ' ') }}
                                                 </a>
                                             </td>
                                             <td data-tw-merge=""
