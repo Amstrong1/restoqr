@@ -332,7 +332,7 @@
 
             <div class="col-span-12 flex flex-col gap-y-10 2xl:col-span-7">
                 <div>
-                    <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
+                    {{-- <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
                         <div class="text-base font-medium">Quick Links</div>
                         <div class="flex flex-col gap-x-3 gap-y-2 sm:flex-row md:ml-auto">
                             <div class="relative">
@@ -354,7 +354,7 @@
                                     class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 datepicker rounded-[0.5rem] pl-9 sm:w-64">
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="box box--stacked mt-3.5">
                         <div class="overflow-auto xl:overflow-visible">
                             <table data-tw-merge="" class="w-full text-left">
