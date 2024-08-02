@@ -6,7 +6,7 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="bg-white overflow-hidden shadow-lg sm:rounded-lg">
                         <div class="p-6 text-gray-900">
-                           
+
                             <div class="mt-4">
                                 <div
                                     class="flex flex-col items-stretch w-full overflow-hidden rounded-lg shadow-xs border">
@@ -38,7 +38,7 @@
 
                                                     <th
                                                         class="font-medium border-b-2 border-l border-r border-t whitespace-nowrap px-4 py-3 text-center">
-                                                        Nom du clicnt
+                                                        Nom du client
                                                     </th>
                                                     <th
                                                         class="font-medium border-b-2 border-l border-r border-t whitespace-nowrap px-4 py-3 text-center">
@@ -46,11 +46,11 @@
                                                     </th>
                                                     <th
                                                         class="font-medium border-b-2 border-l border-r border-t whitespace-nowrap px-4 py-3 text-center">
-                                                      Commenttaire
+                                                        Commentaire
                                                     </th>
                                                     <th
                                                         class="font-medium border-b-2 border-l border-r border-t whitespace-nowrap px-4 py-3 text-center">
-                                                       Date
+                                                        Date
                                                     </th>
 
                                                     <th
@@ -63,65 +63,71 @@
                                             <tbody class="bg-white divide-y">
 
                                                 @foreach ($feedback as $item)
-                                                <tr class="text-gray-700">
-                                                    
-                                                <td
-                                                    class="text-center px-5 py-3 border-b border-l border-r border-t">
-                                                    <div class="flex items-center justify-center space-x-4 text-sm">
+                                                    <tr class="text-gray-700">
 
-                                                      {{$item->name}}
+                                                        <td
+                                                            class="text-center px-5 py-3 border-b border-l border-r border-t">
+                                                            <div
+                                                                class="flex items-center justify-center space-x-4 text-sm">
 
-
-
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-center px-5 py-3 border-b border-l border-r border-t">
-                                                    <div class="flex items-center justify-center space-x-4 text-sm">
-
-                                                        {{$item->phone}}
+                                                                {{ $item->name }}
 
 
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-center px-5 py-3 border-b border-l border-r border-t">
-                                                    <div class="flex items-center justify-center space-x-4 text-sm">
 
-                                                        {{$item->comment}}
+                                                            </div>
+                                                        </td>
+                                                        <td
+                                                            class="text-center px-5 py-3 border-b border-l border-r border-t">
+                                                            <div
+                                                                class="flex items-center justify-center space-x-4 text-sm">
 
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-center px-5 py-3 border-b border-l border-r border-t">
-                                                    <div class="flex items-center justify-center space-x-4 text-sm">
-
-                                                        {{$item->created_at}}
-
-                                                    </div>
-                                                </td>
-                                                <td
-                                                    class="text-center px-5 py-3 border-b border-l border-r border-t">
-                                                    <div class="flex items-center justify-center space-x-4 text-sm">
-
-                                                        <a href="{{ route('feedback.show', $item->id) }}"
-                                                            class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 rounded-lg focus:outline-none focus:shadow-outline-gray">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5"
-                                                                viewBox="0 0 20 20" fill="currentColor">
-                                                                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                                                                <path fill-rule="evenodd"
-                                                                    d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-                                                                    clip-rule="evenodd" />
-                                                            </svg>
-                                                        </a>
-                                 
+                                                                {{ $item->phone }}
 
 
-                                                    </div>
-                                                </td>
-                                                
-                                            </tr>
-                                            @endforeach
+                                                            </div>
+                                                        </td>
+                                                        <td
+                                                            class="text-center px-5 py-3 border-b border-l border-r border-t">
+                                                            <div
+                                                                class="flex items-center justify-center space-x-4 text-sm">
+
+                                                                {{ $item->comment }}
+
+                                                            </div>
+                                                        </td>
+                                                        <td
+                                                            class="text-center px-5 py-3 border-b border-l border-r border-t">
+                                                            <div
+                                                                class="flex items-center justify-center space-x-4 text-sm">
+
+                                                                {{ $item->created_at }}
+
+                                                            </div>
+                                                        </td>
+                                                        <td
+                                                            class="text-center px-5 py-3 border-b border-l border-r border-t">
+                                                            <div
+                                                                class="flex items-center justify-center space-x-4 text-sm">
+
+                                                                <a href="{{ route('feedback.show', $item->id) }}"
+                                                                    class="flex items-center justify-between px-2 py-2 text-sm font-medium leading-5 rounded-lg focus:outline-none focus:shadow-outline-gray">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        class="h-5 w-5" viewBox="0 0 20 20"
+                                                                        fill="currentColor">
+                                                                        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                                        <path fill-rule="evenodd"
+                                                                            d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                                                            clip-rule="evenodd" />
+                                                                    </svg>
+                                                                </a>
+
+
+
+                                                            </div>
+                                                        </td>
+
+                                                    </tr>
+                                                @endforeach
 
 
                                             </tbody>

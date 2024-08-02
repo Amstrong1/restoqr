@@ -39,7 +39,7 @@
         <div
             class="relative z-50 h-full col-span-12 p-7 sm:p-14 bg-white rounded-2xl lg:bg-transparent lg:pr-10 lg:col-span-5 xl:pr-24 2xl:col-span-4 lg:p-0 before:content-[''] before:absolute before:inset-0 before:-mb-3.5 before:bg-white/40 before:rounded-2xl before:mx-5">
             <div class="relative z-10 flex h-full w-full flex-col justify-center py-2 lg:py-32">
-                <div
+                {{-- <div
                     class="flex h-[55px] w-[55px] items-center justify-center rounded-[0.8rem] border border-primary/30">
                     <div
                         class="relative flex h-[50px] w-[50px] items-center justify-center rounded-[0.6rem] bg-white bg-gradient-to-b from-theme-1/90 to-theme-2/90">
@@ -51,8 +51,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="mt-10">
+                </div> --}}
+                <x-application-logo />
+                <div class="mt-6">
                     {{ $slot }}
                 </div>
             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Social;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class SocialController extends Controller
 {
@@ -20,6 +21,7 @@ class SocialController extends Controller
             ]
         );
 
+        Alert::success('Success', 'Lien ajouté avec succès!');
         return back();
     }
 }

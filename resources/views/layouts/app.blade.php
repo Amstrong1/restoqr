@@ -61,14 +61,6 @@
 
     @include('sweetalert::alert')
 
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-
     <!-- BEGIN: Vendor JS Assets-->
     <script src="{{ asset('dist/js/vendors/dom.js') }}"></script>
     <script src="{{ asset('dist/js/vendors/tailwind-merge.js') }}"></script>
@@ -82,16 +74,13 @@
     <script src="{{ asset('dist/js/vendors/simplebar.js') }}"></script>
     <script src="{{ asset('dist/js/vendors/chartjs.js') }}"></script>
     <script src="{{ asset('dist/js/vendors/transition.js') }}"></script>
-    <script src="{{ asset('dist/js/vendors/modal.js') }}"></script>
     <script src="{{ asset('dist/js/components/base/theme-color.js') }}"></script>
     <script src="{{ asset('dist/js/components/base/lucide.js') }}"></script>
     <script src="{{ asset('dist/js/utils/colors.js') }}"></script>
     <script src="{{ asset('dist/js/utils/helper.js') }}"></script>
-    {{-- <script src="{{ asset('dist/js/components/report-donut-chart-5.js') }}"></script> --}}
     <script src="{{ asset('dist/js/components/base/litepicker.js') }}"></script>
     <script src="{{ asset('dist/js/components/report-bar-chart-5.js') }}"></script>
     <script src="{{ asset('dist/js/themes/exort.js') }}"></script>
-    <script src="{{ asset('dist/js/components/quick-search.js') }}"></script>
     <!-- END: Vendor JS Assets-->
     <!-- BEGIN: Pages, layouts, components JS Assets-->
     <!-- END: Pages, layouts, components JS Assets-->

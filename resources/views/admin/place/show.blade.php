@@ -22,7 +22,8 @@
                         </div>
                         <div id="print" class="my-4 flex flex-col items-center gap-2 text-black h-full">
                             <h2 class="mt-2 text-4xl font-bold text-orange-500 mb-2">MENU</h2>
-                            <h3 class="mb-2 text-sm font-semibold">Scannez le code QR pour voir le menu sur votre téléphone</h3>
+                            <h3 class="mb-2 text-sm font-semibold">Scannez le code QR pour voir le menu sur votre
+                                téléphone</h3>
                             <div>{!! $qrCode !!}</div>
                             <span class="mt-4 block">{{ auth()->user()->structure->name }}</span>
                             <span class="bloc font-semibold mb-2">TABLE N°: {{ $place->number }}</span>
@@ -39,13 +40,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
     integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <script>
     function generatePDF() {
         var element = document.getElementById("print");
         document.getElementById('btn').style.display = "none";
         var opt = {
             margin: 0.3,
-            filename: {{ 'table' . json_encode($place->number) }} . '.pdf',
+            filename: 'table' + {{ $place->number }} + '.pdf',
             image: {
                 type: 'jpeg',
                 quality: 0.98

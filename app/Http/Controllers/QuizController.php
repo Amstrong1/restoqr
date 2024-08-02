@@ -15,8 +15,9 @@ class QuizController extends Controller
      */
     public function index()
     {
+        $structure = auth()->user()->structure;
         return view('admin.quiz.index', [
-            'quizzes' => Quiz::all(),
+            'quizzes' => $structure->quizzes()->get(),
             'my_actions' => $this->quiz_actions(),
             'my_attributes' => $this->quiz_columns(),
         ]);

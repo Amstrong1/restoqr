@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Goal;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class GoalController extends Controller
 {
@@ -25,6 +26,7 @@ class GoalController extends Controller
             ]
         );
 
+        Alert::success('Success', 'Objectifs enregistrés avec succès!');
         return back();
     }
 }

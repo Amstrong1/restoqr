@@ -40,6 +40,22 @@ class Structure extends Model
     {
         return $this->hasMany(Article::class);
     }
+    public function places()
+    {
+        return $this->hasMany(Place::class);
+    }
+    public function customers()
+    {
+        return $this->hasMany(Customer::class);
+    }
+    public function quizzes()
+    {
+        return $this->hasMany(Quiz::class);
+    }
+    public function feedbacks()
+    {
+        return $this->hasMany(Feedback::class);
+    }
     public function banner()
     {
         return $this->hasOne(Banner::class);
