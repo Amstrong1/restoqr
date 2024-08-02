@@ -31,17 +31,15 @@
                                             <img src="landing/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
                                         </div>
                                         <blockquote class="text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl">
-                                            Masco image edit is a great tool for those people who
-                                            are passionate about AI photo editing. Saved me a lot of
-                                            time on remove objects in Photo. I love this tool 💗
+                                            Nous utilisons RESTOqr pour protéger nos visiteurs. Les menus sales sont du passé. Pour l'instant, les clients signalent pas de problèmes. Et ils aiment notre nouveau menu en ligne
                                         </blockquote>
                                         <div class="flex items-center gap-x-[17px]">
-                                            <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
+                                            <!-- <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
                                                 <img src="landing/img/th-12/testimonial-user-img-1.png" alt="testimonial-user-img-1" width="60" height="60" class="h-full w-full">
-                                            </div>
+                                            </div> -->
                                             <div class="text-xl font-semibold capitalize text-[#0E0E0E]">
                                                 Dominika Smith
-                                                <span class="block text-lg font-normal">Photographer</span>
+                                                <span class="block text-lg font-normal">Brooklyn Taco</span>
                                             </div>
                                         </div>
                                     </div>
@@ -56,18 +54,15 @@
                                             <img src="landing/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
                                         </div>
                                         <blockquote class="text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl">
-                                            I am very impressed! The user interface is very simple
-                                            to quickly edit my photos. The editing quality is
-                                            exceptional - my photos look better than ever. Highly
-                                            recommend 👍
+                                            Plus d'impression et de réimpression pour quelques petites erreurs dans notre menu ou un changement de prix. Nous aimons ce que RESTOqr nous ont apporté 👍
                                         </blockquote>
                                         <div class="flex items-center gap-x-[17px]">
-                                            <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
+                                            <!-- <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
                                                 <img src="landing/img/th-12/testimonial-user-img-2.png" alt="testimonial-user-img-2" width="60" height="60" class="h-full w-full">
-                                            </div>
+                                            </div> -->
                                             <div class="text-xl font-semibold capitalize text-[#0E0E0E]">
                                                 Adam Jonney
-                                                <span class="block text-lg font-normal">UI Designer</span>
+                                                <span class="block text-lg font-normal">Awang Italian Restaurant</span>
                                             </div>
                                         </div>
                                     </div>
@@ -82,18 +77,16 @@
                                             <img src="landing/img/icons/icon-purple-quote.svg" alt="icon-purple-quote" width="64" height="60" class="h-auto w-full">
                                         </div>
                                         <blockquote class="text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl">
-                                            The background remover is awesome!! It is easy to use
-                                            and made my photos 100% better. This is the best picture
-                                            editing software ever!! Easy to use &amp; very Comfortable.
+                                            RESTOqr était parfaitement adapté à la situation de la pandémie. Nous devrions avoir utilisé ce type de menu bien plus tôt
                                             😍
                                         </blockquote>
                                         <div class="flex items-center gap-x-[17px]">
-                                            <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
+                                            <!-- <div class="h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]">
                                                 <img src="landing/img/th-12/testimonial-user-img-3.png" alt="testimonial-user-img-3" width="60" height="60" class="h-full w-full">
-                                            </div>
+                                            </div> -->
                                             <div class="text-xl font-semibold capitalize text-[#0E0E0E]">
                                                 Robert Mack
-                                                <span class="block text-lg font-normal">Instagrammer</span>
+                                                <span class="block text-lg font-normal">Burger 2Go</span>
                                             </div>
                                         </div>
                                     </div>
