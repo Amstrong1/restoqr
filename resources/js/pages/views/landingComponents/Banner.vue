@@ -17,8 +17,8 @@
                                         Digitalisez votre restaurant avec notre solution tout-en-un : créez des menus digitaux personnalisés, permettez à vos clients de passer commande et de payer en ligne facilement. Collectez et gérez les avis clients pour améliorer constamment votre service et fidéliser votre clientèle.
                                     </p>
                                     <div class="mb-6 flex flex-wrap justify-center gap-5 sm:justify-normal">
-                                        <a href="#" class="btn is-purple btn-animation is-large inline-block rounded"><span>Démarrer maintenant</span></a>
-                                        <a href="#" class="btn is-outline-black btn-animation is-large inline-block rounded"><span>En savoir plus</span></a>
+                                        <a href="/register" class="btn is-purple btn-animation is-large inline-block rounded"><span>Démarrer maintenant</span></a>
+                                        <a href="/#about" class="btn is-outline-black btn-animation is-large inline-block rounded"><span>En savoir plus</span></a>
                                     </div>
                                     <p class="flex gap-[10px] text-base font-semibold">
                                         <img src="landing/img/icons/icon-green-star.svg" alt="icon-green-star" width="25" height="24" />
