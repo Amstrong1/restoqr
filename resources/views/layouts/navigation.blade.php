@@ -94,14 +94,14 @@
                             <a href="/profile"
                                 class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item"><i
                                     data-tw-merge="" data-lucide="users" class="stroke-[1] mr-2 h-4 w-4"></i>
-                                Profile Info
+                                Profil
                             </a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <button type="submit"
                                     class="cursor-pointer flex items-center p-2 transition duration-300 ease-in-out rounded-md hover:bg-slate-200/60 dark:bg-darkmode-600 dark:hover:bg-darkmode-400 dropdown-item"><i
                                         data-tw-merge="" data-lucide="power" class="stroke-[1] mr-2 h-4 w-4"></i>
-                                    Logout</button>
+                                    Se déconnecter</button>
                             </form>
                         </div>
                     </div>
@@ -123,10 +123,9 @@
                             <button data-tw-merge=""
                                 class="transition duration-200 border shadow-sm items-center justify-center py-2 px-3 rounded-md font-medium cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed border-secondary text-slate-500 dark:border-darkmode-100/40 dark:text-slate-300 [&:hover:not(:disabled)]:bg-secondary/20 [&:hover:not(:disabled)]:dark:bg-darkmode-100/10 hidden sm:flex"><i
                                     data-tw-merge="" data-lucide="shield-check" class="stroke-[1] mr-2 h-4 w-4"></i>
-                                Mark all as
-                                read</button>
+                                Tout marquer comme lu</button>
                         </div>
-                        <div data-tw-merge="" class="overflow-y-auto flex-1 p-0">
+                        {{-- <div data-tw-merge="" class="overflow-y-auto flex-1 p-0">
                             <div class="flex flex-col gap-0.5 p-3">
                                 <a class="flex items-center rounded-xl px-3 py-2.5 hover:bg-slate-100/80"
                                     href="#">
@@ -151,7 +150,7 @@
                                     </div>
                                 </a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

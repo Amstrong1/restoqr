@@ -7,12 +7,7 @@
                     <div class="bg-white overflow-hidden shadow-lg sm:rounded-lg">
                         <div class="p-6 text-gray-900">
                             <div class="flex justify-between">
-                                <h1 class="font-bold text-lg my-2">{{ __('Liste') }}</h1>
-                                <a href="{{ route('structure.create') }}">
-                                    <x-primary-button>
-                                        {{ __('Nouveau') }}
-                                    </x-primary-button>
-                                </a>
+                                <h1 class="font-bold text-lg my-2">{{ __('Liste des structures') }}</h1>
                             </div>
                             <div class="mt-4">
                                 <x-tables.default :resources="$structures" :mattributes="$my_attributes" type="structure"

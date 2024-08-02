@@ -57,14 +57,13 @@ class RegisteredUserController extends Controller
             'structure_id' => $structure->id,
             'name' => $request->lname . ' ' . $request->fname,
             'role' => 'admin',
-            'active' => true,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
         event(new Registered($user));
 
-        if ($user->active) {
+        if ($user->structure->active) {
             Auth::login($user);
             return redirect(route('dashboard', absolute: false));
         } else {

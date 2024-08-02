@@ -116,9 +116,32 @@
     <script src="dist/js/vendors/modal.js"></script>
     <script src="dist/js/components/base/theme-color.js"></script>
     <script src="dist/js/components/base/tippy.js"></script>
-    <script src="dist/js/components/base/lucide.js"></script> 
+    <script src="dist/js/components/base/lucide.js"></script>
     <!-- END: Vendor JS Assets-->
-    
-</body>
+
+    <script>
+        function showPassword() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+                document.getElementById('view1').classList.add("hidden");
+                document.getElementById('view2').classList.remove("hidden");
+
+                if (document.getElementById('password_confirmation') !== null) {
+                    document.getElementById('password_confirmation').type = "text";
+                }
+            } else {
+                x.type = "password";
+                document.getElementById('view1').classList.remove("hidden");
+                document.getElementById('view2').classList.add("hidden");
+
+                if (document.getElementById('password_confirmation') !== null) {
+                    document.getElementById('password_confirmation').type = "password";
+                }
+            }
+        }
+    </script>
+
+    </body>
 
 </html>

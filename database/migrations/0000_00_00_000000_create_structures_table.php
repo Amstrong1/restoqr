@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('address');
             $table->string('logo')->nullable();
             $table->string('slug')->nullable();
+            $table->boolean('active')->default(false);
+            $table->datetime('licence_expiry')->default(now());
             $table->softDeletes();
             $table->timestamps();
         });

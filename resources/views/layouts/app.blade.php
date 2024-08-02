@@ -52,7 +52,9 @@
                 class="[&.loading-page--before-hide]:h-screen [&.loading-page--before-hide]:relative loading-page loading-page--before-hide [&.loading-page--before-hide]:before:block [&.loading-page--hide]:before:opacity-0 before:content-[''] before:transition-opacity before:duration-300 before:hidden before:inset-0 before:h-screen before:w-screen before:fixed before:bg-gradient-to-b before:from-theme-1 before:to-theme-2 before:z-[60] [&.loading-page--before-hide]:after:block [&.loading-page--hide]:after:opacity-0 after:content-[''] after:transition-opacity after:duration-300 after:hidden after:h-16 after:w-16 after:animate-pulse after:fixed after:opacity-50 after:inset-0 after:m-auto after:bg-loading-puff after:bg-cover after:z-[61]">
                 <div class="fixed top-0 left-0 z-50 h-screen side-menu group side-menu--collapsed">
                     @include('layouts.navigation')
-                    @include('layouts.sidenav')
+                    @if (auth()->user()->role == 'admin')
+                        @include('layouts.sidenav')
+                    @endif
                 </div>
                 {{ $slot }}
             </div>

@@ -49,7 +49,6 @@ class StaffController extends Controller
             'name' => $request->input('name'),
             'email' => $request->input('email'),
             'role' => $request->input('role'),
-            'active' => true,
             'password' => Hash::make($password),
         ]);
 

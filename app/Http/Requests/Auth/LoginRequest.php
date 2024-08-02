@@ -42,7 +42,11 @@ class LoginRequest extends FormRequest
         $this->ensureIsNotRateLimited();
 
         $credentials = $this->only('email', 'password');
-        $credentials['active'] = true;
+        $credentials['active'] = function ($query) {
+            $query->whereHas('structure', function ($query) {
+                $query->where('active', true);
+            });
+        };
 
         if (! Auth::attempt($credentials, $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());

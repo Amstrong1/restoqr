@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class StructureSeeder extends Seeder
 {
@@ -12,6 +13,13 @@ class StructureSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        DB::table('structures')->insert([
+            'name' => 'RestoQR',
+            'email' => 'contact@restoqr.site',
+            'tel' => '00000000',
+            'address' => 'Bohicon',
+            'logo' => 'assets/images/logo/logo.jpeg',
+            'active' => true,
+        ]);
     }
 }

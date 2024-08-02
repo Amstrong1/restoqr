@@ -12,6 +12,13 @@ class Structure extends Model
 
     protected $guarded = [];
 
+    protected $append = ['active_formatted'];
+
+    public function getActiveFormattedAttribute()
+    {
+        return $this->active ? 'Actif' : 'Inactif';
+    }
+
     public function users()
     {
         return $this->hasMany(User::class);

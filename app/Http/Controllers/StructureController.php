@@ -18,7 +18,7 @@ class StructureController extends Controller
     public function index()
     {
         return view('admin.structure.index', [
-            'structures' => Structure::all(),
+            'structures' => Structure::where('id', '!=', 1)->get(),
             'my_actions' => $this->structure_actions(),
             'my_attributes' => $this->structure_columns(),
         ]);
@@ -56,16 +56,23 @@ class StructureController extends Controller
      */
     public function edit(Structure $structure)
     {
-        return view('admin.structure.edit', [
-            'structure' => $structure,
-            'banner' => Banner::where('structure_id', $structure->id)->first(),
-            'social' => Social::where('structure_id', $structure->id)->first(),
-            'goal' => Goal::where('structure_id', $structure->id)->first(),
-            'my_fields' => $this->structure_fields(),
-            'social_fields' => $this->social_fields(),
-            'banner_fields' => $this->banner_fields(),
-            'goal_fields' => $this->goal_fields(),
-        ]);
+        if (auth()->user()->role == 'admin') {
+            return view('admin.structure.edit', [
+                'structure' => $structure,
+                'banner' => Banner::where('structure_id', $structure->id)->first(),
+                'social' => Social::where('structure_id', $structure->id)->first(),
+                'goal' => Goal::where('structure_id', $structure->id)->first(),
+                'my_fields' => $this->structure_fields(),
+                'social_fields' => $this->social_fields(),
+                'banner_fields' => $this->banner_fields(),
+                'goal_fields' => $this->goal_fields(),
+            ]);
+        } elseif (auth()->user()->role == 'superadmin') {
+            return view('admin.structure.edit', [
+                'structure' => $structure,
+                'my_fields' => $this->structure_fields(),
+            ]);
+        }
     }
 
     /**
@@ -73,25 +80,40 @@ class StructureController extends Controller
      */
     public function update(UpdateStructureRequest $request, Structure $structure)
     {
-        if ($request->logo !== null) {
-            $fileName = time() . '.' . $request->logo->extension();
-            $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
+        if (auth()->user()->role == "superadmin") {
+            $structure->active = $request->active;
+            $month = $request->licence_expiry;
+            
+            $date = new \DateTime();
+            $new_date = $date->modify('+' . $month . ' month');
+            $structure->licence_expiry = $new_date->format('Y-m-d H:i:s');
+
+            if ($structure->save()) {
+                Alert::toast('Opération éffectué avec succès', 'success');
+                return redirect('structure');
+            };
+        } else {
+            if ($request->logo !== null) {
+                $fileName = time() . '.' . $request->logo->extension();
+                $path = $request->file('logo')->storeAs('logos', $fileName, 'public');
+            }
+    
+            $structure->name = $request->name;
+            $structure->email = $request->email;
+            $structure->tel = $request->tel;
+            $structure->address = $request->address;
+            $structure->slug = $request->slug;
+    
+            if (isset($fileName)) {
+                $structure->logo = $path;
+            }
+    
+            if ($structure->save()) {
+                Alert::toast('Opération éffectué avec succès', 'success');
+                return back();
+            };
         }
-
-        $structure->name = $request->name;
-        $structure->email = $request->email;
-        $structure->tel = $request->tel;
-        $structure->address = $request->address;
-        $structure->slug = $request->slug;
-
-        if (isset($fileName)) {
-            $structure->logo = $path;
-        }
-
-        if ($structure->save()) {
-            Alert::toast('Opération éffectué avec succès', 'success');
-            return back();
-        };
+        
     }
 
     /**
@@ -117,6 +139,7 @@ class StructureController extends Controller
             'email' => 'Contact',
             'tel' => 'Email',
             'address' => 'Adresse',
+            'active_formatted' => 'Statut',
         ];
         return $columns;
     }
@@ -125,39 +148,62 @@ class StructureController extends Controller
     {
         $actions = (object) array(
             'show' => 'Voir',
-            'delete' => "Supprimer",
         );
+
+        if (auth()->user()->role == 'superadmin') {
+            $actions->edit = 'Modifier';
+            $actions->delete = "Supprimer";
+        }
+
         return $actions;
     }
 
     private function structure_fields()
     {
-        $fields = [
-            'name' => [
-                'title' => 'Dénomination',
-                'field' => 'text'
-            ],
-            'email' => [
-                'title' => 'Email',
-                'field' => 'text'
-            ],
-            'tel' => [
-                'title' => 'Contact',
-                'field' => 'tel'
-            ],
-            'address' => [
-                'title' => 'Adresse',
-                'field' => 'text'
-            ],
-            'slug' => [
-                'title' => 'Lien site internet',
-                'field' => 'url'
-            ],
-            'logo' => [
-                'title' => 'Logo',
-                'field' => 'file'
-            ],
-        ];
+        if (auth()->user()->role == 'admin') {
+            $fields = [
+                'name' => [
+                    'title' => 'Dénomination',
+                    'field' => 'text'
+                ],
+                'email' => [
+                    'title' => 'Email',
+                    'field' => 'text'
+                ],
+                'tel' => [
+                    'title' => 'Contact',
+                    'field' => 'tel'
+                ],
+                'address' => [
+                    'title' => 'Adresse',
+                    'field' => 'text'
+                ],
+                'slug' => [
+                    'title' => 'Lien site internet',
+                    'field' => 'url'
+                ],
+                'logo' => [
+                    'title' => 'Logo',
+                    'field' => 'file'
+                ],
+            ];
+        } elseif (auth()->user()->role == 'superadmin') {
+            $fields = [                
+                'active' => [
+                    'title' => 'Statut',
+                    'field' => 'select',
+                    'options' => [
+                        '0' => 'Inactif',
+                        '1' => 'Actif',
+                    ]
+                ],
+                'licence_expiry' => [
+                    'title' => 'Durée de la licence (mois)',
+                    'field' => 'number'
+                ],
+            ];
+        }
+
         return $fields;
     }
 

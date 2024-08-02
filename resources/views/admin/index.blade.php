@@ -11,44 +11,44 @@
                     </div>
                     <div class="box box--stacked mt-3.5 p-5">
                         {{-- <div class="flex flex-col gap-y-5 lg:flex-row lg:items-center">
-                            <div class="flex flex-col gap-x-3 gap-y-2 sm:flex-row sm:items-center">
-                                <div class="relative">
-                                    <i data-tw-merge="" data-lucide="calendar-check2"
-                                        class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3]"></i>
-                                    <select data-tw-merge=""
-                                        class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 pl-9 sm:w-44">
-                                        <option value="custom-date">Custom Date</option>
-                                        <option value="daily">Quotidien</option>
-                                        <option value="weekly">Hebdomadaire</option>
-                                        <option value="monthly">Mensuel</option>
-                                        <option value="yearly">Annuel</option>
-                                    </select>
-                                </div>
-                                <div class="relative">
-                                    <i data-tw-merge="" data-lucide="calendar"
-                                        class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3]"></i>
-                                    <input data-tw-merge="" type="text"
-                                        class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 datepicker rounded-[0.3rem] pl-9 sm:w-64">
-                                </div>
+                        <div class="flex flex-col gap-x-3 gap-y-2 sm:flex-row sm:items-center">
+                            <div class="relative">
+                                <i data-tw-merge="" data-lucide="calendar-check2"
+                                    class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3]"></i>
+                                <select data-tw-merge=""
+                                    class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm rounded-md py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 pl-9 sm:w-44">
+                                    <option value="custom-date">Custom Date</option>
+                                    <option value="daily">Quotidien</option>
+                                    <option value="weekly">Hebdomadaire</option>
+                                    <option value="monthly">Mensuel</option>
+                                    <option value="yearly">Annuel</option>
+                                </select>
                             </div>
-                            <div class="flex items-center gap-3.5 lg:ml-auto">
-                                <a class="flex items-center text-slate-500" href="#">
-                                    <i data-tw-merge="" data-lucide="printer" class="h-3.5 w-3.5 stroke-[1.7]"></i>
-                                    <div
-                                        class="ml-1.5 whitespace-nowrap underline decoration-slate-300 decoration-dotted underline-offset-[3px]">
-                                        Export to PDF
-                                    </div>
-                                </a>
-                                <a class="flex items-center text-primary" href="#">
-                                    <i data-tw-merge="" data-lucide="external-link"
-                                        class="h-3.5 w-3.5 stroke-[1.7]"></i>
-                                    <div
-                                        class="ml-1.5 whitespace-nowrap underline decoration-primary/30 decoration-dotted underline-offset-[3px]">
-                                        Show full report
-                                    </div>
-                                </a>
+                            <div class="relative">
+                                <i data-tw-merge="" data-lucide="calendar"
+                                    class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3]"></i>
+                                <input data-tw-merge="" type="text"
+                                    class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 datepicker rounded-[0.3rem] pl-9 sm:w-64">
                             </div>
-                        </div> --}}
+                        </div>
+                        <div class="flex items-center gap-3.5 lg:ml-auto">
+                            <a class="flex items-center text-slate-500" href="#">
+                                <i data-tw-merge="" data-lucide="printer" class="h-3.5 w-3.5 stroke-[1.7]"></i>
+                                <div
+                                    class="ml-1.5 whitespace-nowrap underline decoration-slate-300 decoration-dotted underline-offset-[3px]">
+                                    Export to PDF
+                                </div>
+                            </a>
+                            <a class="flex items-center text-primary" href="#">
+                                <i data-tw-merge="" data-lucide="external-link"
+                                    class="h-3.5 w-3.5 stroke-[1.7]"></i>
+                                <div
+                                    class="ml-1.5 whitespace-nowrap underline decoration-primary/30 decoration-dotted underline-offset-[3px]">
+                                    Show full report
+                                </div>
+                            </a>
+                        </div>
+                    </div> --}}
 
                         <div class="mt-5 rounded-md border border-dashed border-slate-300/70 py-5">
                             <div class="flex flex-col md:flex-row">
@@ -80,7 +80,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div
                                     class="flex flex-1 items-center justify-center border-dashed border-slate-300/70 py-3 last:border-0 md:border-r md:w-64">
                                     <div
@@ -133,10 +133,10 @@
                                             <div class="mt-1 flex items-center">
                                                 <div class="text-xl font-medium">{{ $orders_count }}</div>
                                                 {{-- <div class="-mr-1 ml-2.5 flex items-center text-success">
-                                                    11%
-                                                    <i data-tw-merge="" data-lucide="chevron-up"
-                                                        class="stroke-[1] ml-px h-4 w-4"></i>
-                                                </div> --}}
+                                                11%
+                                                <i data-tw-merge="" data-lucide="chevron-up"
+                                                    class="stroke-[1] ml-px h-4 w-4"></i>
+                                            </div> --}}
                                             </div>
                                         </div>
                                         @if ($goal !== null)
@@ -303,28 +303,28 @@
             <div class="col-span-12 flex flex-col gap-y-10 2xl:col-span-7">
                 <div>
                     {{-- <div class="flex flex-col gap-y-3 md:h-10 md:flex-row md:items-center">
-                        <div class="text-base font-medium">Quick Links</div>
-                        <div class="flex flex-col gap-x-3 gap-y-2 sm:flex-row md:ml-auto">
-                            <div class="relative">
-                                <i data-tw-merge="" data-lucide="calendar-check2"
-                                    class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3]"></i>
-                                <select data-tw-merge=""
-                                    class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 rounded-[0.5rem] pl-9 sm:w-44">
-                                    <option value="custom-date">Custom Date</option>
-                                    <option value="daily">Quotidien</option>
-                                    <option value="weekly">Hebdomadaire</option>
-                                    <option value="monthly">Mensuel</option>
-                                    <option value="yearly">Annuel</option>
-                                </select>
-                            </div>
-                            <div class="relative">
-                                <i data-tw-merge="" data-lucide="calendar"
-                                    class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3]"></i>
-                                <input data-tw-merge="" type="text"
-                                    class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 datepicker rounded-[0.5rem] pl-9 sm:w-64">
-                            </div>
+                    <div class="text-base font-medium">Quick Links</div>
+                    <div class="flex flex-col gap-x-3 gap-y-2 sm:flex-row md:ml-auto">
+                        <div class="relative">
+                            <i data-tw-merge="" data-lucide="calendar-check2"
+                                class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3]"></i>
+                            <select data-tw-merge=""
+                                class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 rounded-[0.5rem] pl-9 sm:w-44">
+                                <option value="custom-date">Custom Date</option>
+                                <option value="daily">Quotidien</option>
+                                <option value="weekly">Hebdomadaire</option>
+                                <option value="monthly">Mensuel</option>
+                                <option value="yearly">Annuel</option>
+                            </select>
                         </div>
-                    </div> --}}
+                        <div class="relative">
+                            <i data-tw-merge="" data-lucide="calendar"
+                                class="absolute inset-y-0 left-0 z-10 my-auto ml-3 h-4 w-4 stroke-[1.3]"></i>
+                            <input data-tw-merge="" type="text"
+                                class="disabled:bg-slate-100 disabled:cursor-not-allowed dark:disabled:bg-darkmode-800/50 dark:disabled:border-transparent [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 [&[readonly]]:dark:border-transparent transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm placeholder:text-slate-400/90 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 dark:placeholder:text-slate-500/80 [&[type='file']]:border file:mr-4 file:py-2 file:px-4 file:rounded-l-md file:border-0 file:border-r-[1px] file:border-slate-100/10 file:text-sm file:font-semibold file:bg-slate-100 file:text-slate-500/70 hover:file:bg-200 group-[.form-inline]:flex-1 group-[.input-group]:rounded-none group-[.input-group]:[&:not(:first-child)]:border-l-transparent group-[.input-group]:first:rounded-l group-[.input-group]:last:rounded-r group-[.input-group]:z-10 datepicker rounded-[0.5rem] pl-9 sm:w-64">
+                        </div>
+                    </div>
+                </div> --}}
                     <div class="box box--stacked mt-3.5">
                         <div class="overflow-auto xl:overflow-visible">
                             <table data-tw-merge="" class="w-full text-left">
@@ -458,20 +458,20 @@
                     <div class="flex-reverse mt-8 flex flex-col-reverse flex-wrap items-center gap-y-2 sm:flex-row">
                         <nav class="mr-auto w-full flex-1 sm:w-auto">
                             {{-- <ul class="flex w-full mr-0 sm:mr-auto sm:w-auto">                                
-                                <li class="flex-1 sm:flex-initial">
-                                    <a data-tw-merge=""
-                                        class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3">...</a>
-                                </li>                                
-                            </ul> --}}
+                            <li class="flex-1 sm:flex-initial">
+                                <a data-tw-merge=""
+                                    class="transition duration-200 border items-center justify-center py-2 rounded-md cursor-pointer focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus-visible:outline-none dark:focus:ring-slate-700 dark:focus:ring-opacity-50 [&:hover:not(:disabled)]:bg-opacity-90 [&:hover:not(:disabled)]:border-opacity-90 [&:not(button)]:text-center disabled:opacity-70 disabled:cursor-not-allowed min-w-0 sm:min-w-[40px] shadow-none font-normal flex border-transparent text-slate-800 sm:mr-2 dark:text-slate-300 px-1 sm:px-3">...</a>
+                            </li>                                
+                        </ul> --}}
                             {{ $orderLinesAll->links() }}
                         </nav>
                         {{-- <select data-tw-merge=""
-                            class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 rounded-[0.5rem] sm:w-20">
-                            <option>10</option>
-                            <option>25</option>
-                            <option>35</option>
-                            <option>50</option>
-                        </select> --}}
+                        class="disabled:bg-slate-100 disabled:cursor-not-allowed disabled:dark:bg-darkmode-800/50 [&[readonly]]:bg-slate-100 [&[readonly]]:cursor-not-allowed [&[readonly]]:dark:bg-darkmode-800/50 transition duration-200 ease-in-out w-full text-sm border-slate-200 shadow-sm py-2 px-3 pr-8 focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-primary focus:border-opacity-40 dark:bg-darkmode-800 dark:border-transparent dark:focus:ring-slate-700 dark:focus:ring-opacity-50 group-[.form-inline]:flex-1 rounded-[0.5rem] sm:w-20">
+                        <option>10</option>
+                        <option>25</option>
+                        <option>35</option>
+                        <option>50</option>
+                    </select> --}}
                     </div>
                 </div>
             </div>
