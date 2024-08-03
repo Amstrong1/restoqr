@@ -140,6 +140,7 @@ class StructureController extends Controller
             'tel' => 'Email',
             'address' => 'Adresse',
             'active_formatted' => 'Statut',
+            'licence_expiry_formatted' => 'Expiration',
         ];
         return $columns;
     }

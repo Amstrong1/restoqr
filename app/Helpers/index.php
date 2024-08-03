@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Carbon;
+
 /**
  * Generates a random color in hexadecimal format.
  *
@@ -67,4 +70,17 @@ function getWeekOfYear($date) {
     }
 
     return $week;
+}
+
+function getFormattedDateTime($date): String
+{
+    Carbon::setLocale('fr');
+    $new_date = Carbon::createFromDate($date);
+    if (Str::length($new_date->minute) == 1) {
+        $prefix = '0';
+    } else {
+        $prefix = '';
+    }
+    $new_date_format = $new_date->day . ' ' . $new_date->monthName . ' ' . $new_date->year . ' ' . $new_date->hour . 'h' . $prefix . $new_date->minute . 'min';
+    return $new_date_format;
 }

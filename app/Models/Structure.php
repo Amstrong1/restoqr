@@ -12,11 +12,16 @@ class Structure extends Model
 
     protected $guarded = [];
 
-    protected $append = ['active_formatted'];
+    protected $append = ['active_formatted', 'licence_expiry_formatted'];
 
     public function getActiveFormattedAttribute()
     {
         return $this->active ? 'Actif' : 'Inactif';
+    }
+
+    public function getLicenceExpiryFormattedAttribute()
+    {
+        return getFormattedDateTime($this->licence_expiry);
     }
 
     public function users()

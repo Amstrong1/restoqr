@@ -35,7 +35,7 @@
                         name="{{ $attr }}" class="block mt-1 w-full border-2 p-2 rounded outline-0">
                         <option value="">Sélectionner</option>
                         @foreach ($value['options'] as $key => $value)
-                            <option value="{{ $key }}" @selected(old($value) ? old($attr) === $value : $fill == $value)>
+                            <option value="{{ $key }}" @selected(old($attr) == $key)>
                                 {{ $value }}
                             </option>
                         @endforeach
