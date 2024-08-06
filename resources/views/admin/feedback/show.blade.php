@@ -77,7 +77,7 @@
 <script>
     function generatePDF() {
         var element = document.getElementById("print");
-        document.getElementById('btn').style.display = "none";
+
         var opt = {
             margin: 0.3,
             filename: 'document.pdf',
@@ -95,9 +95,5 @@
             }
         };
         html2pdf().from(element).set(opt).save();
-
-        // setTimeout(function() {
-        //     document.getElementById('btn').style.display = 'block';
-        // }, 10000);
     }
 </script>
