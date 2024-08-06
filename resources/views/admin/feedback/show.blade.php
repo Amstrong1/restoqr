@@ -19,7 +19,7 @@
                                         <button onclick="generatePDF()" id="btn"
                                             class="bg-green-700 px-4 py-1 text-white rounded">Imprimer</button>
                                     </div>
-                                    <div class="print">
+                                    <div id="print">
                                         <h1 class="my-4 text-center font-semibold text-lg">Récapitulatif de l'avis du
                                             client</h1>
                                         <ul>

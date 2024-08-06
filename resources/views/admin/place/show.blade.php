@@ -44,7 +44,7 @@
 <script>
     function generatePDF() {
         var element = document.getElementById("print");
-        document.getElementById('btn').style.display = "none";
+
         var opt = {
             margin: 0.3,
             filename: 'table' + {{ $place->number }} + '.pdf',
