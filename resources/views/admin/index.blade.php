@@ -480,14 +480,13 @@
 </x-app-layout>
 
 <script>
-    console.log(JSON.parse(`{!! $json_colors !!}`));
     (() => {
         (function() {
             "use strict";
             let r = $(".report-donut-chart-5");
             r.length && r.each(function() {
                 let a = $(this)[0].getContext("2d"),
-                    t = {{ $qties }},
+                    t = {{ isset($qties) ? $qties : '[0]' }},
                     o = new Chart(a, {
                         type: "doughnut",
                         data: {

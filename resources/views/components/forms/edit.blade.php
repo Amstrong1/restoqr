@@ -81,7 +81,8 @@
                     <x-dynamic-component :component="$component" style="color: #000" id="editor"
                         name="{{ $attr }}" type="{{ $value['field'] }}"
                         class="block mt-1 w-full border-2 p-2 rounded outline-0">
-                        {!! old($attr) ?? $fill !!}</x-dynamic-component>
+                        {!! old($attr) ?? $fill !!}
+                    </x-dynamic-component>
                     @error($attr)
                         <p class="text-red-500 text-sm pl-2 pt-2">
                             {{ $message }}
@@ -107,8 +108,8 @@
                             <input type="file" name="{{ $attr }}" id="{{ $attr }}"
                                 class="block mt-1 w-full border-2 p-2 rounded outline-0">
                         </div>
-
-                        @if ($fill !== null)
+                        
+                        @if ($fill !== "")
                             <div class="w-1/2 p-1 md:p-2">
                                 <img alt="gallery" class="block w-1/2 rounded-lg object-cover object-center"
                                     src="{{ asset('storage/' . $fill) }}" />

@@ -56,11 +56,13 @@
                         @include('layouts.sidenav')
                     @endif
                 </div>
-                @if (auth()->user()->role == "superadmin" || auth()->user()->structure->licence_expiry > now())
+                @if (auth()->user()->role == 'superadmin' || auth()->user()->structure->licence_expiry > now())
                     {{ $slot }}
                 @else
-                    <div class="flex items-center justify-start transition-[margin,width] duration-100 px-5 mt-[65px] pt-[31px] pb-16 relative z-10 content--compact xl:ml-[275px] [&.content--compact]:xl:ml-[91px]">
-                        <h2 class="text-semibold text-xl">Votre licence a expiré. Veuillez contacter votre fournisseur pour continuer à bénéficier ce votre espace RestoQR.</h2>
+                    <div
+                        class="flex items-center justify-start transition-[margin,width] duration-100 px-5 mt-[65px] pt-[31px] pb-16 relative z-10 content--compact xl:ml-[275px] [&.content--compact]:xl:ml-[91px]">
+                        <h2 class="text-semibold text-xl">Votre licence a expiré. Veuillez contacter votre fournisseur
+                            pour continuer à bénéficier ce votre espace RestoQR.</h2>
                     </div>
                 @endif
             </div>
@@ -92,6 +94,16 @@
     <!-- END: Vendor JS Assets-->
     <!-- BEGIN: Pages, layouts, components JS Assets-->
     <!-- END: Pages, layouts, components JS Assets-->
+
+    <script>
+        if (document.querySelector('#editor') != null) {
+            ClassicEditor
+                .create(document.querySelector('#editor'))
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+    </script>
 </body>
 
 </html>

@@ -183,10 +183,10 @@ class StructureController extends Controller
                     'title' => 'Lien site internet',
                     'field' => 'url'
                 ],
-                'logo' => [
-                    'title' => 'Logo',
-                    'field' => 'file'
-                ],
+                // 'logo' => [
+                //     'title' => 'Logo',
+                //     'field' => 'file'
+                // ],
             ];
         } elseif (auth()->user()->role == 'superadmin') {
             $fields = [                
