@@ -7,7 +7,7 @@
                     <div class="bg-white overflow-hidden shadow-lg sm:rounded-lg">
                         <div class="p-6 text-gray-900">
                             <div class="flex justify-between">
-                                <h1 class="font-bold text-lg my-2">{{ __('Liste') }}</h1>
+                                <h1 class="font-bold text-lg my-2">{{ __('Liste des tables') }}</h1>
                                 <a href="{{ route('place.create') }}">
                                     <x-primary-button>
                                         {{ __('Nouveau') }}

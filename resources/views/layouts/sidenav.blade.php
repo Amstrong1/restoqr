@@ -52,7 +52,7 @@
                         class="side-menu__link @if (request()->routeIs('menu.*')) side-menu__link--active @endif">
                         <i data-tw-merge="" data-lucide="layout-grid"
                             class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                        <div class="side-menu__link__title">Menu</div>
+                        <div class="side-menu__link__title">Catégorie</div>
                     </a>
                 </li>
 

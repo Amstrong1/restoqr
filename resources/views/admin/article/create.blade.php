@@ -6,7 +6,7 @@
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="shadow-lg sm:rounded-lg">
                         <div class="p-6 text-gray-900">
-                            <h1>{{ __('Nouveau') }}</h1>
+                            <h1>{{ __('Nouvel article') }}</h1>
                             <x-forms.create :fields="$my_fields" type="article" />
                         </div>
                     </div>
