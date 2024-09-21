@@ -11,7 +11,6 @@ class BannerController extends Controller
 {
     public function update(Request $request)
     {
-        $path = "";
         if ($request->image !== null) {
             $image = time() . '.' . $request->image->extension();
             $path = $request->file('image')->storeAs('banners', $image, 'public');
@@ -21,7 +20,7 @@ class BannerController extends Controller
             ['structure_id' => Auth::user()->structure->id],
             [
                 'title' => $request->title,
-                'image' => $path,
+                'image' => $path ?? Auth::user()->structure->banner->image,
                 'description' => $request->description,
             ]
         );
