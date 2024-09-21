@@ -23,6 +23,14 @@
                 </li>
 
                 <li>
+                    <a href="{{ route('structure.edit', Auth::user()->structure->id) }}"
+                        class="side-menu__link @if (request()->routeIs('structure.edit')) side-menu__link--active @endif">
+                        <i data-tw-merge="" data-lucide="compass" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
+                        <div class="side-menu__link__title">Mon Restaurant</div>
+                    </a>
+                </li>
+
+                <li>
                     <a href="/order/pending"
                         class="side-menu__link @if (request()->routeIs('order.pending')) side-menu__link--active @endif">
                         <i data-tw-merge data-lucide="alert-circle"
@@ -85,14 +93,6 @@
                         class="side-menu__link @if (request()->routeIs('feedback.*')) side-menu__link--active @endif">
                         <i data-tw-merge="" data-lucide="users" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
                         <div class="side-menu__link__title">Avis client</div>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="{{ route('structure.edit', Auth::user()->structure->id) }}"
-                        class="side-menu__link @if (request()->routeIs('structure.edit')) side-menu__link--active @endif">
-                        <i data-tw-merge="" data-lucide="compass" class="stroke-[1] w-5 h-5 side-menu__link__icon"></i>
-                        <div class="side-menu__link__title">Mon Restaurant</div>
                     </a>
                 </li>
             </ul>
