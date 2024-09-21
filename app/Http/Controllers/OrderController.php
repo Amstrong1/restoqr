@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Order;
 use App\Models\Place;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreOrderRequest;
-use App\Http\Requests\UpdateOrderRequest;
 use RealRashid\SweetAlert\Facades\Alert;
+use App\Http\Requests\UpdateOrderRequest;
 
 class OrderController extends Controller
 {
@@ -15,7 +16,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $structure = auth()->user()->structure;
+        $structure = Auth::user()->structure;
         return view('admin.order.index', [
             'orders' => $structure->orders()->get(),
             'my_actions' => $this->order_actions(),
@@ -30,8 +31,9 @@ class OrderController extends Controller
      */
     public function pending()
     {
+        $structure = Auth::user()->structure;
         return view('admin.order.index', [
-            'orders' => Order::where('status', 'En attente')->get(),
+            'orders' => $structure->orders()->where('status', 'En attente')->get(),
             'my_actions' => $this->order_actions(),
             'my_attributes' => $this->order_columns(),
         ]);
@@ -39,8 +41,9 @@ class OrderController extends Controller
 
     public function inProgress()
     {
+        $structure = Auth::user()->structure;
         return view('admin.order.index', [
-            'orders' => Order::where('status', 'En cours')->get(),
+            'orders' => $structure->orders()->where('status', 'En cours')->get(),
             'my_actions' => $this->order_actions(),
             'my_attributes' => $this->order_columns(),
         ]);
