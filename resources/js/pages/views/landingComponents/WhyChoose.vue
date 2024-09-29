@@ -52,9 +52,9 @@
               </ul>
               <!-- Accordion List -->
 
-              <div class="mt-[60px] flex justify-center xl:mt-20 jos" data-jos_once="1" data-jos_animation="fade-up" data-jos_timingfunction="ease" data-jos_duration="0.7" data-jos_delay="0.5" data-jos_counter="1">
+              <!-- <div class="mt-[60px] flex justify-center xl:mt-20 jos" data-jos_once="1" data-jos_animation="fade-up" data-jos_timingfunction="ease" data-jos_duration="0.7" data-jos_delay="0.5" data-jos_counter="1">
                 <a class="btn is-blue is-rounded btn-animation is-large group" href="contact.html"><span>Vous avez encore des questions ? Contactez-nous</span></a>
-              </div>
+              </div> -->
             </div>
             <!-- FAQ Area -->
           </div>

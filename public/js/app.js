@@ -25248,18 +25248,6 @@ var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 var _hoisted_12 = {
   "class": "pt-5"
 };
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "mt-[60px] flex justify-center xl:mt-20 jos",
-  "data-jos_once": "1",
-  "data-jos_animation": "fade-up",
-  "data-jos_timingfunction": "ease",
-  "data-jos_duration": "0.7",
-  "data-jos_delay": "0.5",
-  "data-jos_counter": "1"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "btn is-blue is-rounded btn-animation is-large group",
-  href: "contact.html"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Vous avez encore des questions ? Contactez-nous")])], -1 /* HOISTED */);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Space "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Container "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Content Wrapper "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Content Wrapper "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" FAQ Area "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion List "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Item "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.faqItems, function (item, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
@@ -25291,7 +25279,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         key: bulletIndex
       }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bullet), 1 /* TEXT */);
     }), 128 /* KEYED_FRAGMENT */))])], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Body ")], 2 /* CLASS */);
-  }), 64 /* STABLE_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Item ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion List "), _hoisted_13]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" FAQ Area ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Container ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Space ")])]);
+  }), 64 /* STABLE_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Item ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion List "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"mt-[60px] flex justify-center xl:mt-20 jos\" data-jos_once=\"1\" data-jos_animation=\"fade-up\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\">\n                <a class=\"btn is-blue is-rounded btn-animation is-large group\" href=\"contact.html\"><span>Vous avez encore des questions ? Contactez-nous</span></a>\n              </div> ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" FAQ Area ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Container ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Space ")])]);
 }
 
 /***/ }),
