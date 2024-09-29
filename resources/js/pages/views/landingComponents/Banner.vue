@@ -10,19 +10,19 @@
                             <!-- Hero Content Block -->
                             <div class="jos mx-auto max-w-[500px] lg:mx-0 lg:max-w-none">
                                 <div class="flex flex-col items-center justify-center text-center lg:items-start lg:justify-normal lg:text-left">
-                                    <h1 class="mb-6 text-4xl font-extrabold leading-[1.11] -tracking-[1px] md:text-5xl lg:text-6xl xl:text-7xl xxl:text-[90px]">
-                                        Digitalisez et Fidélisez avec QR Resto
+                                    <h1 class="mt-12 text-4xl font-extrabold leading-[1.11] -tracking-[1px] md:text-3xl lg:text-xl xl:text-5xl xxl:text-[60px]">
+                                        RestoQR : Où la technologie rencontre la gastronomie
                                     </h1>
-                                    <p class="mb-10 max-w-[624px] xl:mb-[50px]">
-                                        Digitalisez votre restaurant avec notre solution tout-en-un : créez des menus digitaux personnalisés, permettez à vos clients de passer commande et de payer en ligne facilement. Collectez et gérez les avis clients pour améliorer constamment votre service et fidéliser votre clientèle.
+                                    <p class="mb-10 mt-4 max-w-[624px] xl:mb-[50px] sm:max-w-[100px] text-sm md:text-lg lg:text-lg xl:text-xl">
+                                        Imaginez un monde où les menus parlent, Les commandes volent instantanément en cuisine,Les erreurs s'évaporent comme par magie,Les files d'attente deviennent un lointain souvenir,Vos bénéfices grimpent plus vite qu'un soufflé au fromage, et les clients repartent avec le sourire. Ce n'est pas de la science-fiction. C'est RestoQR.
                                     </p>
                                     <div class="mb-6 flex flex-wrap justify-center gap-5 sm:justify-normal">
-                                        <a href="/register" class="btn is-purple btn-animation is-large inline-block rounded"><span>Démarrer maintenant</span></a>
+                                        <a href="/register" class="btn is-blue is-rounded btn-animation is-large group is-large inline-block rounded"><span>Démarrer maintenant</span></a>
                                         <a href="/#about" class="btn is-outline-black btn-animation is-large inline-block rounded"><span>En savoir plus</span></a>
                                     </div>
                                     <p class="flex gap-[10px] text-base font-semibold">
                                         <img src="landing/img/icons/icon-green-star.svg" alt="icon-green-star" width="25" height="24" />
-                                        Classé 4.9/5 - sur plus de 600 avis
+                                        Classé 4.9/5 - sur plus de 60 avis
                                     </p>
                                 </div>
                             </div>

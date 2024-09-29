@@ -18,7 +18,7 @@
                             </div>
                             <!-- Section Content Wrapper -->
                             <div class="flex justify-center jos" data-jos_once="1" data-jos_animation="fade-up" data-jos_timingfunction="ease" data-jos_duration="0.7" data-jos_delay="0.5" data-jos_counter="1">
-                                <a href="#" class="btn is-black btn-animation is-large inline-block rounded">
+                                <a href="/register" class="btn is-black btn-animation is-large inline-block rounded">
                                     <span>Demarrez maintenant</span>
                                 </a>
                             </div>

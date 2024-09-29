@@ -23876,8 +23876,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _landingComponents_Banner_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./landingComponents/Banner.vue */ "./resources/js/pages/views/landingComponents/Banner.vue");
 /* harmony import */ var _landingComponents_Feature_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./landingComponents/Feature.vue */ "./resources/js/pages/views/landingComponents/Feature.vue");
 /* harmony import */ var _landingComponents_Who_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./landingComponents/Who.vue */ "./resources/js/pages/views/landingComponents/Who.vue");
-/* harmony import */ var _landingComponents_Testimonial_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./landingComponents/Testimonial.vue */ "./resources/js/pages/views/landingComponents/Testimonial.vue");
-/* harmony import */ var _landingComponents_Footer_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./landingComponents/Footer.vue */ "./resources/js/pages/views/landingComponents/Footer.vue");
+/* harmony import */ var _landingComponents_WhyChoose_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./landingComponents/WhyChoose.vue */ "./resources/js/pages/views/landingComponents/WhyChoose.vue");
+/* harmony import */ var _landingComponents_Testimonial_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./landingComponents/Testimonial.vue */ "./resources/js/pages/views/landingComponents/Testimonial.vue");
+/* harmony import */ var _landingComponents_Footer_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./landingComponents/Footer.vue */ "./resources/js/pages/views/landingComponents/Footer.vue");
+
 
 
 
@@ -23894,8 +23896,9 @@ __webpack_require__.r(__webpack_exports__);
       Banner: _landingComponents_Banner_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
       Feature: _landingComponents_Feature_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       Who: _landingComponents_Who_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-      Testimonial: _landingComponents_Testimonial_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      Footer: _landingComponents_Footer_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+      WhyChoose: _landingComponents_WhyChoose_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      Testimonial: _landingComponents_Testimonial_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      Footer: _landingComponents_Footer_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -23925,10 +23928,98 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var __expose = _ref.expose;
     __expose();
+    var isMenuOpen = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      var openBtn = document.getElementById('openBtn');
+      var mobileMenu = document.querySelector('.menu-block');
+      var mobileMenuClose = document.querySelector('.mobile-menu-close');
+      var goBackBtn = document.querySelector('.go-back');
+      openBtn.addEventListener('click', function () {
+        mobileMenu.classList.add('active');
+        document.body.classList.add('overflow-hidden');
+        isMenuOpen.value = true;
+      });
+      mobileMenuClose.addEventListener('click', function () {
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('overflow-hidden');
+        isMenuOpen.value = false;
+      });
+      goBackBtn.addEventListener('click', function () {
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('overflow-hidden');
+        isMenuOpen.value = false;
+      });
+    });
     var __returned__ = {
+      isMenuOpen: isMenuOpen,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
-      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
-      onBeforeMount: vue__WEBPACK_IMPORTED_MODULE_0__.onBeforeMount
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=script&setup=true&lang=js":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=script&setup=true&lang=js ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  __name: 'WhyChoose',
+  setup: function setup(__props, _ref) {
+    var __expose = _ref.expose;
+    __expose();
+    var activeIndex = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
+    var faqItems = [{
+      question: "1. Expérience client améliorée",
+      answerBullets: ["-Menus digitalisés via QR code pour une consultation facile et rapide", "-Commandes en ligne réduisant les erreurs et le temps d'attente", "-Suivi en temps réel du statut des commandes", "-Possibilité pour les clients de laisser des avis et des notes"]
+    }, {
+      question: "2. Augmentation de la productivité du personnel",
+      answerBullets: ["-Moins de tâches répétitives de prise de commande manuelle", "-Gestion centralisée des commandes facilitant la coordination", "-Libération du temps du personnel pour se concentrer sur l'accueil et le service"]
+    }, {
+      question: "3. Réduction des coûts opérationnels",
+      answerBullets: ["-Moins de coûts d'impression et de mise à jour des menus physiques", "-Optimisation des stocks grâce aux analyses de ventes", "-Diminution du gaspillage alimentaire"]
+    }, {
+      question: "4. Adaptabilité et personnalisation",
+      answerBullets: ["-Menus dynamiques faciles à mettre à jour", "-Création d'offres spéciales et de promotions sur mesure", "-Intégration des réseaux sociaux et des programmes de fidélité"]
+    }, {
+      question: "5. Sécurité et hygiène",
+      answerBullets: ["-Réduction des contacts physiques avec les menus"
+      // "-Options de paiement sans contact pour plus de sécurité"
+      ]
+    }, {
+      question: "6. Flexibilité et évolutivité",
+      answerBullets: ["-Adaptation à différents types de restaurants", "-Possibilité d'ajouter de nouvelles fonctionnalités au fur et à mesure"]
+    }, {
+      question: "7. Rapports et analyses détaillés",
+      answerBullets: ["-Statistiques de vente pour identifier les tendances", "-Aide à la prise de décision pour optimiser les commandes"]
+    }];
+    var toggleAccordion = function toggleAccordion(index) {
+      if (activeIndex.value === index) {
+        activeIndex.value = null;
+      } else {
+        activeIndex.value = index;
+      }
+    };
+    var __returned__ = {
+      activeIndex: activeIndex,
+      faqItems: faqItems,
+      toggleAccordion: toggleAccordion,
+      ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -24906,10 +24997,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "page-wrapper relative z-[1] bg-ColorAlmond"
+  "class": "page-wrapper relative z-[1] bg-white"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Header"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Banner"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Feature"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Who"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Testimonial"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Footer"])]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Header"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Banner"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Feature"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Who"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["WhyChoose"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Testimonial"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Footer"])]);
 }
 
 /***/ }),
@@ -24927,7 +25018,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"section-hero\"><!-- Section Space --><div class=\"pb-20 pt-28 md:pt-36 lg:pb-[100px] lg:pt-[150px] xxl:pb-[120px] xxl:pt-[185px]\"><!-- Section Container --><div class=\"container-default\" id=\"home\"><!-- Hero Area --><div class=\"grid items-center gap-12 lg:grid-cols-[1fr,minmax(0,_0.8fr)] lg:gap-[50px]\"><!-- Hero Content Block --><div class=\"jos mx-auto max-w-[500px] lg:mx-0 lg:max-w-none\"><div class=\"flex flex-col items-center justify-center text-center lg:items-start lg:justify-normal lg:text-left\"><h1 class=\"mb-6 text-4xl font-extrabold leading-[1.11] -tracking-[1px] md:text-5xl lg:text-6xl xl:text-7xl xxl:text-[90px]\"> Digitalisez et Fidélisez avec QR Resto </h1><p class=\"mb-10 max-w-[624px] xl:mb-[50px]\"> Digitalisez votre restaurant avec notre solution tout-en-un : créez des menus digitaux personnalisés, permettez à vos clients de passer commande et de payer en ligne facilement. Collectez et gérez les avis clients pour améliorer constamment votre service et fidéliser votre clientèle. </p><div class=\"mb-6 flex flex-wrap justify-center gap-5 sm:justify-normal\"><a href=\"/register\" class=\"btn is-purple btn-animation is-large inline-block rounded\"><span>Démarrer maintenant</span></a><a href=\"/#about\" class=\"btn is-outline-black btn-animation is-large inline-block rounded\"><span>En savoir plus</span></a></div><p class=\"flex gap-[10px] text-base font-semibold\"><img src=\"landing/img/icons/icon-green-star.svg\" alt=\"icon-green-star\" width=\"25\" height=\"24\"> Classé 4.9/5 - sur plus de 600 avis </p></div></div><!-- Hero Content Block --><!-- Hero Image Block --><div class=\"jos\"><div class=\"relative mx-auto h-auto max-w-[280px] sm:max-w-[500px] lg:ml-auto lg:mr-0\"><!-- Hero Main Image --><img src=\"/img1.png\" alt=\"hero-img\" width=\"499\" height=\"1255\" class=\"h-[905px] w-[499px] rounded-[50%]\"><!-- Hero Avatar Image --><img src=\"/img5.png\" alt=\"hero-avatar-img-1\" width=\"400\" height=\"400\" class=\"absolute -left-[35px] top-[150px] h-[100px] w-[100px] rounded-[50%]\"><!-- Hero Avatar Image --><img src=\"img3.png\" alt=\"hero-avatar-img-2\" width=\"408\" height=\"408\" class=\"absolute -right-[39px] bottom-10 h-[78px] w-[78px] rounded-[50%]\"><!-- Hero Shape --><img src=\"landing/img/elements/hero-2-shape-1.svg\" alt=\"hero-2-shape-1\" width=\"90\" height=\"91\" class=\"absolute -right-[45px] -top-[70px]\"></div></div><!-- Hero Image Block --></div><!-- Hero Area --></div><!-- Section Container --></div><!-- Section Space --></section>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"section-hero\"><!-- Section Space --><div class=\"pb-20 pt-28 md:pt-36 lg:pb-[100px] lg:pt-[150px] xxl:pb-[120px] xxl:pt-[185px]\"><!-- Section Container --><div class=\"container-default\" id=\"home\"><!-- Hero Area --><div class=\"grid items-center gap-12 lg:grid-cols-[1fr,minmax(0,_0.8fr)] lg:gap-[50px]\"><!-- Hero Content Block --><div class=\"jos mx-auto max-w-[500px] lg:mx-0 lg:max-w-none\"><div class=\"flex flex-col items-center justify-center text-center lg:items-start lg:justify-normal lg:text-left\"><h1 class=\"mt-12 text-4xl font-extrabold leading-[1.11] -tracking-[1px] md:text-3xl lg:text-xl xl:text-5xl xxl:text-[60px]\"> RestoQR : Où la technologie rencontre la gastronomie </h1><p class=\"mb-10 mt-4 max-w-[624px] xl:mb-[50px] sm:max-w-[100px] text-sm md:text-lg lg:text-lg xl:text-xl\"> Imaginez un monde où les menus parlent, Les commandes volent instantanément en cuisine,Les erreurs s&#39;évaporent comme par magie,Les files d&#39;attente deviennent un lointain souvenir,Vos bénéfices grimpent plus vite qu&#39;un soufflé au fromage, et les clients repartent avec le sourire. Ce n&#39;est pas de la science-fiction. C&#39;est RestoQR. </p><div class=\"mb-6 flex flex-wrap justify-center gap-5 sm:justify-normal\"><a href=\"/register\" class=\"btn is-blue is-rounded btn-animation is-large group is-large inline-block rounded\"><span>Démarrer maintenant</span></a><a href=\"/#about\" class=\"btn is-outline-black btn-animation is-large inline-block rounded\"><span>En savoir plus</span></a></div><p class=\"flex gap-[10px] text-base font-semibold\"><img src=\"landing/img/icons/icon-green-star.svg\" alt=\"icon-green-star\" width=\"25\" height=\"24\"> Classé 4.9/5 - sur plus de 60 avis </p></div></div><!-- Hero Content Block --><!-- Hero Image Block --><div class=\"jos\"><div class=\"relative mx-auto h-auto max-w-[280px] sm:max-w-[500px] lg:ml-auto lg:mr-0\"><!-- Hero Main Image --><img src=\"/img1.png\" alt=\"hero-img\" width=\"499\" height=\"1255\" class=\"h-[905px] w-[499px] rounded-[50%]\"><!-- Hero Avatar Image --><img src=\"/img5.png\" alt=\"hero-avatar-img-1\" width=\"400\" height=\"400\" class=\"absolute -left-[35px] top-[150px] h-[100px] w-[100px] rounded-[50%]\"><!-- Hero Avatar Image --><img src=\"img3.png\" alt=\"hero-avatar-img-2\" width=\"408\" height=\"408\" class=\"absolute -right-[39px] bottom-10 h-[78px] w-[78px] rounded-[50%]\"><!-- Hero Shape --><img src=\"landing/img/elements/hero-2-shape-1.svg\" alt=\"hero-2-shape-1\" width=\"90\" height=\"91\" class=\"absolute -right-[45px] -top-[70px]\"></div></div><!-- Hero Image Block --></div><!-- Hero Area --></div><!-- Section Container --></div><!-- Section Space --></section>", 1);
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("...::: Hero Section Start :::... "), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("...::: Hero Section End :::... ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
 }
@@ -24948,9 +25039,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  id: "feature"
+  id: "feature",
+  "class": "bg-gray-50",
+  style: {
+    "padding-top": "5rem"
+  }
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-default\"><!-- Section Content Wrapper --><div class=\"mb-[60px] xl:mb-20 jos\" data-jos_once=\"1\" data-jos_animation=\"fade-up\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\"><!-- Section Content Block --><div class=\"mx-auto flex max-w-[636px] flex-col items-center justify-center\"><!-- Section Tag --><!-- &lt;span class=&quot;text-darkborder-ColorDark mb-[30px] inline-block rounded-[50px] border border-ColorDark bg-[#A2DFF5] px-[18.5px] py-[5.5px] text-base font-semibold&quot;&gt;\n                                        Hosting For Every Website&lt;/span&gt; --><!-- Section Tag --><h2 class=\"text-center font-Cabin font-bold leading-[1.12] text-ColorDark xl:text-[56px]\"> Fonctionnalités Clés </h2></div><!-- Section Content Block --></div><!-- Section Content Wrapper --><!-- Service List --><div class=\"grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4\"><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-1.svg\" alt=\"icon-black-home-7-service-1\" width=\"75\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Menus Numériques Personnalisés</a><p> Créez des menus interactifs et attrayants, adaptés à votre offre et à votre ambiance. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0.6\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-3.svg\" alt=\"icon-black-home-7-service-3.svg\" width=\"75\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"service-details.html\">Commandes en Ligne Intégrées</a><p> Permettez à vos clients de passer leurs commandes depuis leur appareil mobile, en toute simplicité </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"2.1\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-8.svg\" alt=\"icon-black-home-7-service-8\" width=\"60\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Paiements Sécurisés et Faciles </a><p> Proposez un processus de paiement intégré, sécurisé et sans friction pour une expérience client optimale. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"1.5\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-6.svg\" alt=\"icon-black-home-7-service-6\" width=\"73\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Gestion des Avis Clients</a><p> Collectez et gérez les avis de vos clients en temps réel pour améliorer constamment vos services. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0.3\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-2.svg\" alt=\"icon-black-home-7-service-2\" width=\"75\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Gestion des Stocks</a><p> Contrôlez efficacement vos niveaux de stock et recevez des alertes pour les réapprovisionnements. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0.9\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-4.svg\" alt=\"icon-black-home-7-service-4\" width=\"69\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Promotions et Offres Spéciales</a><p> Créez et gérez des promotions et des offres spéciales pour attirer et fidéliser vos clients. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"1.2\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-5.svg\" alt=\"icon-black-home-7-service-5\" width=\"73\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Analytique Avancée</a><p> Accédez à des statistiques détaillées et à des rapports pour comprendre et répondre aux besoins de votre clientèle. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"1.8\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-7.svg\" alt=\"icon-black-home-7-service-7\" width=\"75\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Intégration avec les Réseaux Sociaux</a><p> Permettez aux clients de partager leurs expériences sur les réseaux sociaux et intégrez les plateformes pour une visibilité accrue. </p></div></div></div></div><!-- Service Item --></div><!-- Service List --></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-default\"><!-- Section Content Wrapper --><div class=\"mb-[60px] xl:mb-20 jos\" data-jos_once=\"1\" data-jos_animation=\"fade-up\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\"><!-- Section Content Block --><div class=\"mx-auto flex max-w-[636px] flex-col items-center justify-center\"><!-- Section Tag --><!-- &lt;span class=&quot;text-darkborder-ColorDark mb-[30px] inline-block rounded-[50px] border border-ColorDark bg-[#A2DFF5] px-[18.5px] py-[5.5px] text-base font-semibold&quot;&gt;\n                                        Hosting For Every Website&lt;/span&gt; --><!-- Section Tag --><h2 class=\"text-center font-Cabin font-bold leading-[1.12] text-ColorDark xl:text-[56px]\"> Fonctionnalités Clés </h2></div><!-- Section Content Block --></div><!-- Section Content Wrapper --><!-- Service List --><div class=\"grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3\"><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-1.svg\" alt=\"icon-black-home-7-service-1\" width=\"75\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Menus Numériques Personnalisés</a><p> Créez des menus interactifs et attrayants, adaptés à votre offre et à votre ambiance. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0.6\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-3.svg\" alt=\"icon-black-home-7-service-3.svg\" width=\"75\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"service-details.html\">Commandes</a><p> Facilitez l&#39;expérience de vos clients en leur permettant de commander directement depuis leur téléphone mobile, simplement en scannant un code QR. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"2.1\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-8.svg\" alt=\"icon-black-home-7-service-8\" width=\"60\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Suivi du statut des commandes en temps réel</a><p> Permettez aux clients de suivre l&#39;état de leurs commandes en temps réel. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"1.5\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-6.svg\" alt=\"icon-black-home-7-service-6\" width=\"73\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Système de notation et d&#39;avis clients</a><p> Collectez et gérez les avis de vos clients en temps réel pour améliorer constamment vos services. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"1.2\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-5.svg\" alt=\"icon-black-home-7-service-5\" width=\"73\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Statistiques et analyses</a><p> Obtenez des statistiques précises et des rapports pour mieux comprendre les besoins de vos clients et prendre des décisions éclairées sur l&#39;approvisionnement. </p></div></div></div></div><!-- Service Item --><!-- Service Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"1.8\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full after:bg-ColorPurple\"><div class=\"group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]\"><div class=\"mb-[30px] h-[70px] w-auto\"><img src=\"landing/img/icons/icon-black-home-7-service-7.svg\" alt=\"icon-black-home-7-service-7\" width=\"75\" height=\"70\"></div><div><a class=\"mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl\" href=\"/\">Intégration avec les Réseaux Sociaux</a><p> Permettez aux clients de partager leurs expériences sur les réseaux sociaux et intégrez les plateformes pour une visibilité accrue. </p></div></div></div></div><!-- Service Item --></div><!-- Service List --></div>", 1);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [].concat(_hoisted_3));
@@ -24974,7 +25069,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "section-footer"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-ColorBlack\"><!-- Footer Area Top --><div class=\"relative z-10\"><!-- Footer Top Spacing --><div class=\"pb-[60px] pt-20 lg:pb-20 lg:pt-[100px] xl:pt-[120px]\"><!-- Section Container --><div class=\"container-default\"><!-- Section Wrapper --><div class=\"flex flex-wrap items-center justify-center text-center lg:text-left lg:justify-between gap-8\"><!-- Section Block --><div class=\"max-w-[400px] md:max-w-[500px] lg:max-w-[550px]\"><h2 class=\"text-white\"> Prêt à transformer l&#39;expérience de vos clients ? </h2></div><!-- Section Block --><a class=\"btn is-blue is-rounded btn-animation is-large group\" href=\"/regitser\"><span>Demarrez maintenant</span></a></div><!-- Section Wrapper --></div><!-- Section Container --></div><!-- Footer Top Spacing --><!-- CTA Shape --><div class=\"absolute right-[9%] top-8 -z-10 hidden xxl:block\"><img src=\"landing/img/elements/cta-1-shape-1.svg\" alt=\"cta-1-shape-1\" width=\"115\" height=\"130\"></div></div><!-- Footer Area Top --><!-- Horizontal Line Separator --><div class=\"horizontal-line bg-white\"></div><!-- Horizontal Line Separator --><!-- Footer Bottom --><div class=\"bg-white bg-opacity-5\"><!-- Footer Bottom Spacing --><div class=\"py-[18px]\"><!-- Section Container --><div class=\"container-default\"><div class=\"text-center text-white text-opacity-80\"> © Copyright 2024, Tout droit reservé par RESTOqr </div></div><!-- Section Container --></div><!-- Footer Bottom Spacing --></div><!-- Footer Bottom --></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"bg-ColorBlack\"><!-- Footer Area Top --><div class=\"relative z-10\"><!-- Footer Top Spacing --><div class=\"pb-[60px] pt-20 lg:pb-20 lg:pt-[100px] xl:pt-[120px]\"><!-- Section Container --><div class=\"container-default\"><!-- Section Wrapper --><div class=\"flex flex-wrap items-center justify-center text-center lg:text-left lg:justify-between gap-8\"><!-- Section Block --><div class=\"max-w-[400px] md:max-w-[500px] lg:max-w-[550px]\"><h2 class=\"text-white\"> Prêt à transformer l&#39;expérience de vos clients ? </h2></div><!-- Section Block --><a class=\"btn is-blue is-rounded btn-animation is-large group\" href=\"/register\"><span>Demarrez maintenant</span></a></div><!-- Section Wrapper --></div><!-- Section Container --></div><!-- Footer Top Spacing --><!-- CTA Shape --><div class=\"absolute right-[9%] top-8 -z-10 hidden xxl:block\"><img src=\"landing/img/elements/cta-1-shape-1.svg\" alt=\"cta-1-shape-1\" width=\"115\" height=\"130\"></div></div><!-- Footer Area Top --><!-- Horizontal Line Separator --><div class=\"horizontal-line bg-white\"></div><!-- Horizontal Line Separator --><!-- Footer Bottom --><div class=\"bg-white bg-opacity-5\"><!-- Footer Bottom Spacing --><div class=\"py-[18px]\"><!-- Section Container --><div class=\"container-default\"><div class=\"text-center text-white text-opacity-80\"> © Copyright 2024, Tout droit reservé par RESTOqr || contact@restoqr.site </div></div><!-- Section Container --></div><!-- Footer Bottom Spacing --></div><!-- Footer Bottom --></div>", 1);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, [].concat(_hoisted_3));
@@ -24982,10 +25077,10 @@ function render(_ctx, _cache) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace&scoped=true":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace&scoped=true ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -24995,9 +25090,46 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<header class=\"site-header site-header--sticky mobile-sticky-enable is--white py-3\" id=\"sticky-menu\"><div class=\"container-default\"><div class=\"flex items-center justify-between gap-x-8\"><!-- Header Logo --><a class href=\"/\"><img src=\"/RESTOqrLogo.png\" alt=\"logoRESTOqr\" width=\"150\" height=\"64\"></a><!-- Header Logo --><!-- Header Navigation --><div class=\"menu-block-wrapper\"><div class=\"menu-overlay\"></div><nav class=\"menu-block\" id=\"append-menu-header\"><div class=\"mobile-menu-head\"><div class=\"go-back\"><i class=\"fa-solid fa-angle-left\"></i></div><div class=\"current-menu-title\"></div><div class=\"mobile-menu-close\">×</div></div><ul class=\"site-menu-main\"><li class=\"nav-item nav-item-has-children\"><a class=\"nav-link-item drop-trigger\" href=\"/\">Accueil</a></li><li class=\"nav-item nav-item-has-children\"><a href=\"/#feature\" class=\"nav-link-item drop-trigger\">Fonctionnalités</a></li><!-- &lt;li class=&quot;nav-item nav-item-has-children&quot;&gt;\n                                    &lt;a href=&quot;#interface&quot; class=&quot;nav-link-item drop-trigger&quot;&gt;Interfaces&lt;/a&gt;\n                                &lt;/li&gt; --><li class=\"nav-item nav-item-has-children\"><a href=\"/#about\" class=\"nav-link-item drop-trigger\">A propos</a></li><!-- &lt;li class=&quot;nav-item nav-item-has-children&quot;&gt;\n                                    &lt;a href=&quot;#whychooseus&quot; class=&quot;nav-link-item drop-trigger&quot;&gt;Pourquoi nous choisir?&lt;/a&gt;\n                                &lt;/li&gt; --></ul></nav></div><!-- Header Navigation --><!-- Header User Event --><div class=\"flex items-center gap-6\"><a class=\"btn-text hidden hover:text-ColorPurple sm:inline-block\" href=\"/login\">Connexion</a><a class=\"btn is-lunar-green is-rounded btn-animation group hidden sm:inline-block\" href=\"/register\"><span> Inscription</span></a><!-- Responsive Offcanvas Menu Button --><div class=\"block lg:hidden\"><button id=\"openBtn\" class=\"hamburger-menu mobile-menu-trigger\"><span></span><span></span><span></span></button></div></div><!-- Header User Event --></div></div></header>", 1);
+var _withScopeId = function _withScopeId(n) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)("data-v-55984ace"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;
+};
+var _hoisted_1 = {
+  "class": "site-header bg-white site-header--sticky mobile-sticky-enable is--white"
+};
+var _hoisted_2 = {
+  "class": "container-default"
+};
+var _hoisted_3 = {
+  "class": "flex items-center justify-between gap-x-8"
+};
+var _hoisted_4 = /*#__PURE__*/_withScopeId(function () {
+  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    "class": "",
+    href: "/"
+  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
+    src: "/RESTOqrLogo.png",
+    alt: "logoRESTOqr",
+    width: "150",
+    height: "64"
+  })], -1 /* HOISTED */);
+});
+var _hoisted_5 = {
+  "class": "menu-block-wrapper"
+};
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"mobile-menu-head\" data-v-55984ace><div class=\"go-back\" data-v-55984ace><i class=\"fa-solid fa-angle-left\" data-v-55984ace></i></div><div class=\"current-menu-title\" data-v-55984ace></div><div class=\"mobile-menu-close\" data-v-55984ace>×</div></div><ul class=\"site-menu-main\" data-v-55984ace><li class=\"nav-item nav-item-has-children\" data-v-55984ace><a class=\"nav-link-item drop-trigger\" href=\"/\" data-v-55984ace>Accueil</a></li><li class=\"nav-item nav-item-has-children\" data-v-55984ace><a href=\"/#feature\" class=\"nav-link-item drop-trigger\" data-v-55984ace>Fonctionnalités</a></li><li class=\"nav-item nav-item-has-children\" data-v-55984ace><a href=\"/#about\" class=\"nav-link-item drop-trigger\" data-v-55984ace>A propos</a></li><!-- Boutons de connexion et d&#39;inscription dans le menu mobile uniquement --><li class=\"nav-item-auth\" data-v-55984ace><a class=\"btn-text block is-rounded hover:text-ColorPurple\" href=\"/login\" data-v-55984ace>Connexion</a></li><li class=\"nav-item-auth\" data-v-55984ace><a class=\"btn is-lunar-green is-rounded btn-animation group block\" href=\"/register\" data-v-55984ace><span data-v-55984ace>Inscription</span></a></li></ul>", 2);
+var _hoisted_8 = [_hoisted_6];
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"flex items-center gap-6\" data-v-55984ace><!-- Boutons de connexion et d&#39;inscription pour les grands écrans uniquement --><a class=\"btn-text hover:text-ColorPurple hidden lg:block\" href=\"/login\" data-v-55984ace>Connexion</a><a class=\"btn is-blue is-rounded btn-animation is-large group hidden lg:block\" href=\"/register\" data-v-55984ace><span data-v-55984ace>Inscription</span></a><!-- Responsive Offcanvas Menu Button --><div class=\"block lg:hidden\" data-v-55984ace><button id=\"openBtn\" class=\"hamburger-menu mobile-menu-trigger\" data-v-55984ace><span data-v-55984ace></span><span data-v-55984ace></span><span data-v-55984ace></span></button></div></div>", 1);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("...::: Header Start :::... "), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("...::: Header End :::... ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("...::: Header Start :::... "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("header", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header Logo "), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header Logo "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header Navigation "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["menu-overlay", {
+      'active': $setup.isMenuOpen
+    }])
+  }, null, 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["menu-block", {
+      'active': $setup.isMenuOpen
+    }]),
+    id: "append-menu-header"
+  }, [].concat(_hoisted_8), 2 /* CLASS */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header Navigation "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header User Event "), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header User Event ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("...::: Header End :::... ")], 2112 /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */);
 }
 
 /***/ }),
@@ -25018,7 +25150,7 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "section-testimonial"
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"section-space\"><!-- Section Container --><div class=\"container-default\"><!-- Section Content Wrapper --><div class=\"mb-[60px] xl:mb-20 jos\" data-jos_once=\"1\" data-jos_animation=\"fade-up\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\"><!-- Section Content Block --><div class=\"mx-auto max-w-[750px]\"><div class=\"mb-5\"><h2 class=\"text-center font-Sora text-4xl font-bold leading-[1.16] -tracking-[0.5px] text-[#0E0E0E] lg:text-5xl xl:text-[52px] xxl:text-[60px]\"> Ils nous font confiance </h2></div><p class=\"text-center text-[#2c2c2c]\"> Nous sommes fiers de compter de nombreux clients qui ont confiance en nous pour leurs projets de développement web. Nous travaillons dur chaque jour pour vous offrir des produits de haute qualité et des services de premier ordre. Nous espérons que vous trouverez notre travail convaincant et que nous pourrons vous aider à atteindre vos objectifs en ligne. </p></div><!-- Section Content Block --></div><!-- Section Content Wrapper --><!-- Testimonial List --><div class=\"gris-cols-1 grid gap-[30px] md:grid-cols-2 xl:grid-cols-3\"><!-- Testimonial Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full\"><div class=\"flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10\"><div class=\"h-auto w-16\"><img src=\"landing/img/icons/icon-purple-quote.svg\" alt=\"icon-purple-quote\" width=\"64\" height=\"60\" class=\"h-auto w-full\"></div><blockquote class=\"text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl\"> Nous utilisons RESTOqr pour protéger nos visiteurs. Les menus sales sont du passé. Pour l&#39;instant, les clients signalent pas de problèmes. Et ils aiment notre nouveau menu en ligne </blockquote><div class=\"flex items-center gap-x-[17px]\"><!-- &lt;div class=&quot;h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]&quot;&gt;\n                                                &lt;img src=&quot;landing/img/th-12/testimonial-user-img-1.png&quot; alt=&quot;testimonial-user-img-1&quot; width=&quot;60&quot; height=&quot;60&quot; class=&quot;h-full w-full&quot;&gt;\n                                            &lt;/div&gt; --><div class=\"text-xl font-semibold capitalize text-[#0E0E0E]\"> Dominika Smith <span class=\"block text-lg font-normal\">Brooklyn Taco</span></div></div></div></div></div><!-- Testimonial Item --><!-- Testimonial Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0.3\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full\"><div class=\"flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10\"><div class=\"h-auto w-16\"><img src=\"landing/img/icons/icon-purple-quote.svg\" alt=\"icon-purple-quote\" width=\"64\" height=\"60\" class=\"h-auto w-full\"></div><blockquote class=\"text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl\"> Plus d&#39;impression et de réimpression pour quelques petites erreurs dans notre menu ou un changement de prix. Nous aimons ce que RESTOqr nous ont apporté 👍 </blockquote><div class=\"flex items-center gap-x-[17px]\"><!-- &lt;div class=&quot;h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]&quot;&gt;\n                                                &lt;img src=&quot;landing/img/th-12/testimonial-user-img-2.png&quot; alt=&quot;testimonial-user-img-2&quot; width=&quot;60&quot; height=&quot;60&quot; class=&quot;h-full w-full&quot;&gt;\n                                            &lt;/div&gt; --><div class=\"text-xl font-semibold capitalize text-[#0E0E0E]\"> Adam Jonney <span class=\"block text-lg font-normal\">Awang Italian Restaurant</span></div></div></div></div></div><!-- Testimonial Item --><!-- Testimonial Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0.6\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full\"><div class=\"flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10\"><div class=\"h-auto w-16\"><img src=\"landing/img/icons/icon-purple-quote.svg\" alt=\"icon-purple-quote\" width=\"64\" height=\"60\" class=\"h-auto w-full\"></div><blockquote class=\"text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl\"> RESTOqr était parfaitement adapté à la situation de la pandémie. Nous devrions avoir utilisé ce type de menu bien plus tôt 😍 </blockquote><div class=\"flex items-center gap-x-[17px]\"><!-- &lt;div class=&quot;h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]&quot;&gt;\n                                                &lt;img src=&quot;landing/img/th-12/testimonial-user-img-3.png&quot; alt=&quot;testimonial-user-img-3&quot; width=&quot;60&quot; height=&quot;60&quot; class=&quot;h-full w-full&quot;&gt;\n                                            &lt;/div&gt; --><div class=\"text-xl font-semibold capitalize text-[#0E0E0E]\"> Robert Mack <span class=\"block text-lg font-normal\">Burger 2Go</span></div></div></div></div></div><!-- Testimonial Item --></div><!-- Testimonial List --></div><!-- Section Container --></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"section-space\"><!-- Section Container --><div class=\"container-default\"><!-- Section Content Wrapper --><div class=\"mb-[60px] xl:mb-20 jos\" data-jos_once=\"1\" data-jos_animation=\"fade-up\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\"><!-- Section Content Block --><div class=\"mx-auto max-w-[750px]\"><div class=\"mb-5\"><h2 class=\"text-center font-Sora text-4xl font-bold leading-[1.16] -tracking-[0.5px] text-[#0E0E0E] lg:text-5xl xl:text-[52px] xxl:text-[60px]\"> Ils nous font confiance </h2></div><p class=\"text-center text-[#2c2c2c]\"> Nous sommes fiers de compter de nombreux clients qui ont confiance en nous pour leurs projets de développement web. Nous travaillons dur chaque jour pour vous offrir des produits de haute qualité et des services de premier ordre. Nous espérons que vous trouverez notre travail convaincant et que nous pourrons vous aider à atteindre vos objectifs en ligne. </p></div><!-- Section Content Block --></div><!-- Section Content Wrapper --><!-- Testimonial List --><div class=\"gris-cols-1 grid gap-[30px] md:grid-cols-2 xl:grid-cols-3\"><!-- Testimonial Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full\"><div class=\"flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10\"><div class=\"h-auto w-16\"><img src=\"landing/img/icons/icon-purple-quote.svg\" alt=\"icon-purple-quote\" width=\"64\" height=\"60\" class=\"h-auto w-full\"></div><blockquote class=\"text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl\"> Nous utilisons RESTOqr pour protéger nos visiteurs. Les menus sales sont du passé. Pour l&#39;instant, les clients signalent pas de problèmes. Et ils aiment notre nouveau menu en ligne </blockquote><div class=\"flex items-center gap-x-[17px]\"><!-- &lt;div class=&quot;h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]&quot;&gt;\r\n                                                &lt;img src=&quot;landing/img/th-12/testimonial-user-img-1.png&quot; alt=&quot;testimonial-user-img-1&quot; width=&quot;60&quot; height=&quot;60&quot; class=&quot;h-full w-full&quot;&gt;\r\n                                            &lt;/div&gt; --><div class=\"text-xl font-semibold capitalize text-[#0E0E0E]\"> Dominika Smith <span class=\"block text-lg font-normal\">Brooklyn Taco</span></div></div></div></div></div><!-- Testimonial Item --><!-- Testimonial Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0.3\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full\"><div class=\"flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10\"><div class=\"h-auto w-16\"><img src=\"landing/img/icons/icon-purple-quote.svg\" alt=\"icon-purple-quote\" width=\"64\" height=\"60\" class=\"h-auto w-full\"></div><blockquote class=\"text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl\"> Plus d&#39;impression et de réimpression pour quelques petites erreurs dans notre menu ou un changement de prix. Nous aimons ce que RESTOqr nous ont apporté 👍 </blockquote><div class=\"flex items-center gap-x-[17px]\"><!-- &lt;div class=&quot;h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]&quot;&gt;\r\n                                                &lt;img src=&quot;landing/img/th-12/testimonial-user-img-2.png&quot; alt=&quot;testimonial-user-img-2&quot; width=&quot;60&quot; height=&quot;60&quot; class=&quot;h-full w-full&quot;&gt;\r\n                                            &lt;/div&gt; --><div class=\"text-xl font-semibold capitalize text-[#0E0E0E]\"> Adam Jonney <span class=\"block text-lg font-normal\">Awang Italian Restaurant</span></div></div></div></div></div><!-- Testimonial Item --><!-- Testimonial Item --><div class=\"jos\" data-jos_animation=\"flip-left\" data-jos_delay=\"0.6\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_counter=\"1\"><div class=\"hover-solid-shadow h-full\"><div class=\"flex h-full flex-col gap-y-10 rounded-[10px] border-2 border-[#0E0E0E] bg-[#FEF7E6] p-10\"><div class=\"h-auto w-16\"><img src=\"landing/img/icons/icon-purple-quote.svg\" alt=\"icon-purple-quote\" width=\"64\" height=\"60\" class=\"h-auto w-full\"></div><blockquote class=\"text-xl font-semibold -tracking-[0.5px] text-[#0E0E0E] lg:text-2xl\"> RESTOqr était parfaitement adapté à la situation de la pandémie. Nous devrions avoir utilisé ce type de menu bien plus tôt 😍 </blockquote><div class=\"flex items-center gap-x-[17px]\"><!-- &lt;div class=&quot;h-[60px] w-[60px] overflow-hidden rounded-[50%] border-2 border-[#0E0E0E]&quot;&gt;\r\n                                                &lt;img src=&quot;landing/img/th-12/testimonial-user-img-3.png&quot; alt=&quot;testimonial-user-img-3&quot; width=&quot;60&quot; height=&quot;60&quot; class=&quot;h-full w-full&quot;&gt;\r\n                                            &lt;/div&gt; --><div class=\"text-xl font-semibold capitalize text-[#0E0E0E]\"> Robert Mack <span class=\"block text-lg font-normal\">Burger 2Go</span></div></div></div></div></div><!-- Testimonial Item --></div><!-- Testimonial List --></div><!-- Section Container --></div>", 1);
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Space "), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Space ")]);
 }
@@ -25039,13 +25171,127 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "section-conten mt-16",
-  id: "about"
+  "class": "section-content pt-16 mt-16",
+  id: "about",
+  style: {
+    "margin-top": "5rem",
+    "padding-top": "5rem",
+    "padding-bottom": "2rem"
+  }
 };
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-default\"><div class=\"grid items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1fr_minmax(0,_1.2fr)] xl:gap-[135px]\"><!-- Content Block Left --><div class=\"lg:order-2 jos\" data-jos_animation=\"fade-left\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\"><!-- Section Wrapper --><div><!-- Section Block --><div class=\"mb-5\"><h2> Comment ça marche ? </h2></div><!-- Section Block --></div><!-- Section Wrapper --><p> Étapes illustrées : </p><ul class=\"flex flex-col gap-5 font-semibold text-black\"><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\">Inscription : <span class=\"text-gray-600\">&quot;Créez votre compte en quelques minutes.&quot;</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\">Création du menu : <span class=\"text-gray-600\">&quot;Ajoutez et personnalisez vos plats.&quot;</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\">Génération du QR code : <span class=\"text-gray-600\">&quot;Générez et imprimez votre QR code unique.&quot;</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\">Utilisation par les clients : <span class=\"text-gray-600\">&quot;Vos clients scannent et accèdent au menu.&quot;</span></span></li></ul></div><!-- Content Block Left --><!-- Content Block Right --><div class=\"relative lg:order-1 jos\" data-jos_animation=\"fade-right\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\"><div class=\"rounded-[10px] bg-[#FFFFFF] p-[30px] lg:p-10 xl:p-[50px]\"><!-- Content Image --><img src=\"img1.png\" alt=\"content-img-1\" width=\"426\" height=\"398\" class=\"h-auto w-full rounded-[10px]\"></div><!-- Content Shape --><img src=\"landing/img/elements/content-shape-2.svg\" alt=\"content-shape-1\" width=\"107\" height=\"105\" class=\"absolute -bottom-1 -left-1\"></div><!-- Content Block Right --></div></div>", 1);
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container-default\"><div class=\"grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-24 xl:grid-cols-[1fr_minmax(0,_1.2fr)] xl:gap-[135px]\"><!-- Content Block Left --><div class=\"lg:order-2 jos\" data-jos_animation=\"fade-left\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\"><h2 class=\"mb-8 text-3xl font-bold\">Comment ça marche ?</h2><ul class=\"flex flex-col gap-5 font-semibold text-black\"><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\"> Inscription <span class=\"text-gray-600\">Créez votre compte en quelques secondes.</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\"> Personnalisation <span class=\"text-gray-600\">Personnalisez l&#39;interface selon l&#39;identité visuelle de votre restaurant.</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\"> Création du menu <span class=\"text-gray-600\">Ajoutez et personnalisez vos plats.</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\"> Génération du QR code <span class=\"text-gray-600\">Générez et imprimez votre QR code pour chaque table.</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\"> Réception et traitement des commandes <span class=\"text-gray-600\">Recevez les commandes en temps réel sur votre tableau de bord.</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\"> Analyse et optimisation <span class=\"text-gray-600\">Statistiques ventes et préférences clients pour optimiser menu et stock.</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\"> Fidélisation et marketing <span class=\"text-gray-600\">Collectez et utilisez les données pour améliorer et personnaliser votre offre.</span></span></li><li class=\"flex items-start\"><span class=\"mr-3 inline-block text-xl text-blue-500\"><i class=\"fa-solid fa-badge-check\"></i></span><span class=\"flex-1\"> Utilisation par les clients <span class=\"text-gray-600\">Scannez le QR code - Consultez le menu et passez commande - Suivez le statut de votre commande - Profitez de votre repas et laissez un avis.</span></span></li></ul></div><!-- Content Block Left --><!-- Content Block Right --><div class=\"relative lg:order-1 jos\" data-jos_animation=\"fade-right\" data-jos_once=\"1\" data-jos_timingfunction=\"ease\" data-jos_duration=\"0.7\" data-jos_delay=\"0.5\" data-jos_counter=\"1\"><div class=\"rounded-[10px] bg-white p-[30px] lg:p-10 xl:p-[50px]\"><img src=\"RESTOqrLogo.png\" alt=\"content-img-1\" width=\"426\" height=\"398\" class=\"h-auto w-full rounded-[10px]\"></div><img src=\"landing/img/elements/content-shape-2.svg\" alt=\"content-shape-1\" width=\"107\" height=\"105\" class=\"absolute -bottom-1 -left-1\"></div><!-- Content Block Right --></div></div>", 1);
 var _hoisted_3 = [_hoisted_2];
 function render(_ctx, _cache) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [].concat(_hoisted_3));
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=template&id=138e8aa3":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=template&id=138e8aa3 ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "section-faq bg-gray-50"
+};
+var _hoisted_2 = {
+  "class": "relative z-10 overflow-hidden"
+};
+var _hoisted_3 = {
+  "class": "section-space"
+};
+var _hoisted_4 = {
+  "class": "container-default"
+};
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mb-[60px] xl:mb-20 jos",
+  "data-jos_once": "1",
+  "data-jos_animation": "fade-up",
+  "data-jos_timingfunction": "ease",
+  "data-jos_duration": "0.7",
+  "data-jos_delay": "0.5",
+  "data-jos_counter": "1"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Content Block "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mx-auto max-w-[625px]"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "text-center"
+}, " Principaux avantages de RestoQR pour votre restaurant ")]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Content Block ")], -1 /* HOISTED */);
+var _hoisted_6 = {
+  "class": "jos",
+  "data-jos_once": "1",
+  "data-jos_animation": "fade-up",
+  "data-jos_timingfunction": "ease",
+  "data-jos_duration": "0.7",
+  "data-jos_delay": "0.5",
+  "data-jos_counter": "1"
+};
+var _hoisted_7 = {
+  "class": "mx-auto max-w-[1076px] rounded-[10px] border border-ColorBlack"
+};
+var _hoisted_8 = {
+  "class": "accordion-header flex justify-between items-center gap-6 text-xl font-semibold text-ColorBlack"
+};
+var _hoisted_9 = ["onClick"];
+var _hoisted_10 = ["onClick"];
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "inline-block h-0.5 w-[10px] rounded-sm bg-white"
+}, null, -1 /* HOISTED */);
+var _hoisted_12 = {
+  "class": "pt-5"
+};
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "mt-[60px] flex justify-center xl:mt-20 jos",
+  "data-jos_once": "1",
+  "data-jos_animation": "fade-up",
+  "data-jos_timingfunction": "ease",
+  "data-jos_duration": "0.7",
+  "data-jos_delay": "0.5",
+  "data-jos_counter": "1"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "btn is-blue is-rounded btn-animation is-large group",
+  href: "contact.html"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Vous avez encore des questions ? Contactez-nous")])], -1 /* HOISTED */);
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("section", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Space "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Container "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Content Wrapper "), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Content Wrapper "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" FAQ Area "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion List "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Item "), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.faqItems, function (item, index) {
+    return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+      key: index,
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["accordion-item overflow-hidden border-b border-ColorBlack p-[30px] last:border-b-0", {
+        'active': $setup.activeIndex === index
+      }])
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Header "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      "class": "flex-1 text-left",
+      onClick: function onClick($event) {
+        return $setup.toggleAccordion(index);
+      }
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.question), 9 /* TEXT, PROPS */, _hoisted_9), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+      "class": "accordion-icon-1 relative flex h-5 w-5 items-center justify-center rounded-[50%] bg-ColorBlue",
+      onClick: function onClick($event) {
+        return $setup.toggleAccordion(index);
+      }
+    }, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["absolute inline-block h-[10px] w-0.5 rounded-sm bg-white", {
+        'rotate-90': $setup.activeIndex === index
+      }])
+    }, null, 2 /* CLASS */)], 8 /* PROPS */, _hoisted_10)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Header "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Body "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
+        'h-auto': $setup.activeIndex === index,
+        'h-0 overflow-hidden': $setup.activeIndex !== index
+      }, "accordion-body max-w-[826px] opacity-80 transition-all duration-300 ease-in-out"])
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_12, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)(item.answerBullets, function (bullet, bulletIndex) {
+      return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
+        key: bulletIndex
+      }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bullet), 1 /* TEXT */);
+    }), 128 /* KEYED_FRAGMENT */))])], 2 /* CLASS */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Body ")], 2 /* CLASS */);
+  }), 64 /* STABLE_FRAGMENT */)), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion Item ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Accordion List "), _hoisted_13]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" FAQ Area ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Container ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Section Space ")])]);
 }
 
 /***/ }),
@@ -25215,7 +25461,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.sendOrder();
     }),
     "class": "py-2 px-5 inline-block font-semibold tracking-wide border align-middle duration-500 text-base text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md me-2 mt-2"
-  }, "Lancer commande"), _hoisted_29]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"flex justify-between p-4\">\n                                    <span class=\"font-semibold text-lg\">Subtotal :</span>\n                                    <span class=\"text-slate-400\">$ 1500</span>\n                                </li>\n                                <li class=\"flex justify-between p-4 border-t border-gray-100 dark:border-gray-800\">\n                                    <span class=\"font-semibold text-lg\">Taxes :</span>\n                                    <span class=\"text-slate-400\">$ 150</span>\n                                </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_32, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.data.getCartTotal) + " F CFA", 1 /* TEXT */)])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" End "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Footer"])], 64 /* STABLE_FRAGMENT */);
+  }, "Lancer commande"), _hoisted_29]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_30, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_31, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <li class=\"flex justify-between p-4\">\r\n                                    <span class=\"font-semibold text-lg\">Subtotal :</span>\r\n                                    <span class=\"text-slate-400\">$ 1500</span>\r\n                                </li>\r\n                                <li class=\"flex justify-between p-4 border-t border-gray-100 dark:border-gray-800\">\r\n                                    <span class=\"font-semibold text-lg\">Taxes :</span>\r\n                                    <span class=\"text-slate-400\">$ 150</span>\r\n                                </li> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", _hoisted_32, [_hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_34, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.data.getCartTotal) + " F CFA", 1 /* TEXT */)])])])])])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end section"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" End "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Footer"])], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -25247,7 +25493,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8 /* PROPS */, ["menus"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.restaurant ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["Footer"], {
     key: 3,
     restaurant: $setup.restaurant
-  }, null, 8 /* PROPS */, ["restaurant"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <TodayMenu />\n     ")], 64 /* STABLE_FRAGMENT */);
+  }, null, 8 /* PROPS */, ["restaurant"])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <TodayMenu />\r\n     ")], 64 /* STABLE_FRAGMENT */);
 }
 
 /***/ }),
@@ -25873,7 +26119,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, [].concat(_hoisted_36), 8 /* PROPS */, _hoisted_34)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.restaurant ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", _hoisted_37, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     href: 'mailto:' + $setup.restaurant.email,
     "class": "size-8 inline-flex items-center justify-center tracking-wide align-middle duration-500 text-base text-center border-gray-800 rounded-md border hover:border-indigo-600 dark:hover:border-indigo-600 hover:bg-indigo-600 dark:hover:bg-indigo-600"
-  }, [].concat(_hoisted_40), 8 /* PROPS */, _hoisted_38)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end icon")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end grid")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end grid")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end container"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"py-[30px] px-0 border-t border-slate-800\">\n\t\t\t<div class=\"container relative text-center\">\n\t\t\t\t<div class=\"grid md:grid-cols-1\">\n\t\t\t\t\t<p class=\"mb-0\">©\n\t\t\t\t\t\t<script>document.write(new Date().getFullYear())</script>2024 Techwind. Design with <i\n\t\t\t\t\t\t\tclass=\"mdi mdi-heart text-red-600\"></i> by <a href=\"https://shreethemes.in/\" target=\"_blank\"\n\t\t\t\t\t\t\tclass=\"text-reset\">Shreethemes</a>.\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div> ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
+  }, [].concat(_hoisted_40), 8 /* PROPS */, _hoisted_38)])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end icon")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end grid")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end grid")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("end container"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"py-[30px] px-0 border-t border-slate-800\">\r\n\t\t\t<div class=\"container relative text-center\">\r\n\t\t\t\t<div class=\"grid md:grid-cols-1\">\r\n\t\t\t\t\t<p class=\"mb-0\">©\r\n\t\t\t\t\t\t<script>document.write(new Date().getFullYear())</script>2024 Techwind. Design with <i\r\n\t\t\t\t\t\t\tclass=\"mdi mdi-heart text-red-600\"></i> by <a href=\"https://shreethemes.in/\" target=\"_blank\"\r\n\t\t\t\t\t\t\tclass=\"text-reset\">Shreethemes</a>.\r\n\t\t\t\t\t</p>\r\n\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div> ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
 /***/ }),
@@ -28325,6 +28571,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".swal2-popup.swal2-toast {\n  box-sizi
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* Ajoutez ici vos styles CSS spécifiques si nécessaire */\n.menu-block.active[data-v-55984ace] {\n  transform: translateX(0);\n}\n.menu-overlay.active[data-v-55984ace] {\n  visibility: visible;\n  opacity: 1;\n}\n@media (min-width: 768px) {\n.nav-item-auth[data-v-55984ace] {\n    display: none;\n}\n}\n", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/sites/Rating.vue?vue&type=style&index=0&id=669e946c&lang=css":
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/sites/Rating.vue?vue&type=style&index=0&id=669e946c&lang=css ***!
@@ -28342,7 +28612,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n@keyframes fadeIn {\nfrom {\n        opacity: 0;\n}\nto {\n        opacity: 1;\n}\n}\n@keyframes slideInUp {\nfrom {\n        transform: translateY(20px);\n        opacity: 0;\n}\nto {\n        transform: translateY(0);\n        opacity: 1;\n}\n}\n.animate-fadeIn {\n    animation: fadeIn 1s ease-in-out;\n}\n.animate-slideInUp {\n    animation: slideInUp 1s ease-in-out;\n}\n.star-rating {\n    display: flex;\n    direction: ltr;\n    font-size: 2rem;\n    cursor: pointer;\n}\n.star-rating label {\n    transition: color 0.3s;\n}\n@keyframes bounce {\n0%,\n    20%,\n    50%,\n    80%,\n    100% {\n        transform: translateY(0);\n}\n40% {\n        transform: translateY(-10px);\n}\n60% {\n        transform: translateY(-5px);\n}\n}\n.animate-bounce {\n    animation: bounce 1s;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n@keyframes fadeIn {\nfrom {\r\n        opacity: 0;\n}\nto {\r\n        opacity: 1;\n}\n}\n@keyframes slideInUp {\nfrom {\r\n        transform: translateY(20px);\r\n        opacity: 0;\n}\nto {\r\n        transform: translateY(0);\r\n        opacity: 1;\n}\n}\n.animate-fadeIn {\r\n    animation: fadeIn 1s ease-in-out;\n}\n.animate-slideInUp {\r\n    animation: slideInUp 1s ease-in-out;\n}\n.star-rating {\r\n    display: flex;\r\n    direction: ltr;\r\n    font-size: 2rem;\r\n    cursor: pointer;\n}\n.star-rating label {\r\n    transition: color 0.3s;\n}\n@keyframes bounce {\n0%,\r\n    20%,\r\n    50%,\r\n    80%,\r\n    100% {\r\n        transform: translateY(0);\n}\n40% {\r\n        transform: translateY(-10px);\n}\n60% {\r\n        transform: translateY(-5px);\n}\n}\n.animate-bounce {\r\n    animation: bounce 1s;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28366,7 +28636,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.active {\n    border-bottom: 2px solid #FF9700;\n}\n  ", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.active {\r\n    border-bottom: 2px solid #FF9700;\n}\r\n  ", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28390,7 +28660,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n@keyframes fadeInBackground-1a0f1568 {\n0% { opacity: 0;\n}\n100% { opacity: 1;\n}\n}\n@keyframes fadeIn-1a0f1568 {\nfrom { opacity: 0;\n}\nto { opacity: 1;\n}\n}\n@keyframes slideInDown-1a0f1568 {\nfrom { transform: translateY(-100%);\n}\nto { transform: translateY(0);\n}\n}\n@keyframes slideInUp-1a0f1568 {\nfrom { transform: translateY(100%);\n}\nto { transform: translateY(0);\n}\n}\n@keyframes bounceIn-1a0f1568 {\n0%, 20%, 40%, 60%, 80%, 100% { \n        transform: translateY(0);\n}\n50% { \n        transform: translateY(-20px);\n}\n}\n.animate-fadeInBackground[data-v-1a0f1568] {\n    animation: fadeInBackground-1a0f1568 5ès ease-in-out;\n}\n.animate-fadeIn[data-v-1a0f1568] {\n    animation: fadeIn-1a0f1568 5ès ease-in-out;\n}\n.animate-slideInDown[data-v-1a0f1568] {\n    animation: slideInDown-1a0f1568 3s ease-out;\n}\n.animate-slideInUp[data-v-1a0f1568] {\n    animation: slideInUp-1a0f1568 3s ease-out;\n}\n.animate-bounceIn[data-v-1a0f1568] {\n    animation: bounceIn-1a0f1568 3s ease-in-out;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n@keyframes fadeInBackground-1a0f1568 {\n0% { opacity: 0;\n}\n100% { opacity: 1;\n}\n}\n@keyframes fadeIn-1a0f1568 {\nfrom { opacity: 0;\n}\nto { opacity: 1;\n}\n}\n@keyframes slideInDown-1a0f1568 {\nfrom { transform: translateY(-100%);\n}\nto { transform: translateY(0);\n}\n}\n@keyframes slideInUp-1a0f1568 {\nfrom { transform: translateY(100%);\n}\nto { transform: translateY(0);\n}\n}\n@keyframes bounceIn-1a0f1568 {\n0%, 20%, 40%, 60%, 80%, 100% { \r\n        transform: translateY(0);\n}\n50% { \r\n        transform: translateY(-20px);\n}\n}\n.animate-fadeInBackground[data-v-1a0f1568] {\r\n    animation: fadeInBackground-1a0f1568 5ès ease-in-out;\n}\n.animate-fadeIn[data-v-1a0f1568] {\r\n    animation: fadeIn-1a0f1568 5ès ease-in-out;\n}\n.animate-slideInDown[data-v-1a0f1568] {\r\n    animation: slideInDown-1a0f1568 3s ease-out;\n}\n.animate-slideInUp[data-v-1a0f1568] {\r\n    animation: slideInUp-1a0f1568 3s ease-out;\n}\n.animate-bounceIn[data-v-1a0f1568] {\r\n    animation: bounceIn-1a0f1568 3s ease-in-out;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28623,6 +28893,36 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_sweetalert2_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Header_vue_vue_type_style_index_0_id_55984ace_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css */ "./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Header_vue_vue_type_style_index_0_id_55984ace_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Header_vue_vue_type_style_index_0_id_55984ace_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 
@@ -38518,15 +38818,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Header_vue_vue_type_template_id_55984ace__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header.vue?vue&type=template&id=55984ace */ "./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace");
+/* harmony import */ var _Header_vue_vue_type_template_id_55984ace_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header.vue?vue&type=template&id=55984ace&scoped=true */ "./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace&scoped=true");
 /* harmony import */ var _Header_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header.vue?vue&type=script&setup=true&lang=js */ "./resources/js/pages/views/landingComponents/Header.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Header_vue_vue_type_style_index_0_id_55984ace_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css */ "./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Header_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Header_vue_vue_type_template_id_55984ace__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/views/landingComponents/Header.vue"]])
+
+
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Header_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Header_vue_vue_type_template_id_55984ace_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-55984ace"],['__file',"resources/js/pages/views/landingComponents/Header.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -38579,6 +38882,34 @@ const script = {}
 
 ;
 const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Who_vue_vue_type_template_id_3087bfe2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/views/landingComponents/Who.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/pages/views/landingComponents/WhyChoose.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/pages/views/landingComponents/WhyChoose.vue ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _WhyChoose_vue_vue_type_template_id_138e8aa3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./WhyChoose.vue?vue&type=template&id=138e8aa3 */ "./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=template&id=138e8aa3");
+/* harmony import */ var _WhyChoose_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./WhyChoose.vue?vue&type=script&setup=true&lang=js */ "./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_WhyChoose_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_WhyChoose_vue_vue_type_template_id_138e8aa3__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/pages/views/landingComponents/WhyChoose.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -38878,6 +39209,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=script&setup=true&lang=js":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=script&setup=true&lang=js ***!
+  \*****************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_WhyChoose_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_WhyChoose_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./WhyChoose.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/pages/views/sites/Cart.vue?vue&type=script&setup=true&lang=js":
 /*!************************************************************************************!*\
   !*** ./resources/js/pages/views/sites/Cart.vue?vue&type=script&setup=true&lang=js ***!
@@ -39086,18 +39433,18 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace":
-/*!*********************************************************************************************!*\
-  !*** ./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace ***!
-  \*********************************************************************************************/
+/***/ "./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace&scoped=true":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace&scoped=true ***!
+  \*********************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Header_vue_vue_type_template_id_55984ace__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Header_vue_vue_type_template_id_55984ace_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Header_vue_vue_type_template_id_55984ace__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Header.vue?vue&type=template&id=55984ace */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Header_vue_vue_type_template_id_55984ace_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Header.vue?vue&type=template&id=55984ace&scoped=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=template&id=55984ace&scoped=true");
 
 
 /***/ }),
@@ -39130,6 +39477,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Who_vue_vue_type_template_id_3087bfe2__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Who_vue_vue_type_template_id_3087bfe2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Who.vue?vue&type=template&id=3087bfe2 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Who.vue?vue&type=template&id=3087bfe2");
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=template&id=138e8aa3":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=template&id=138e8aa3 ***!
+  \************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_WhyChoose_vue_vue_type_template_id_138e8aa3__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_WhyChoose_vue_vue_type_template_id_138e8aa3__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./WhyChoose.vue?vue&type=template&id=138e8aa3 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/WhyChoose.vue?vue&type=template&id=138e8aa3");
 
 
 /***/ }),
@@ -39274,6 +39637,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   render: () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayMenu_vue_vue_type_template_id_5b15c6b4__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_TodayMenu_vue_vue_type_template_id_5b15c6b4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./TodayMenu.vue?vue&type=template&id=5b15c6b4 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/sites/components/TodayMenu.vue?vue&type=template&id=5b15c6b4");
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css ***!
+  \***********************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_cjs_js_node_modules_css_loader_dist_cjs_js_clonedRuleSet_9_use_1_node_modules_vue_loader_dist_stylePostLoader_js_node_modules_postcss_loader_dist_cjs_js_clonedRuleSet_9_use_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Header_vue_vue_type_style_index_0_id_55984ace_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/style-loader/dist/cjs.js!../../../../../node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!../../../../../node_modules/vue-loader/dist/stylePostLoader.js!../../../../../node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css */ "./node_modules/style-loader/dist/cjs.js!./node_modules/css-loader/dist/cjs.js??clonedRuleSet-9.use[1]!./node_modules/vue-loader/dist/stylePostLoader.js!./node_modules/postcss-loader/dist/cjs.js??clonedRuleSet-9.use[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/pages/views/landingComponents/Header.vue?vue&type=style&index=0&id=55984ace&scoped=true&lang=css");
 
 
 /***/ }),

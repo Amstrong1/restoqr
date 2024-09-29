@@ -16,7 +16,7 @@
                                     </h2>
                                 </div>
                                 <!-- Section Block -->
-                                <a class="btn is-blue is-rounded btn-animation is-large group" href="/regitser"><span>Demarrez maintenant</span></a>
+                                <a class="btn is-blue is-rounded btn-animation is-large group" href="/register"><span>Demarrez maintenant</span></a>
                             </div>
                             <!-- Section Wrapper -->
                         </div>
@@ -35,7 +35,7 @@
                 <div class="horizontal-line bg-white"></div>
                 <!-- Horizontal Line Separator -->
 
-           
+
                 <!-- Footer Bottom -->
                 <div class="bg-white bg-opacity-5">
                     <!-- Footer Bottom Spacing -->
@@ -43,7 +43,7 @@
                         <!-- Section Container -->
                         <div class="container-default">
                             <div class="text-center text-white text-opacity-80">
-                                © Copyright 2024, Tout droit reservé par RESTOqr
+                                © Copyright 2024, Tout droit reservé par RESTOqr || contact@restoqr.site
                             </div>
                         </div>
                         <!-- Section Container -->

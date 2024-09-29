@@ -1,5 +1,5 @@
 <template>
-    <section id="feature">
+    <section id="feature" class="bg-gray-50" style="padding-top: 5rem;">
 
         <div class="container-default">
             <!-- Section Content Wrapper -->
@@ -20,7 +20,7 @@
             <!-- Section Content Wrapper -->
 
             <!-- Service List -->
-            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
                 <!-- Service Item -->
                 <div class="jos" data-jos_animation="flip-left" data-jos_delay="0" data-jos_once="1"
                     data-jos_timingfunction="ease" data-jos_duration="0.7" data-jos_counter="1">
@@ -54,10 +54,9 @@
                             </div>
                             <div>
                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl"
-                                    href="service-details.html">Commandes en Ligne Intégrées</a>
+                                    href="service-details.html">Commandes</a>
                                 <p>
-                                    Permettez à vos clients de passer leurs commandes depuis leur appareil mobile, en
-                                    toute simplicité
+                                    Facilitez l'expérience de vos clients en leur permettant de commander directement depuis leur téléphone mobile, simplement en scannant un code QR.
                                 </p>
                             </div>
                         </div>
@@ -76,10 +75,9 @@
                             </div>
                             <div>
                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl"
-                                    href="/">Paiements Sécurisés et Faciles </a>
+                                    href="/">Suivi du statut des commandes en temps réel</a>
                                 <p>
-                                    Proposez un processus de paiement intégré, sécurisé et sans friction pour une
-                                    expérience client optimale.
+                                    Permettez aux clients de suivre l'état de leurs commandes en temps réel.
                                 </p>
                             </div>
                         </div>
@@ -97,7 +95,7 @@
                             </div>
                             <div>
                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl"
-                                    href="/">Gestion des Avis Clients</a>
+                                    href="/">Système de notation et d'avis clients</a>
                                 <p>
                                     Collectez et gérez les avis de vos clients en temps réel pour améliorer constamment
                                     vos services.
@@ -107,49 +105,7 @@
                     </div>
                 </div>
                 <!-- Service Item -->
-                <!-- Service Item -->
-                <div class="jos" data-jos_animation="flip-left" data-jos_delay="0.3" data-jos_once="1"
-                    data-jos_timingfunction="ease" data-jos_duration="0.7" data-jos_counter="1">
-                    <div class="hover-solid-shadow h-full after:bg-ColorPurple">
-                        <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
-                            <div class="mb-[30px] h-[70px] w-auto">
-                                <img src="landing/img/icons/icon-black-home-7-service-2.svg"
-                                    alt="icon-black-home-7-service-2" width="75" height="70">
-                            </div>
-                            <div>
-                                <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl"
-                                    href="/">Gestion des Stocks</a>
-                                <p>
-                                    Contrôlez efficacement vos niveaux de stock et recevez des alertes pour les
-                                    réapprovisionnements.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Service Item -->
 
-                <!-- Service Item -->
-                <div class="jos" data-jos_animation="flip-left" data-jos_delay="0.9" data-jos_once="1"
-                    data-jos_timingfunction="ease" data-jos_duration="0.7" data-jos_counter="1">
-                    <div class="hover-solid-shadow h-full after:bg-ColorPurple">
-                        <div class="group h-full rounded-[10px] border-2 border-ColorDark bg-white p-[30px]">
-                            <div class="mb-[30px] h-[70px] w-auto">
-                                <img src="landing/img/icons/icon-black-home-7-service-4.svg"
-                                    alt="icon-black-home-7-service-4" width="69" height="70">
-                            </div>
-                            <div>
-                                <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl"
-                                    href="/">Promotions et Offres Spéciales</a>
-                                <p>
-                                    Créez et gérez des promotions et des offres spéciales pour attirer et fidéliser vos
-                                    clients.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Service Item -->
                 <!-- Service Item -->
                 <div class="jos" data-jos_animation="flip-left" data-jos_delay="1.2" data-jos_once="1"
                     data-jos_timingfunction="ease" data-jos_duration="0.7" data-jos_counter="1">
@@ -161,10 +117,9 @@
                             </div>
                             <div>
                                 <a class="mb-4 block text-[22px] font-semibold leading-[1.33] -tracking-[0.5px] text-ColorDark group-hover:text-ColorPurple xxl:text-2xl"
-                                    href="/">Analytique Avancée</a>
+                                    href="/">Statistiques et analyses</a>
                                 <p>
-                                    Accédez à des statistiques détaillées et à des rapports pour comprendre et répondre
-                                    aux besoins de votre clientèle.
+                                    Obtenez des statistiques précises et des rapports pour mieux comprendre les besoins de vos clients et prendre des décisions éclairées sur l'approvisionnement.
                                 </p>
                             </div>
                         </div>
